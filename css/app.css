@@ -1,0 +1,63 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: #111;
+  color: #fff;
+  font-family: "LG Smart UI", "Museo Sans", Arial, sans-serif;
+}
+
+/* Reading area — TV safe area keeps text away from edges */
+#reader {
+  position: absolute;
+  inset: 54px 96px;
+  overflow: hidden;
+}
+#text {
+  font-size: 44px;
+  line-height: 1.6;
+  max-width: 1500px;
+  margin: 0 auto;
+  transition: transform 0.2s ease-out;
+}
+#text p { margin-bottom: 1em; }
+
+/* Bars overlay */
+#bars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* Panels */
+#panel, #disclaimer {
+  position: absolute;
+  background: rgba(20, 20, 20, 0.95);
+  border: 2px solid #444;
+  border-radius: 16px;
+  padding: 48px 56px;
+  z-index: 10;
+}
+#panel { right: 96px; top: 96px; width: 760px; }
+#disclaimer { left: 50%; top: 50%; width: 1100px; transform: translate(-50%, -50%); }
+#disclaimer p { font-size: 34px; line-height: 1.5; margin-bottom: 24px; }
+
+h1 { font-size: 48px; margin-bottom: 32px; }
+
+#settings { list-style: none; }
+#settings li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 34px;
+  padding: 18px 24px;
+  border-radius: 10px;
+}
+#settings li.focused { background: #2b5cff; }
+#settings .value::before { content: "◀  "; opacity: 0.6; }
+#settings .value::after  { content: "  ▶"; opacity: 0.6; }
+
+.hint { font-size: 26px; color: #aaa; margin-top: 28px; }
+.hidden { display: none; }

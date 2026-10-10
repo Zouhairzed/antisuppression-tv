@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Antisuppression Bars</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <!-- Reading content shown under the bars -->
+  <main id="reader">
+    <article id="text"></article>
+  </main>
+
+  <!-- Red/green bar overlay -->
+  <div id="bars" aria-hidden="true"></div>
+
+  <!-- Settings panel (toggle with OK / Enter) -->
+  <section id="panel" class="hidden">
+    <h1>Settings</h1>
+    <ul id="settings"></ul>
+    <p class="hint">▲▼ select · ◀▶ change · OK close · BACK exit</p>
+  </section>
+
+  <!-- First-run disclaimer -->
+  <section id="disclaimer" class="hidden">
+    <h1>Before you start</h1>
+    <p>This app is a supplement to vision therapy prescribed by an optometrist or
+      ophthalmologist. It is not a medical device and does not diagnose or treat any condition.</p>
+    <p>Turn off any TV picture modes that alter colour (e.g. eye-comfort / blue-light filters),
+      then wear your red-green (bichrome) glasses.</p>
+    <p class="hint">Press OK to continue</p>
+  </section>
+
+  <script src="js/settings.js"></script>
+  <script src="js/bars.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
