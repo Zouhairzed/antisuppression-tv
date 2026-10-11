@@ -16,7 +16,7 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 
 ## 1. First launch
 1. Launch the app from the Home launcher. The splash screen appears, then the **"Before you start"** notice.
-2. Press **OK**. The notice closes and the **home menu** appears with five items: Reading, Shape Blaster, Lane Racer, Hop & Duck, Settings.
+2. Press **OK**. The notice closes and the **home menu** appears with seven items: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse, Settings.
 3. Red and green horizontal bars cover the whole screen. This is the core function of the app.
 4. Relaunch the app: the notice is not shown again.
 
@@ -65,11 +65,24 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 3. Hold **▼** to duck under birds.
 4. Touching a star adds 25 points. Touching a block or bird costs one life.
 
+### 5d. Snake
+1. Select **Snake**. A short snake moves inside a walled field; a piece of food appears.
+2. Press **◀ ▲ ▼ ▶** to steer. The snake cannot reverse directly.
+3. Eating food adds 10 points and makes the snake longer and slightly faster.
+4. Hitting the wall or the snake's own body costs one life and restarts the snake (score is kept).
+
+### 5e. Maze Mouse
+1. Select **Maze Mouse**. A mouse starts in a maze full of crumbs; two cats start in the middle.
+2. Press **◀ ▲ ▼ ▶** to choose the mouse's direction; it turns at the next opening.
+3. Each crumb adds 1 point. A cheese wedge (one in each corner area) adds 5 points and makes the cats hollow and scared for 7 seconds.
+4. Touching a scared cat adds 50 points and sends it home. Touching a normal cat costs one life.
+5. Eating every crumb adds 100 points and starts the next level with faster cats; "Level N" appears at the top.
+
 ## Expected key behaviour summary
 | Key | Menu | Reading | Games | Settings |
 |---|---|---|---|---|
-| ▲ ▼ | move | scroll | jump / duck (Hop & Duck) | choose |
-| ◀ ▶ | — | change story | move / change lane | change value |
+| ▲ ▼ | move | scroll | jump / duck, steer (Snake, Maze Mouse) | choose |
+| ◀ ▶ | — | change story | move / change lane / steer | change value |
 | OK | open item | open Settings | fire / jump / restart | close |
 | BACK | exit app | menu | menu | close |
 | RED | — | bar orientation | — | — |

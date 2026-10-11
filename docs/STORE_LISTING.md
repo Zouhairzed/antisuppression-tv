@@ -15,7 +15,7 @@
 | Privacy policy URL | *(public link to docs/privacy-policy.html — see note below)* |
 
 ## Short description
-Red-green reading bars and games for at-home binocular vision exercises with bichrome glasses.
+Red-green reading bars and 5 games for at-home binocular vision exercises with bichrome glasses.
 
 ## Full description
 Antisuppression Bars brings red-green reading bars to your LG TV for at-home vision exercises recommended by eye-care professionals.
@@ -27,6 +27,8 @@ What's inside:
 • Shape Blaster: move the cannon and shoot falling shapes before they land
 • Lane Racer: switch lanes to dodge traffic on an endless road
 • Hop & Duck: help a running cat jump over blocks, duck under birds and collect stars
+• Snake: steer a growing snake to the food without hitting the walls or its tail
+• Maze Mouse: eat every crumb in the maze while cats chase you; big cheese turns the tables
 
 Adjust everything to match your glasses:
 • Horizontal or vertical bars

@@ -16,7 +16,7 @@
   var disclaimer = $('disclaimer'), menuEl = $('menu'), menuList = $('menu-list');
   var reader = $('reader'), canvas = $('game'), gameHint = $('game-hint');
 
-  var GAMES = [Blaster, Racer, Runner];
+  var GAMES = [Blaster, Racer, Runner, Snake, Maze];
   var MENU = [
     { label: 'Reading', sub: STORIES.length + ' stories', action: function () { show('reader'); } }
   ].concat(GAMES.map(function (g) {
