@@ -9,7 +9,8 @@ var Settings = (function () {
     opacity: 0.6,              // 0.1 – 1.0
     redColor: '#ff0000',
     greenColor: '#00ff00',
-    blueColor: '#0000ff',
+    blueColor: '#0050ff',      // azure-leaning blue: stays blue (not violet) when blended at lower strength
+    blueRev: 2,
     fontSize: 44,
     seenDisclaimer: false
   };
@@ -23,7 +24,8 @@ var Settings = (function () {
     opacity: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
     redColor: ['#ff0000', '#f00000', '#e00000', '#d00000', '#c00000', '#ff2020', '#ff4040', '#ff0040'],
     greenColor: ['#00ff00', '#00f000', '#00e000', '#00d000', '#00c000', '#20ff20', '#40ff40', '#00ff60', '#00ff80'],
-    blueColor: ['#0000ff', '#0000e0', '#0000c0', '#2020ff', '#4040ff', '#0040ff', '#0060ff', '#0080ff', '#00a0ff'],
+    // From azure to pure blue. #0000ff looks violet on many screens once blended, so it is not the default.
+    blueColor: ['#0050ff', '#0060ff', '#0070ff', '#0080ff', '#0040ff', '#0030ff', '#0000ff', '#0040e0', '#0050c0'],
     fontSize: [32, 38, 44, 52, 60, 72]
   };
 
@@ -53,6 +55,8 @@ var Settings = (function () {
       var saved = raw ? JSON.parse(raw) : {};
       var out = {};
       for (var k in DEFAULTS) out[k] = (k in saved) ? saved[k] : DEFAULTS[k];
+      // Older versions saved #0000ff as the blue default; move those to the new default once
+      if ((saved.blueRev || 0) < DEFAULTS.blueRev) { out.blueColor = DEFAULTS.blueColor; out.blueRev = DEFAULTS.blueRev; }
       return out;
     } catch (e) {
       return JSON.parse(JSON.stringify(DEFAULTS));
