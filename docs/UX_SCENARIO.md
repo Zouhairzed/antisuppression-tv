@@ -36,13 +36,22 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 7. Press **BACK** to return to the home menu.
 
 ## 4. Settings panel (available from anywhere with BLUE, or from the menu)
-1. Press **▲ / ▼** to choose a setting: Glasses, Orientation, Bar width, Bar strength, Red shade, Green shade (or Blue shade), Text size, Music, Sound effects.
+1. Press **▲ / ▼** to choose a setting: Glasses, Orientation, Bar width, Bar strength, Red colour, Green colour (or Blue colour), Colour test, Text size, Music, Sound effects.
    - **Glasses** switches between red / green and red / blue. With red / blue, the bars become red and blue and the Green shade row is replaced by Blue shade.
-   - Each shade row shows a colour swatch and its value; several shades are offered because screens display colour differently.
+   - Each colour row shows a swatch and its value; **◀ / ▶** steps through preset colours. The defaults are the reference reading-bar colours (red #AA1819, green #1AA91C) at 100% bar strength.
+   - **Colour test** (press **OK**) opens the colour test and picker described in section 4a.
    - **Music** (on / off) controls the soft background music in games. **Sound effects** (on / off) controls the short sounds for menus, moves, shots, jumps, pickups and losing a life.
 2. Press **◀ / ▶** to change the value. The bars update immediately behind the panel (bars are shown while Settings is open, even over the home menu).
 3. Press **OK**, **BACK** or **BLUE** to close.
 4. Exit and relaunch the app: the chosen settings are kept.
+
+## 4a. Colour test & picker (Settings → Colour test → OK)
+1. Two tests are shown side by side: **Green bars** (or **Blue bars**) and **Red bars**. Each shows a white cat seen through a square of that bar colour, exactly as the app draws things under that bar. The red bars and app bars are hidden on this screen.
+2. Next to each test: a colour swatch with its value, and **R**, **G**, **B** sliders (0–255).
+3. Press **▲ / ▼** to move between the sliders and buttons, and **◀ / ▶** to change the highlighted slider in steps of 5 (hold to keep changing). The test square and swatch update immediately.
+4. User instruction on screen: close the eye behind the green lens and, looking through the red lens only, adjust the green colour until the cat disappears; then the same for red with the green lens.
+5. **Reset to default** restores that colour; **Use reference colours** restores both; **Done** or **BACK** saves and returns to Settings.
+6. With the Magic Remote pointer, sliders can also be dragged and buttons clicked.
 
 ## 5. Games (common behaviour)
 - The score is shown top left, the play time top centre, and lives (3 hearts) top right.

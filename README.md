@@ -27,7 +27,9 @@ In every game: YELLOW pause · BLUE settings · BACK menu. Best scores are saved
 Games have soft background music and sound effects; each can be turned off in Settings.
 
 The home menu is drawn without bars. **Settings → Glasses** switches between red/green and
-red/blue; each colour has its own shade list because screens show colour differently.
+red/blue. **Settings → Colour test** shows a cat through each bar colour with R / G / B pickers,
+to tune the colours to your glasses and screen. Defaults are the reference reading-bar colours
+(red #AA1819, green #1AA91C) at 100% strength.
 
 ## Project layout
 ```
@@ -39,6 +41,7 @@ js/bars.js       bar rendering (CSS repeating gradient)
 js/app.js        menu, screens, remote-control navigation
 js/sound.js      synthesized music and sound effects (Web Audio)
 js/menu-art.js   menu tile icons
+js/calibrate.js  colour test and picker
 js/games/        engine.js + blaster, racer, runner, snake, maze, blocks
 assets/          icon.png (80x80), largeIcon.png (130x130), splash.png (1920x1080)
 docs/            store submission notes

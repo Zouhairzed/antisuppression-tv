@@ -36,7 +36,7 @@ Adjust everything to match your glasses:
 • Red-green or red-blue glasses
 • Horizontal or vertical bars
 • Bar width and strength
-• Red, green and blue shades, to suit how your screen shows colour
+• Red, green and blue colours, with a built-in colour test and picker to match your glasses and screen
 
 The app works offline, has no ads, and collects no personal data. Settings and best scores are saved on your TV.
 

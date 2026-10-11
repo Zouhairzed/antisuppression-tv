@@ -14,7 +14,7 @@
   var $ = function (id) { return document.getElementById(id); };
   var barsEl = $('bars'), textEl = $('text'), panel = $('panel'), list = $('settings');
   var disclaimer = $('disclaimer'), menuEl = $('menu'), menuList = $('menu-list');
-  var reader = $('reader'), canvas = $('game'), gameHint = $('game-hint');
+  var reader = $('reader'), canvas = $('game'), gameHint = $('game-hint'), calibEl = $('calib');
 
   var GAMES = [Blaster, Racer, Runner, Snake, Maze, Blocks];
   var MENU = [
@@ -70,6 +70,7 @@
       if (k === 'barSize' || k === 'fontSize') v = v + ' px';
       if (k === 'glasses') v = v === 'red-blue' ? 'red / blue' : 'red / green';
       if (/Color$/.test(k)) v = '<i class="swatch" style="background:' + v + '"></i>' + v;
+      if (k === 'calibrate') v = 'press OK';
       return '<li class="' + (i === setFocus ? 'focused' : '') + '"><span>' +
         Settings.LABELS[k] + '</span><span class="value">' + v + '</span></li>';
     }).join('');
@@ -90,6 +91,7 @@
     menuEl.classList.toggle('hidden', name !== 'menu');
     reader.classList.toggle('hidden', name !== 'reader');
     canvas.classList.toggle('hidden', name !== 'game');
+    calibEl.classList.toggle('hidden', name !== 'calib');
     gameHint.classList.toggle('hidden', name !== 'game');
     if (name !== 'game') Engine.stop();
     if (name === 'menu') renderMenu();
@@ -106,7 +108,20 @@
   function closePanel() { panel.classList.add('hidden'); updateBars(); }
 
   // Bars stay off the home menu, but show while Settings is open so changes can be previewed
-  function updateBars() { barsEl.classList.toggle('hidden', screen === 'menu' && !panelOpen()); }
+  function updateBars() { barsEl.classList.toggle('hidden', (screen === 'menu' && !panelOpen()) || screen === 'calib'); }
+
+  // Colour test & picker. Opened from Settings; returns to Settings when done.
+  var beforeCalib = 'menu';
+  function openCalib() {
+    beforeCalib = screen === 'game' ? 'menu' : screen;   // a running game is ended
+    closePanel();
+    show('calib');
+    Calibrate.open(calibEl, s, function () {
+      apply();
+      show(beforeCalib);
+      openPanel();
+    });
+  }
 
   function scroll(dy) {
     var max = Math.max(0, textEl.scrollHeight - 972);
@@ -130,7 +145,10 @@
       return;
     }
 
+    if (screen === 'calib') { Calibrate.key(k); return; }
+
     if (panelOpen()) {
+      if (k === KEY.ENTER && setKeys[setFocus] === 'calibrate') { openCalib(); return; }
       if (k === KEY.ENTER || k === KEY.BACK || k === KEY.BLUE) { closePanel(); return; }
       if (k === KEY.UP) setFocus = (setFocus - 1 + setKeys.length) % setKeys.length;
       if (k === KEY.DOWN) setFocus = (setFocus + 1) % setKeys.length;
