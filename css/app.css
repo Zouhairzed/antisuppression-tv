@@ -23,6 +23,8 @@ html, body {
   transition: transform 0.2s ease-out;
 }
 #text p { margin-bottom: 1em; }
+#text .story-title { font-size: 1.5em; margin-bottom: 0.8em; }
+#text .story-end { color: #aaa; font-size: 0.7em; text-align: center; margin-top: 1.5em; }
 
 /* Bars overlay */
 #bars {
@@ -96,4 +98,4 @@ h1 { font-size: 48px; margin-bottom: 32px; }
 }
 
 .hint { font-size: 26px; color: #aaa; margin-top: 28px; }
-.hidden { display: none; }
+.hidden { display: none !important; }

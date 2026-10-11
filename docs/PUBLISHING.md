@@ -7,12 +7,14 @@
 - [ ] Test on a real TV with the Developer Mode app.
 - [ ] Run the **App Self Checklist** from the developer site and fix issues.
 - [ ] Prepare submission files:
-  - [ ] `.ipk` package (`ares-package .`)
-  - [ ] Icons, launcher background and splash images (sizes per Seller Lounge form)
-  - [ ] Screenshots
-  - [ ] **UX scenario document** (template on Seller Lounge) — how testers use the app
-  - [ ] **Privacy policy** URL (app collects no data — still required)
-  - [ ] Description, keywords, age rating, service countries, languages
+  - [x] `.ipk` package (`ares-package . -e docs -e README.md`)
+  - [x] Icons (80×80, 130×130 in the app; 400×400 store icon in `docs/store-assets/`) and splash
+  - [x] Screenshots in `docs/screenshots/`
+  - [x] **UX scenario** text in `docs/UX_SCENARIO.md` — copy into the Seller Lounge template
+  - [x] **Privacy policy** page in `docs/privacy-policy.html` (published; share it publicly
+        and paste its link in the form)
+  - [x] Description, keywords, age rating in `docs/STORE_LISTING.md`
+  - [ ] Choose service countries
 - [ ] Submit via *App Management → App Submission*.
 - [ ] LG QA: pre-test → function test → content test. Fix and re-submit if rejected.
 

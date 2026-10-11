@@ -36,14 +36,18 @@ docs/            store submission notes
 ```
 
 ## Remote controls
-| Key | Reading mode | Settings panel |
-|---|---|---|
-| ▲ ▼ | scroll text | move selection |
-| ◀ ▶ | — | change value |
-| OK | open settings | close settings |
-| BACK | exit app | close settings |
-| RED | toggle horizontal/vertical | — |
-| GREEN | next bar width | — |
+| Key | Menu | Reading (6 stories) | Settings panel |
+|---|---|---|---|
+| ▲ ▼ | move | scroll text | move selection |
+| ◀ ▶ | — | previous / next story | change value |
+| OK | open item | open settings | close settings |
+| BACK | exit app | back to menu | close settings |
+| RED | — | toggle horizontal/vertical | — |
+| GREEN | — | next bar width | — |
+| BLUE | settings | settings | close settings |
+
+Game controls are listed above. The full tester walkthrough is in
+[docs/UX_SCENARIO.md](docs/UX_SCENARIO.md).
 
 ## Develop & test
 1. Install the webOS TV CLI: `npm install -g @webos-tools/cli`

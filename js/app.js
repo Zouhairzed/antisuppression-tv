@@ -18,7 +18,7 @@
 
   var GAMES = [Blaster, Racer, Runner];
   var MENU = [
-    { label: 'Reading', sub: 'text under bars', action: function () { show('reader'); } }
+    { label: 'Reading', sub: STORIES.length + ' stories', action: function () { show('reader'); } }
   ].concat(GAMES.map(function (g) {
     return { label: g.title, sub: 'game', action: function () { startGame(g); } };
   })).concat([
@@ -29,12 +29,7 @@
   var menuFocus = 0, setFocus = 0, scrollY = 0;
   var setKeys = Object.keys(Settings.LABELS);
 
-  // Placeholder reading content — replace with bundled public-domain texts.
-  var SAMPLE = [
-    'Reading with red-green bars encourages both eyes to work together. Each eye, behind its coloured filter, sees only some of the bars, so the brain must combine input from both eyes to read every line.',
-    'Use the arrow keys to scroll. Press OK to open settings and adjust bar width, strength and colours to match your glasses.',
-    'Follow the session length and schedule recommended by your eye-care provider.'
-  ];
+  var storyIdx = 0;
 
   /* ---------- rendering ---------- */
 
@@ -47,7 +42,18 @@
 
   function renderText() {
     textEl.style.fontSize = s.fontSize + 'px';
-    textEl.innerHTML = SAMPLE.map(function (p) { return '<p>' + p + '</p>'; }).join('');
+    var st = STORIES[storyIdx];
+    textEl.innerHTML =
+      '<h2 class="story-title">' + st.title + '</h2>' +
+      st.paragraphs.map(function (p) { return '<p>' + p + '</p>'; }).join('') +
+      '<p class="story-end">◀ ▶ story ' + (storyIdx + 1) + ' of ' + STORIES.length + '</p>';
+  }
+
+  function changeStory(dir) {
+    storyIdx = (storyIdx + dir + STORIES.length) % STORIES.length;
+    renderText();
+    scrollY = 0;
+    scroll(0);
   }
 
   function renderPanel() {
@@ -135,6 +141,8 @@
       if (k === KEY.ENTER) { openPanel(); return; }
       if (k === KEY.DOWN) scroll(120);
       if (k === KEY.UP) scroll(-120);
+      if (k === KEY.LEFT) changeStory(-1);
+      if (k === KEY.RIGHT) changeStory(1);
       if (k === KEY.RED) { Settings.cycle(s, 'orientation', 1); apply(); }
       if (k === KEY.GREEN) { Settings.cycle(s, 'barSize', 1); apply(); }
       return;
