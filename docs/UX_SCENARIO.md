@@ -16,12 +16,12 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 
 ## 1. First launch
 1. Launch the app from the Home launcher. The splash screen appears, then the **"Before you start"** notice.
-2. Press **OK**. The notice closes and the **home menu** appears: eight tiles in a 4 × 2 grid, each with an icon and a short description: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse, Block Drop, Settings.
+2. Press **OK**. The notice closes and the **home menu** appears: twelve tiles in a 4 × 3 grid, each with an icon and a short description: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse, Block Drop, Split Stack, Ball & Paddle, Fruit Catcher, Hidden Picture, Settings.
 3. The home menu is shown without bars so it is easy to read. Vertical red and green bars cover the screen in Reading and in every game; this is the core function of the app.
 4. Relaunch the app: the notice is not shown again.
 
 ## 2. Home menu
-1. Press **◀ / ▶** to move the highlight between tiles, and **▲ / ▼** to move between the two rows.
+1. Press **◀ / ▶** to move the highlight between tiles, and **▲ / ▼** to move between rows.
 2. Press **OK** to open the highlighted item.
 3. Press **BACK** on the home menu to exit the app.
 
@@ -37,10 +37,12 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 7. Press **BACK** to return to the story list.
 
 ## 4. Settings panel (available from anywhere with BLUE, or from the menu)
-1. Press **▲ / ▼** to choose a setting: Glasses, Orientation, Bar width, Bar strength, Red colour, Green colour (or Blue colour), Colour test, Text size, Music, Sound effects.
+1. Press **▲ / ▼** to choose a setting: Glasses, Orientation, Bar width, Bar strength, Red colour, Green colour (or Blue colour), Colour test, Weaker eye, Strong-eye contrast, Text size, Music, Sound effects.
    - **Glasses** switches between red / green and red / blue. With red / blue, the bars become red and blue and the Green shade row is replaced by Blue shade.
    - Each colour row shows a swatch and its value; **◀ / ▶** steps through preset colours. The defaults are red #9B1819 and green #1A9B1C at 100% bar strength.
    - **Colour test** (press **OK**) opens the colour test and picker described in section 4a.
+   - **Weaker eye** (behind red lens / behind green lens) tells the two-eye games which colour the weaker eye sees.
+   - **Strong-eye contrast** (100% down to 20%) darkens everything that only the stronger eye sees in the two-eye games.
    - **Music** (on / off) controls the soft background music in games. **Sound effects** (on / off) controls the short sounds for menus, moves, shots, jumps, pickups and losing a life.
 2. Press **◀ / ▶** to change the value. The bars update immediately behind the panel (bars are shown while Settings is open, even over the home menu).
 3. Press **OK**, **BACK** or **BLUE** to close.
@@ -100,12 +102,36 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 4. Completing a full row clears it: 1, 2, 3 or 4 rows give 10, 30, 50 or 80 points times the level. Every 10 rows the level goes up and blocks fall faster.
 5. If the stack reaches the top, one life is lost and the well is emptied (the score is kept).
 
+## 5x. Two-eye games (Split Stack, Ball & Paddle, Fruit Catcher, Hidden Picture)
+- In these four games the red/green bars are not shown. Instead, parts of the game are drawn only in the weaker eye's colour and other parts only in the stronger eye's colour (dimmed by **Strong-eye contrast**), so each eye sees different pieces. Frames, text and score are white (both eyes).
+- Lives, pause, Settings, music and Game over work as in the other games.
+
+### 5g. Split Stack
+1. Same controls and rules as Block Drop (5f).
+2. The falling block, its landing outline and the next block are drawn for the weaker eye; the stack is drawn for the stronger eye.
+
+### 5h. Ball & Paddle
+1. Bricks fill the top of a walled court. The ball serves by itself after a moment (or press **OK** / **▲**).
+2. Hold **◀ / ▶** to move the paddle. Where the ball hits the paddle sets its angle.
+3. Returning the ball adds 1 point, breaking a brick 10. Clearing all bricks adds 100 and starts a faster level ("Level N" top left).
+4. Missing the ball costs one life. The ball and bricks are drawn for the weaker eye, the paddle for the stronger eye.
+
+### 5i. Fruit Catcher
+1. Apples, pears, cherries and bananas fall, mixed with bugs. Hold **◀ / ▶** to move the basket.
+2. Catching fruit adds points, with a growing combo bonus. Dropping fruit only resets the combo. Catching a bug costs one life.
+3. Fruit and bugs are drawn for the weaker eye, the basket for the stronger eye. Fruit falls faster and bugs become more frequent over time.
+
+### 5j. Hidden Picture
+1. A shape (circle, square, triangle, star, heart, moon, house, fish, arrow or cross) is hidden in a field of dots. Patches of dots are drawn for the weaker eye and the other patches for the stronger eye.
+2. Three answers are shown below with a small picture and name. Press **◀ / ▶** to choose and **OK** to answer.
+3. A right answer adds points and shows the shape; a wrong answer costs one life and shows the right shape. Each new picture adds more background dots.
+
 ## Expected key behaviour summary
 | Key | Menu | Reading | Games | Settings |
 |---|---|---|---|---|
-| ▲ ▼ | move between rows | scroll | jump / duck, steer, rotate / drop faster (Block Drop) | choose |
-| ◀ ▶ | move between tiles | change story | move / change lane / steer | change value |
-| OK | open item | open Settings | fire / jump / rotate / restart | close |
+| ▲ ▼ | move between rows | scroll | jump / duck, steer, rotate / drop faster, serve | choose |
+| ◀ ▶ | move between tiles | change story | move / change lane / steer / choose answer | change value |
+| OK | open item | open Settings | fire / jump / rotate / serve / answer / restart | close |
 | BACK | exit app | story list | menu | close |
 | RED | — | bar orientation | — | — |
 | GREEN | — | bar width | — | — |

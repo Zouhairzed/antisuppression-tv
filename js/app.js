@@ -16,7 +16,7 @@
   var disclaimer = $('disclaimer'), menuEl = $('menu'), menuList = $('menu-list');
   var reader = $('reader'), canvas = $('game'), gameHint = $('game-hint'), calibEl = $('calib'), libraryEl = $('library');
 
-  var GAMES = [Blaster, Racer, Runner, Snake, Maze, Blocks];
+  var GAMES = [Blaster, Racer, Runner, Snake, Maze, Blocks, SplitStack, Paddle, Fruit, Picture];
   var MENU = [
     { label: 'Reading', icon: MENU_ART.reading.icon, sub: STORIES.length + ' stories', action: function () { openLibrary(); } }
   ].concat(GAMES.map(function (g) {
@@ -72,6 +72,8 @@
       if (k === 'glasses') v = v === 'red-blue' ? 'red / blue' : 'red / green';
       if (/Color$/.test(k)) v = '<i class="swatch" style="background:' + v + '"></i>' + v;
       if (k === 'calibrate') v = 'press OK';
+      if (k === 'weakLens') v = 'behind ' + (v === 'red' ? 'red' : (s.glasses === 'red-blue' ? 'blue' : 'green')) + ' lens';
+      if (k === 'strongContrast') v = Math.round(v * 100) + '%';
       return '<li class="' + (i === setFocus ? 'focused' : '') + '"><span>' +
         Settings.LABELS[k] + '</span><span class="value">' + v + '</span></li>';
     }).join('');
@@ -79,6 +81,7 @@
 
   function apply() {
     Bars.render(barsEl, s);
+    Engine.setColors(Settings.eyeColors(s));
     Sound.configure({ music: s.music === 'on', sfx: s.sfx === 'on' });
     renderText();
     if (panelOpen()) renderPanel();
@@ -99,7 +102,9 @@
     if (name === 'menu') renderMenu();
   }
 
+  var currentGame = null;
   function startGame(g) {
+    currentGame = g;
     show('game');
     gameHint.textContent = g.hint + '  ·  YELLOW pause  ·  BLUE settings  ·  BACK menu';
     Engine.start(canvas, g);
@@ -112,7 +117,9 @@
   // Bars stay off the home menu, but show while Settings is open so changes can be previewed
   function updateBars() {
     var plain = screen === 'menu' || screen === 'library';
-    barsEl.classList.toggle('hidden', (plain && !panelOpen()) || screen === 'calib');
+    // Two-eye games draw their own colours for each eye, so the bars are not used there
+    var twoEye = screen === 'game' && currentGame && currentGame.dichoptic;
+    barsEl.classList.toggle('hidden', (plain && !panelOpen()) || screen === 'calib' || twoEye);
   }
 
   // Story list (no bars); picking a story opens it in the reader

@@ -60,6 +60,30 @@ var Sound = (function () {
       patterns: [[0, 2, -1, 3, 2, -1, 1, 2], [0, 3, -1, 4, 3, -1, 2, 1]],
       arp: [12, 'sine', 0.08, 1.6], bass: ['half', 'triangle', 0.11], pad: 0.03, echo: 0.2, filter: 2400
     },
+    // Split Stack: steady, thoughtful (C major, low and warm)
+    split: {
+      bpm: 96, chords: [[48, 52, 55], [45, 48, 52], [41, 45, 48], [43, 47, 50]],
+      patterns: [[0, 2, 1, 3, 2, 4, 3, 2], [0, 1, 2, 3, 4, 3, 2, 1]],
+      arp: [24, 'triangle', 0.07, 1.4], bass: ['half', 'triangle', 0.11], pad: 0.03, echo: 0.22, filter: 2300
+    },
+    // Ball & Paddle: bright and bouncy (G major)
+    paddle: {
+      bpm: 120, chords: [[55, 59, 62], [50, 54, 57], [52, 55, 59], [48, 52, 55]],
+      patterns: [[0, 2, 1, 2, 3, 2, 1, 2], [0, 3, 2, 3, 4, 3, 2, 3]],
+      arp: [12, 'triangle', 0.075, 1.0], bass: ['pulse', 'triangle', 0.09], pad: 0.02, echo: 0.12, filter: 2700
+    },
+    // Fruit Catcher: happy and light (A major)
+    fruit: {
+      bpm: 108, chords: [[57, 61, 64], [50, 54, 57], [52, 56, 59], [57, 61, 64]],
+      patterns: [[0, -1, 2, 1, 3, -1, 2, 1], [0, 2, -1, 4, 3, -1, 1, 2]],
+      arp: [12, 'sine', 0.085, 0.9], bass: ['bounce', 'triangle', 0.10], pad: 0.02, echo: 0.15, filter: 2800
+    },
+    // Hidden Picture: calm and slow, for looking carefully (F major)
+    picture: {
+      bpm: 76, chords: [[53, 57, 60], [50, 53, 57], [55, 58, 62], [48, 52, 55]],
+      patterns: [[0, -1, 2, -1, 3, -1, 4, -1], [0, -1, 3, -1, 2, -1, 1, -1]],
+      arp: [12, 'sine', 0.075, 2.6], bass: ['half', 'sine', 0.10], pad: 0.04, echo: 0.3, filter: 1900
+    },
     // Maze Mouse: light "tiptoe" feel, staccato notes over a walking bass (G minor)
     maze: {
       bpm: 96, chords: [[55, 58, 62], [51, 55, 58], [48, 51, 55], [50, 54, 57]],

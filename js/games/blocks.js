@@ -1,9 +1,15 @@
 /*
+ * Block Drop and Split Stack — falling-blocks puzzles (one engine, two games).
+ *
+ * Split Stack is the two-eye version: the falling piece and its landing outline are drawn
+ * in the weaker eye's colour, the stack in the stronger eye's colour, so only both eyes
+ * together see where the piece fits.
+ *
  * Block Drop — falling-blocks puzzle. Move and rotate the falling pieces to fill
  * complete rows; full rows clear. If the stack reaches the top you lose a life
  * and the board is cleared (the score is kept).
  */
-var Blocks = (function () {
+function makeBlocks(opts) {
   var K = { LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40, ENTER: 13 };
   var W = Engine.W, FG = Engine.FG, BG = Engine.BG;
   var COLS = 10, ROWS = 20, C = 42;
@@ -166,14 +172,16 @@ var Blocks = (function () {
     }
   }
 
-  function cell(ctx, px, py, size) {
-    ctx.fillStyle = FG;
+  function cell(ctx, px, py, size, color) {
+    ctx.fillStyle = color || FG;
     ctx.fillRect(px + 3, py + 3, size - 6, size - 6);
     ctx.fillStyle = BG;
     ctx.fillRect(px + size * 0.35, py + size * 0.35, size * 0.3, size * 0.3);
   }
 
   function draw(ctx) {
+    var eyes = opts.dichoptic ? Engine.colors() : null;
+    var pieceCol = eyes ? eyes.weak : FG, stackCol = eyes ? eyes.strong : FG;
     // Frame
     ctx.strokeStyle = FG;
     ctx.lineWidth = 6;
@@ -181,21 +189,23 @@ var Blocks = (function () {
 
     // Settled blocks
     for (var y = 0; y < ROWS; y++) {
-      for (var x = 0; x < COLS; x++) if (board[y][x]) cell(ctx, OX + x * C, OY + y * C, C);
+      for (var x = 0; x < COLS; x++) if (board[y][x]) cell(ctx, OX + x * C, OY + y * C, C, stackCol);
     }
 
     // Ghost: where the piece will land
     var gy = piece.y;
     while (fits(piece.m, piece.x, gy + 1)) gy++;
-    ctx.strokeStyle = 'rgba(242,242,242,0.35)';
+    ctx.strokeStyle = pieceCol;
+    ctx.globalAlpha = 0.4;
     ctx.lineWidth = 3;
     eachCell(piece.m, function (x, y) {
       if (gy + y >= 0) ctx.strokeRect(OX + (piece.x + x) * C + 5, OY + (gy + y) * C + 5, C - 10, C - 10);
     });
+    ctx.globalAlpha = 1;
 
     // Falling piece
     eachCell(piece.m, function (x, y) {
-      if (piece.y + y >= 0) cell(ctx, OX + (piece.x + x) * C, OY + (piece.y + y) * C, C);
+      if (piece.y + y >= 0) cell(ctx, OX + (piece.x + x) * C, OY + (piece.y + y) * C, C, pieceCol);
     });
 
     // Flash when the stack reached the top
@@ -219,13 +229,17 @@ var Blocks = (function () {
     ctx.font = '36px Arial, sans-serif';
     ctx.fillText('Next', nx, OY + 60);
     var nm = SHAPES[nextId], ns = 36;
-    eachCell(nm, function (x, y) { cell(ctx, nx + x * ns, OY + 100 + y * ns, ns); });
+    eachCell(nm, function (x, y) { cell(ctx, nx + x * ns, OY + 100 + y * ns, ns, pieceCol); });
   }
 
   function eachCell(m, fn) {
     for (var y = 0; y < m.length; y++) for (var x = 0; x < m.length; x++) if (m[y][x]) fn(x, y);
   }
 
-  return { id: 'blocks', title: 'Block Drop', hint: '◀ ▶ move  ·  ▲ / OK rotate  ·  hold ▼ drop faster',
+  return { id: opts.id, title: opts.title, dichoptic: !!opts.dichoptic,
+    hint: '◀ ▶ move  ·  ▲ / OK rotate  ·  hold ▼ drop faster',
     init: init, update: update, draw: draw, keydown: keydown };
-})();
+}
+
+var Blocks = makeBlocks({ id: 'blocks', title: 'Block Drop' });
+var SplitStack = makeBlocks({ id: 'split', title: 'Split Stack', dichoptic: true });

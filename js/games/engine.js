@@ -12,6 +12,8 @@ var Engine = (function () {
   var KEY = { ENTER: 13, PAUSE: 19, PLAY: 415, YELLOW: 405 };
 
   var ctx, game, raf = null, last = 0, held = {}, state;
+  // Colours for two-eye games: what only the weaker eye sees, and what only the stronger eye sees
+  var eyes = { weak: '#9b1819', strong: '#1a9b1c' };
 
   function loadBest(id) {
     try { return parseInt(localStorage.getItem('asb.best.' + id), 10) || 0; } catch (e) { return 0; }
@@ -132,6 +134,7 @@ var Engine = (function () {
     W: W, H: H, FG: FG, BG: BG,
     start: start, stop: stop, pause: pause, keydown: keydown, keyup: keyup,
     hit: hit, damage: damage, blink: blink,
+    setColors: function (c) { eyes = c; }, colors: function () { return eyes; },
     isRunning: function () { return !!game; }
   };
 })();

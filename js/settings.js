@@ -13,6 +13,8 @@ var Settings = (function () {
     colorRev: 4,
     blueColor: '#0050ff',      // azure-leaning blue: stays blue (not violet) when blended at lower strength
     blueRev: 2,
+    weakLens: 'red',           // which lens covers the weaker eye: 'red' or 'other' (green / blue)
+    strongContrast: 1.0,       // brightness of what only the stronger eye sees, in two-eye games
     fontSize: 44,
     music: 'on',
     sfx: 'on',
@@ -30,6 +32,8 @@ var Settings = (function () {
     greenColor: ['#1a9b1c', '#1aa91c', '#00ff00', '#00f000', '#00e000', '#00d000', '#00c000', '#20ff20', '#40ff40', '#00ff60', '#00ff80'],
     // From azure to pure blue. #0000ff looks violet on many screens once blended, so it is not the default.
     blueColor: ['#0050ff', '#0060ff', '#0070ff', '#0080ff', '#0040ff', '#0030ff', '#0000ff', '#0040e0', '#0050c0'],
+    weakLens: ['red', 'other'],
+    strongContrast: [1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2],
     fontSize: [32, 38, 44, 52, 60, 72],
     music: ['on', 'off'],
     sfx: ['on', 'off']
@@ -44,6 +48,8 @@ var Settings = (function () {
     greenColor: 'Green colour',
     blueColor: 'Blue colour',
     calibrate: 'Colour test',
+    weakLens: 'Weaker eye',
+    strongContrast: 'Strong-eye contrast',
     fontSize: 'Text size',
     music: 'Music',
     sfx: 'Sound effects'
@@ -52,11 +58,23 @@ var Settings = (function () {
   // Settings shown in the panel: only the shade that matches the chosen glasses.
   function keys(s) {
     return ['glasses', 'orientation', 'barSize', 'opacity', 'redColor',
-      s.glasses === 'red-blue' ? 'blueColor' : 'greenColor', 'calibrate', 'fontSize', 'music', 'sfx'];
+      s.glasses === 'red-blue' ? 'blueColor' : 'greenColor', 'calibrate',
+      'weakLens', 'strongContrast', 'fontSize', 'music', 'sfx'];
   }
 
   // The colour paired with red for the chosen glasses
   function secondColor(s) { return s.glasses === 'red-blue' ? s.blueColor : s.greenColor; }
+
+  // Colours for two-eye (dichoptic) games: the weaker eye's lens colour, and the other
+  // colour darkened by the strong-eye contrast setting.
+  function eyeColors(s) {
+    var second = secondColor(s);
+    var weak = s.weakLens === 'red' ? s.redColor : second;
+    var strong = s.weakLens === 'red' ? second : s.redColor;
+    var n = parseInt(strong.slice(1), 16), k = s.strongContrast;
+    var dim = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map(function (v) { return Math.round(v * k); });
+    return { weak: weak, strong: 'rgb(' + dim.join(',') + ')' };
+  }
 
   function load() {
     try {
@@ -92,6 +110,6 @@ var Settings = (function () {
     save(s);
   }
 
-  return { load: load, save: save, cycle: cycle, keys: keys, secondColor: secondColor, DEFAULTS: DEFAULTS,
+  return { load: load, save: save, cycle: cycle, keys: keys, secondColor: secondColor, eyeColors: eyeColors, DEFAULTS: DEFAULTS,
     OPTIONS: OPTIONS, LABELS: LABELS };
 })();
