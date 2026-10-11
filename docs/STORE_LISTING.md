@@ -29,7 +29,7 @@ What's inside:
 • Hop & Duck: help a running cat jump over blocks, duck under birds and collect stars
 • Snake: steer a growing snake to the food without hitting the walls or its tail
 • Maze Mouse: eat every crumb in the maze while cats chase you; big cheese turns the tables
-• Gentle background music and soft sound effects, each of which can be turned off in Settings
+• Gentle background music with its own theme for each game, and soft sound effects, each of which can be turned off in Settings
 
 Adjust everything to match your glasses:
 • Red-green or red-blue glasses

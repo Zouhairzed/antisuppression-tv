@@ -1,23 +1,69 @@
 /*
  * Light, synthesized audio using the Web Audio API (no sound files):
- *  - gentle background music while a game is playing
+ *  - smooth background music while a game is playing, with its own theme per game
  *  - soft sound effects for moves, shots, jumps, pickups and menus
  * Music and sound effects can each be turned off in Settings.
  */
 var Sound = (function () {
   var MASTER_VOL = 1.3, MUSIC_VOL = 0.6, SFX_VOL = 0.7;
 
-  var ctx = null, master = null, musicBus = null, sfxBus = null;
+  var ctx = null, master = null, sfxBus = null, chain = null;
   var opts = { music: true, sfx: true };
-  var wantMusic = false, gamePaused = false;
+  var wantMusic = false, gamePaused = false, themeId = 'calm';
   var timer = null, nextTime = 0, step = 0, lastTick = 0;
 
-  /* ---------- music: a calm C - Am - F - G loop at 88 BPM ---------- */
-  var EIGHTH = 60 / 88 / 2;
-  var CHORDS = [[60, 64, 67], [57, 60, 64], [53, 57, 60], [55, 59, 62]];   // MIDI notes
-  var PATTERNS = [[0, 1, 2, 3, 2, 1, 2, 1], [0, 2, 3, 2, 1, 2, 3, 1]];     // arpeggio shapes
-
   function mf(m) { return 440 * Math.pow(2, (m - 69) / 12); }
+
+  /* ---------- music themes ----------
+   * Each theme loops four chords, one bar (8 eighth notes) each.
+   * chords:   MIDI notes of each chord (root, third, fifth)
+   * patterns: arpeggio shapes, indexes into [root, 3rd, 5th, root+8va, 3rd+8va]; -1 = rest
+   * arp:      [octave shift, wave, volume, length in eighths]
+   * bass:     style ('half' | 'pulse' | 'bounce' | 'walk'), wave, volume
+   * pad:      sustained chord volume (0 = none)
+   * echo:     amount of soft echo; filter: lowpass cutoff (Hz) for a smooth tone
+   */
+  var THEMES = {
+    // Default: calm and neutral
+    calm: {
+      bpm: 88, chords: [[60, 64, 67], [57, 60, 64], [53, 57, 60], [55, 59, 62]],
+      patterns: [[0, 1, 2, 3, 2, 1, 2, 1], [0, 2, 3, 2, 1, 2, 3, 1]],
+      arp: [12, 'sine', 0.08, 1.8], bass: ['half', 'triangle', 0.10], pad: 0.03, echo: 0.12, filter: 2400
+    },
+    // Shape Blaster: spacey, floating, with a long echo (A minor)
+    blaster: {
+      bpm: 92, chords: [[57, 60, 64], [53, 57, 60], [52, 55, 60], [55, 59, 62]],
+      patterns: [[0, 2, 4, 2, 3, 2, 4, 2], [0, 4, 3, 2, 1, 2, 3, 4]],
+      arp: [12, 'triangle', 0.06, 2.5], bass: ['half', 'sine', 0.11], pad: 0.035, echo: 0.32, filter: 2000
+    },
+    // Lane Racer: steady driving pulse, bright and open (D major)
+    racer: {
+      bpm: 112, chords: [[62, 66, 69], [59, 62, 66], [55, 59, 62], [57, 61, 64]],
+      patterns: [[0, 1, 2, 3, 2, 1, 2, 3], [0, 2, 3, 4, 3, 2, 1, 2]],
+      arp: [0, 'triangle', 0.085, 1.2], bass: ['pulse', 'triangle', 0.095], pad: 0.025, echo: 0.15, filter: 2600
+    },
+    // Hop & Duck: bouncy and playful, short plucks with rests (F major)
+    runner: {
+      bpm: 104, chords: [[53, 57, 60], [50, 53, 57], [46, 50, 53], [48, 52, 55]],
+      patterns: [[0, -1, 2, 1, 3, -1, 2, -1], [0, 2, -1, 3, 4, -1, 3, 2]],
+      arp: [12, 'sine', 0.085, 0.9], bass: ['bounce', 'triangle', 0.10], pad: 0.02, echo: 0.12, filter: 2800
+    },
+    // Snake: slow, calm and focused, long smooth notes (E minor)
+    snake: {
+      bpm: 78, chords: [[52, 55, 59], [48, 52, 55], [55, 59, 62], [50, 54, 57]],
+      patterns: [[0, -1, 2, -1, 3, -1, 2, -1], [0, -1, 3, -1, 4, -1, 2, -1]],
+      arp: [12, 'sine', 0.075, 3], bass: ['half', 'sine', 0.10], pad: 0.04, echo: 0.28, filter: 1800
+    },
+    // Maze Mouse: light "tiptoe" feel, staccato notes over a walking bass (G minor)
+    maze: {
+      bpm: 96, chords: [[55, 58, 62], [51, 55, 58], [48, 51, 55], [50, 54, 57]],
+      patterns: [[0, -1, 2, -1, 1, -1, 2, 3], [0, -1, 2, -1, 3, -1, 4, 2]],
+      arp: [12, 'triangle', 0.08, 0.7], bass: ['walk', 'triangle', 0.12], pad: 0, echo: 0.18, filter: 2200
+    }
+  };
+
+  function theme(id) { return THEMES[id] || THEMES.calm; }
+  function eighth(th) { return 60 / th.bpm / 2; }
 
   // One soft note: quick (or slow, for pads) fade-in, exponential fade-out
   function tone(c, dest, t, freq, dur, type, vol, slideTo, attack) {
@@ -35,17 +81,51 @@ var Sound = (function () {
     o.stop(t + dur + 0.05);
   }
 
-  // Schedule music step n (one eighth note) at time t
-  function musicStep(c, dest, t, n) {
-    var s = n % 8;
-    var ch = CHORDS[Math.floor(n / 8) % 4];
-    var notes = [ch[0], ch[1], ch[2], ch[0] + 12];
-    var pat = PATTERNS[Math.floor(n / 32) % 2];
-    tone(c, dest, t, mf(notes[pat[s]] + 12), EIGHTH * 1.8, 'sine', 0.08);                  // arpeggio
-    if (s === 0 || s === 4) tone(c, dest, t, mf(ch[0] - 12), EIGHTH * 3.6, 'triangle', 0.10, 0, 0.02); // bass
-    if (s === 0) {
-      for (var i = 0; i < 3; i++) tone(c, dest, t, mf(ch[i]), EIGHTH * 8, 'sine', 0.03, 0, 0.6);     // pad
+  // Schedule step n (one eighth note) of a theme at time t
+  function musicStep(c, dest, t, n, id) {
+    var th = theme(id), e = eighth(th), s = n % 8;
+    var ch = th.chords[Math.floor(n / 8) % th.chords.length];
+    var notes = [ch[0], ch[1], ch[2], ch[0] + 12, ch[1] + 12];
+    var pat = th.patterns[Math.floor(n / 32) % th.patterns.length];
+    var a = th.arp, b = th.bass, root = ch[0] - 12;
+
+    // Arpeggio / melody
+    if (pat[s] >= 0) tone(c, dest, t, mf(notes[pat[s]] + a[0]), e * a[3], a[1], a[2], 0, 0.012);
+
+    // Bass line
+    if (b[0] === 'half' && (s === 0 || s === 4)) tone(c, dest, t, mf(root), e * 3.6, b[1], b[2], 0, 0.02);
+    if (b[0] === 'pulse') tone(c, dest, t, mf(s % 4 === 3 ? root + 7 : root), e * 0.9, b[1], b[2], 0, 0.01);
+    if (b[0] === 'bounce' && (s === 0 || s === 3 || s === 4 || s === 6)) {
+      tone(c, dest, t, mf(s === 3 || s === 6 ? root + 7 : root), e * 1.4, b[1], b[2], 0, 0.01);
     }
+    if (b[0] === 'walk' && s % 2 === 0) {
+      tone(c, dest, t, mf(root + [0, 7, 12, 7][s / 2]), e * 0.8, b[1], b[2], 0, 0.01);
+    }
+
+    // Sustained pad, once per bar
+    if (th.pad && s === 0) {
+      for (var i = 0; i < 3; i++) tone(c, dest, t, mf(ch[i]), e * 8, 'sine', th.pad, 0, 0.6);
+    }
+  }
+
+  // Music signal chain: input -> lowpass (smooth tone) -> out, plus a soft echo
+  function makeMusicChain(c, out) {
+    var input = c.createGain(); input.gain.value = 0.0001;
+    var soften = c.createBiquadFilter(); soften.type = 'lowpass';
+    var delay = c.createDelay(2); var fb = c.createGain(); var wet = c.createGain();
+    fb.gain.value = 0.3;
+    input.connect(soften);
+    input.connect(wet); wet.connect(delay); delay.connect(fb); fb.connect(delay); delay.connect(soften);
+    soften.connect(out);
+    return {
+      input: input,
+      setTheme: function (id) {
+        var th = theme(id);
+        soften.frequency.value = th.filter;
+        delay.delayTime.value = eighth(th) * 3;   // dotted-quarter echo
+        wet.gain.value = th.echo;
+      }
+    };
   }
 
   /* ---------- sound effects: [freq, duration, wave, volume, slideTo, delay] ---------- */
@@ -86,9 +166,7 @@ var Sound = (function () {
     if (!AC) return null;
     try { ctx = new AC(); } catch (e) { return null; }
     master = ctx.createGain(); master.gain.value = MASTER_VOL; master.connect(ctx.destination);
-    var soften = ctx.createBiquadFilter(); soften.type = 'lowpass'; soften.frequency.value = 2400;
-    soften.connect(master);
-    musicBus = ctx.createGain(); musicBus.gain.value = 0.0001; musicBus.connect(soften);
+    chain = makeMusicChain(ctx, master);
     sfxBus = ctx.createGain(); sfxBus.gain.value = SFX_VOL; sfxBus.connect(master);
     return ctx;
   }
@@ -99,9 +177,10 @@ var Sound = (function () {
   });
 
   function scheduleAhead() {
+    var e = eighth(theme(themeId));
     while (nextTime < ctx.currentTime + 0.3) {
-      musicStep(ctx, musicBus, nextTime, step);
-      nextTime += EIGHTH;
+      musicStep(ctx, chain.input, nextTime, step, themeId);
+      nextTime += e;
       step++;
     }
   }
@@ -109,21 +188,21 @@ var Sound = (function () {
   // Start or stop the music loop to match the current state
   function refresh() {
     var on = wantMusic && !gamePaused && opts.music && ensure();
+    var g = chain && chain.input.gain;
     if (on && !timer) {
       var now = ctx.currentTime;
+      chain.setTheme(themeId);
       nextTime = now + 0.1;
-      musicBus.gain.cancelScheduledValues(now);
-      musicBus.gain.setValueAtTime(0.0001, now);
-      musicBus.gain.exponentialRampToValueAtTime(MUSIC_VOL, now + 0.8);
+      g.cancelScheduledValues(now);
+      g.setValueAtTime(0.0001, now);
+      g.exponentialRampToValueAtTime(MUSIC_VOL, now + 0.8);
       timer = setInterval(scheduleAhead, 50);
       scheduleAhead();
     } else if (!on && timer) {
       clearInterval(timer);
       timer = null;
-      if (ctx) {
-        musicBus.gain.cancelScheduledValues(ctx.currentTime);
-        musicBus.gain.setTargetAtTime(0.0001, ctx.currentTime, 0.08);
-      }
+      g.cancelScheduledValues(ctx.currentTime);
+      g.setTargetAtTime(0.0001, ctx.currentTime, 0.08);
     }
   }
 
@@ -138,8 +217,14 @@ var Sound = (function () {
     sfxAt(ctx, sfxBus, name, now + 0.005);
   }
 
-  function music(on) {
-    if (on && !wantMusic) step = 0;    // a new game starts the tune from the top
+  // music(true, 'racer') starts that game's theme; music(false) stops
+  function music(on, id) {
+    id = THEMES[id] ? id : 'calm';
+    if (on && (!wantMusic || id !== themeId)) {
+      step = 0;                        // a new game starts its tune from the top
+      if (timer) { clearInterval(timer); timer = null; }
+      themeId = id;
+    }
     wantMusic = on;
     gamePaused = false;
     refresh();
@@ -160,7 +245,9 @@ var Sound = (function () {
   return {
     play: play, music: music, setPaused: setPaused, configure: configure,
     isMusicPlaying: function () { return !!timer; },
+    currentTheme: function () { return themeId; },
     // exposed for tests / offline previews
-    _musicStep: musicStep, _sfxAt: sfxAt, _EIGHTH: EIGHTH, _SFX: SFX
+    _musicStep: musicStep, _makeMusicChain: makeMusicChain, _sfxAt: sfxAt,
+    _eighth: function (id) { return eighth(theme(id)); }, _THEMES: THEMES, _SFX: SFX
   };
 })();

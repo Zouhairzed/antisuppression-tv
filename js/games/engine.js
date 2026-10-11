@@ -23,7 +23,7 @@ var Engine = (function () {
   function reset() {
     state = { score: 0, lives: 3, time: 0, over: false, paused: false, best: loadBest(game.id), invuln: 0 };
     game.init(state);
-    Sound.music(true);
+    Sound.music(true, game.id);   // each game has its own theme
   }
 
   function start(canvas, g) {
