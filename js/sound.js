@@ -60,12 +60,6 @@ var Sound = (function () {
       patterns: [[0, 2, -1, 3, 2, -1, 1, 2], [0, 3, -1, 4, 3, -1, 2, 1]],
       arp: [12, 'sine', 0.08, 1.6], bass: ['half', 'triangle', 0.11], pad: 0.03, echo: 0.2, filter: 2400
     },
-    // Find the Sneak: curious and light, a little mysterious (D minor)
-    sneak: {
-      bpm: 90, chords: [[50, 53, 57], [46, 50, 53], [48, 52, 55], [45, 49, 52]],
-      patterns: [[0, -1, 2, -1, 3, 2, -1, 1], [0, -1, 3, -1, 4, -1, 2, -1]],
-      arp: [12, 'sine', 0.085, 0.8], bass: ['bounce', 'triangle', 0.11], pad: 0.02, echo: 0.25, filter: 2200
-    },
     // Maze Mouse: light "tiptoe" feel, staccato notes over a walking bass (G minor)
     maze: {
       bpm: 96, chords: [[55, 58, 62], [51, 55, 58], [48, 51, 55], [50, 54, 57]],

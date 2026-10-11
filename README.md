@@ -8,7 +8,7 @@ used with bichrome (red-green) or red-blue glasses. Inspired by the
 
 ## Important platform limitation
 webOS TV apps **cannot draw on top of other apps** (no system overlay like a browser extension).
-The bars are shown over content *inside this app*: the built-in reader (19 stories in English, French and Arabic) and seven games.
+The bars are shown over content *inside this app*: the built-in reader (19 stories in English, French and Arabic) and six games.
 
 ## Games
 All games draw in white on black, so the red/green bars split every object between the eyes —
@@ -22,7 +22,6 @@ each eye sees only part of each object, encouraging both eyes to work together.
 | **Snake** — eat food, grow longer, avoid walls and your own tail | ◀ ▲ ▼ ▶ steer |
 | **Maze Mouse** — eat every crumb while cats chase you; big cheese scares them | ◀ ▲ ▼ ▶ move |
 | **Block Drop** — rotate falling blocks to fill and clear complete lines | ◀ ▶ move, ▲/OK rotate, hold ▼ drop |
-| **Find the Sneak** — one owl keeps glancing sideways; catch it before time runs out | ◀ ▲ ▼ ▶ spotlight, OK catch |
 
 In every game: YELLOW pause · BLUE settings · BACK menu. Best scores are saved per game.
 Games have soft background music and sound effects; each can be turned off in Settings.
@@ -45,7 +44,7 @@ js/menu-art.js   menu tile icons
 js/story-art.js  story drawings
 js/library.js    story list
 js/calibrate.js  colour test and picker
-js/games/        engine.js + blaster, racer, runner, snake, maze, blocks, sneak
+js/games/        engine.js + blaster, racer, runner, snake, maze, blocks
 assets/          icon.png (80x80), largeIcon.png (130x130), splash.png (1920x1080)
 docs/            store submission notes
 ```

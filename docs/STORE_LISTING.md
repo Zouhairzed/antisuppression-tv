@@ -15,7 +15,7 @@
 | Privacy policy URL | https://visiorich.odidz.com/privacy |
 
 ## Short description
-Red-green reading bars, 19 stories and 7 games for at-home binocular vision exercises with bichrome glasses.
+Red-green reading bars, 19 stories and 6 games for at-home binocular vision exercises with bichrome glasses.
 
 ## Full description
 Antisuppression Bars brings red-green reading bars to your LG TV for at-home vision exercises recommended by eye-care professionals.
@@ -30,7 +30,6 @@ What's inside:
 • Snake: steer a growing snake to the food without hitting the walls or its tail
 • Maze Mouse: eat every crumb in the maze while cats chase you; big cheese turns the tables
 • Block Drop: rotate the falling blocks to fill and clear complete lines
-• Find the Sneak: one owl keeps glancing sideways; spot it and catch it before time runs out
 • Gentle background music with its own theme for each game, and soft sound effects, each of which can be turned off in Settings
 
 Adjust everything to match your glasses:

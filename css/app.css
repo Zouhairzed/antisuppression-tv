@@ -87,13 +87,13 @@ h1 { font-size: 48px; margin-bottom: 32px; }
   align-items: center;
   justify-content: center;
 }
-#menu .title { font-size: 68px; margin-bottom: 30px; }
-/* 3 x 3 grid of tiles (flex-wrap rather than CSS grid, for older webOS browsers) */
-#menu-list { list-style: none; width: 1260px; display: flex; flex-wrap: wrap; }
+#menu .title { font-size: 72px; margin-bottom: 36px; }
+/* 4 x 2 grid of tiles (flex-wrap rather than CSS grid, for older webOS browsers) */
+#menu-list { list-style: none; width: 1658px; display: flex; flex-wrap: wrap; }
 #menu-list li {
-  width: 400px;
-  height: 236px;
-  margin: 0 30px 26px 0;
+  width: 392px;
+  height: 290px;
+  margin: 0 30px 30px 0;
   border: 4px solid #555;
   border-radius: 22px;
   display: flex;
@@ -102,11 +102,11 @@ h1 { font-size: 48px; margin-bottom: 32px; }
   justify-content: center;
   text-align: center;
 }
-#menu-list li:nth-child(3n) { margin-right: 0; }
-#menu-list li .icon { width: 96px; height: 96px; margin-bottom: 10px; }
+#menu-list li:nth-child(4n) { margin-right: 0; }
+#menu-list li .icon { width: 116px; height: 116px; margin-bottom: 16px; }
 #menu-list li .icon svg { width: 100%; height: 100%; display: block; }
-#menu-list li .label { font-size: 42px; font-weight: bold; }
-#menu-list li .sub { font-size: 26px; color: #aaa; margin-top: 6px; }
+#menu-list li .label { font-size: 44px; font-weight: bold; }
+#menu-list li .sub { font-size: 28px; color: #aaa; margin-top: 6px; }
 #menu-list li.focused { border-color: #fff; background: #333; }
 #menu .hint { font-size: 30px; margin-top: 4px; }
 

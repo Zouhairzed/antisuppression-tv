@@ -51,12 +51,6 @@ var MENU_ART = (function () {
         '<rect x="45" y="46" width="12" height="12" rx="2"/><rect x="6" y="33" width="12" height="12" rx="2"/>' +
         '<rect x="45" y="33" width="12" height="12" rx="2"/><rect x="32" y="46" width="12" height="12" rx="2"/>')
     },
-    sneak: {
-      tag: 'catch the sneaky owl',
-      icon: svg('<path d="M14 22l2-14 10 9zM50 22l-2-14-10 9z"/><ellipse cx="32" cy="36" rx="20" ry="24"/>' +
-        '<circle cx="24" cy="30" r="7" fill="#111"/><circle cx="40" cy="30" r="7" fill="#111"/>' +
-        '<circle cx="27" cy="30" r="3"/><circle cx="43" cy="30" r="3"/><path d="M29 38h6l-3 5z" fill="#111"/>')
-    },
     settings: {
       tag: 'glasses, bars, sound',
       icon: svg('<path d="M10 16h44M10 32h44M10 48h44"/>' +
