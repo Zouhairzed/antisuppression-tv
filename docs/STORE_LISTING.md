@@ -12,7 +12,7 @@
 | In-app purchases | No |
 | Age rating | General audiences (all ages) |
 | Service language / display language | English (the reader also includes 3 stories in Arabic) |
-| Privacy policy URL | https://zouhairzed.github.io/AntisuppressionBars/privacy (live once GitHub Pages is enabled) |
+| Privacy policy URL | https://visiorich.odidz.com/privacy |
 
 ## Short description
 Red-green reading bars and 6 games for at-home binocular vision exercises with bichrome glasses.
