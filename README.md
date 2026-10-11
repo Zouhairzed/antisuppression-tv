@@ -29,6 +29,8 @@ each eye sees only part of each object, encouraging both eyes to work together.
 
 The home menu is a 3 × 4 grid under a centered title, in two groups of six: **Reading and games with bars** (Reading + five games) and **Two-eye reading and games · no bars** (Two-eye Reading + five games). Settings opens from the **⋮** button at the top right (▲ from the top row, or BLUE).
 
+**Settings → Menu theme** switches the menu between night (default) and light. Games with bars use warm tile colours, two-eye games cool ones.
+
 **Two-eye Reading** shows the same stories without bars; the words take turns between the weaker eye's colour and the stronger eye's colour, so each eye sees every other word.
 
 Two-eye games switch the bars off and draw each part in one eye's colour instead, using the

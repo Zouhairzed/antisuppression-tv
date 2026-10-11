@@ -12,7 +12,7 @@ var Library = (function () {
     var html = '<h1>' + heading + '</h1><ul class="lib-grid">';
     STORIES.forEach(function (st, i) {
       var lang = st.lang || 'en';
-      html += '<li data-i="' + i + '" class="' + (i === focus ? 'focused' : '') + '">' +
+      html += '<li data-i="' + i + '" data-lang="' + lang + '" class="' + (i === focus ? 'focused' : '') + '">' +
         '<span class="lib-icon">' + (STORY_ART[st.icon] || '') + '</span>' +
         '<span class="lib-title" dir="' + (lang === 'ar' ? 'rtl' : 'ltr') + '">' + st.title + '</span>' +
         '<span class="lib-lang">' + LANG[lang] + '</span></li>';

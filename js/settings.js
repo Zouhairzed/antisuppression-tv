@@ -16,6 +16,7 @@ var Settings = (function () {
     weakLens: 'red',           // which lens covers the weaker eye: 'red' or 'other' (green / blue)
     strongContrast: 1.0,       // brightness of what only the stronger eye sees, in two-eye games
     fontSize: 44,
+    menuTheme: 'night',        // home menu and story list: 'night' (default) or 'light'
     music: 'on',
     sfx: 'on',
     seenDisclaimer: false
@@ -35,6 +36,7 @@ var Settings = (function () {
     weakLens: ['red', 'other'],
     strongContrast: [1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2],
     fontSize: [32, 38, 44, 52, 60, 72],
+    menuTheme: ['night', 'light'],
     music: ['on', 'off'],
     sfx: ['on', 'off']
   };
@@ -51,6 +53,7 @@ var Settings = (function () {
     weakLens: 'Weaker eye',
     strongContrast: 'Strong-eye contrast',
     fontSize: 'Text size',
+    menuTheme: 'Menu theme',
     music: 'Music',
     sfx: 'Sound effects'
   };
@@ -59,7 +62,7 @@ var Settings = (function () {
   function keys(s) {
     return ['glasses', 'orientation', 'barSize', 'opacity', 'redColor',
       s.glasses === 'red-blue' ? 'blueColor' : 'greenColor', 'calibrate',
-      'weakLens', 'strongContrast', 'fontSize', 'music', 'sfx'];
+      'weakLens', 'strongContrast', 'fontSize', 'menuTheme', 'music', 'sfx'];
   }
 
   // The colour paired with red for the chosen glasses

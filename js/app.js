@@ -119,6 +119,7 @@
   }
 
   function apply() {
+    document.body.className = s.menuTheme === 'light' ? 'theme-light' : 'theme-night';
     Bars.render(barsEl, s);
     Engine.setColors(Settings.eyeColors(s));
     Sound.configure({ music: s.music === 'on', sfx: s.sfx === 'on' });

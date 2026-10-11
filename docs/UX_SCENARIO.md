@@ -45,7 +45,8 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 3. Scrolling, changing story, Settings and BACK work as in Reading. RED and GREEN do nothing here (there are no bars).
 
 ## 4. Settings panel (the ⋮ button on the home menu, or BLUE from anywhere)
-1. Press **▲ / ▼** to choose a setting: Glasses, Orientation, Bar width, Bar strength, Red colour, Green colour (or Blue colour), Colour test, Weaker eye, Strong-eye contrast, Text size, Music, Sound effects.
+1. Press **▲ / ▼** to choose a setting: Glasses, Orientation, Bar width, Bar strength, Red colour, Green colour (or Blue colour), Colour test, Weaker eye, Strong-eye contrast, Text size, Menu theme, Music, Sound effects.
+   - **Menu theme** switches the home menu and story list between **night** (default: dark blue, with warm-coloured tiles for the games with bars and cool-coloured tiles for the two-eye games) and **light** (the same colours on white cards).
    - **Glasses** switches between red / green and red / blue. With red / blue, the bars become red and blue and the Green shade row is replaced by Blue shade.
    - Each colour row shows a swatch and its value; **◀ / ▶** steps through preset colours. The defaults are red #9B1819 and green #1A9B1C at 100% bar strength.
    - **Colour test** (press **OK**) opens the colour test and picker described in section 4a.
