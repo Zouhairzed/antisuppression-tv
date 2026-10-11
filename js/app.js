@@ -17,8 +17,8 @@
   var reader = $('reader'), canvas = $('game'), gameHint = $('game-hint'), calibEl = $('calib'), libraryEl = $('library');
 
   // Home menu in three groups: reading & settings, games with bars, two-eye games (no bars)
-  var BAR_GAMES = [Blaster, Racer, Runner, Snake, Maze, Blocks];
-  var EYE_GAMES = [SplitStack, Paddle, Fruit, Slide];
+  var BAR_GAMES = [Blaster, Racer, Runner, Snake, Maze];
+  var EYE_GAMES = [SplitStack, Paddle, Fruit, Slide, CheeseChase];
   function gameItem(g) {
     return { label: g.title, icon: MENU_ART[g.id].icon, sub: MENU_ART[g.id].tag, action: function () { startGame(g); } };
   }
@@ -28,8 +28,8 @@
   ].concat(BAR_GAMES.map(gameItem), EYE_GAMES.map(gameItem));
   var MENU_ROWS = [
     { title: 'Read and set up', items: [0, 1] },
-    { title: 'Games with bars', items: [2, 3, 4, 5, 6, 7] },
-    { title: 'Two-eye games · no bars', items: [8, 9, 10, 11] }
+    { title: 'Games with bars', items: [2, 3, 4, 5, 6] },
+    { title: 'Two-eye games · no bars', items: [7, 8, 9, 10, 11] }
   ];
   function menuRowOf(i) {
     for (var r = 0; r < MENU_ROWS.length; r++) {

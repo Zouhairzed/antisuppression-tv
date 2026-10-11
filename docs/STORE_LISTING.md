@@ -29,7 +29,6 @@ What's inside:
 • Hop & Duck: help a running cat jump over blocks, duck under birds and collect stars
 • Snake: steer a growing snake to the food without hitting the walls or its tail
 • Maze Mouse: eat every crumb in the maze while cats chase you; big cheese turns the tables
-• Block Drop: rotate the falling blocks to fill and clear complete lines
 • Gentle background music with its own theme for each game, and soft sound effects, each of which can be turned off in Settings
 
 Two-eye games, where each eye sees different parts of the game:
@@ -37,6 +36,7 @@ Two-eye games, where each eye sees different parts of the game:
 • Ball & Paddle: one eye follows the ball and bricks, the other sees the paddle
 • Fruit Catcher: one eye sees the falling fruit and bugs, the other the basket
 • Picture Slide: a sliding dinosaur puzzle; some parts of each dinosaur are shown to one eye, the rest to the other
+• Cheese Chase: a maze chase where one eye sees the mouse and crumbs, the other the walls and cats
 
 Adjust everything to match your glasses:
 • Red-green or red-blue glasses

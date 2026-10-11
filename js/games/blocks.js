@@ -1,11 +1,12 @@
 /*
- * Block Drop and Split Stack — falling-blocks puzzles (one engine, two games).
+ * Split Stack — two-eye falling-blocks puzzle (no bars). The engine (makeBlocks) can also make a
+ * bars version (opts.dichoptic false), which is not on the menu at the moment.
  *
- * Split Stack is the two-eye version: the falling piece and its landing outline are drawn
+ * In Split Stack the falling piece and its landing outline are drawn
  * in the weaker eye's colour, the stack in the stronger eye's colour, so only both eyes
  * together see where the piece fits.
  *
- * Block Drop — falling-blocks puzzle. Move and rotate the falling pieces to fill
+ * Rules: move and rotate the falling pieces to fill
  * complete rows; full rows clear. If the stack reaches the top you lose a life
  * and the board is cleared (the score is kept).
  */
@@ -241,5 +242,4 @@ function makeBlocks(opts) {
     init: init, update: update, draw: draw, keydown: keydown };
 }
 
-var Blocks = makeBlocks({ id: 'blocks', title: 'Block Drop' });
 var SplitStack = makeBlocks({ id: 'split', title: 'Split Stack', dichoptic: true });

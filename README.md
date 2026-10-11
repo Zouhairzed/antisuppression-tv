@@ -8,10 +8,10 @@ used with bichrome (red-green) or red-blue glasses. Inspired by the
 
 ## Important platform limitation
 webOS TV apps **cannot draw on top of other apps** (no system overlay like a browser extension).
-The bars are shown over content *inside this app*: the built-in reader (19 stories in English, French and Arabic) and ten games.
+The bars are shown over content *inside this app*: the built-in reader (19 stories in English, French and Arabic) and ten games (five with bars, five two-eye games).
 
 ## Games
-All games draw in white on black, so the red/green bars split every object between the eyes —
+Games with bars draw in white on black, so the red/green bars split every object between the eyes —
 each eye sees only part of each object, encouraging both eyes to work together.
 
 | Game | Controls |
@@ -21,11 +21,11 @@ each eye sees only part of each object, encouraging both eyes to work together.
 | **Hop & Duck** — a cat runs; jump blocks, duck birds, grab stars | ▲/OK jump, hold ▼ duck |
 | **Snake** — eat food, grow longer, avoid walls and your own tail | ◀ ▲ ▼ ▶ steer |
 | **Maze Mouse** — eat every crumb while cats chase you; big cheese scares them | ◀ ▲ ▼ ▶ move |
-| **Block Drop** — rotate falling blocks to fill and clear complete lines | ◀ ▶ move, ▲/OK rotate, hold ▼ drop |
-| **Split Stack** *(two-eye)* — falling block for the weaker eye, stack for the stronger eye | as Block Drop |
+| **Split Stack** *(two-eye)* — falling block for the weaker eye, stack for the stronger eye | ◀ ▶ move, ▲/OK rotate, hold ▼ drop |
 | **Ball & Paddle** *(two-eye)* — ball and bricks for the weaker eye, paddle for the stronger eye | ◀ ▶ move, OK serve |
 | **Fruit Catcher** *(two-eye)* — fruit and bugs for the weaker eye, basket for the stronger eye | ◀ ▶ move |
 | **Picture Slide** *(two-eye)* — sliding dinosaur puzzle: some parts of each dinosaur for the weaker eye, the rest for the stronger eye | ◀ ▲ ▼ ▶ slide |
+| **Cheese Chase** *(two-eye)* — maze chase: mouse and crumbs for the weaker eye, walls and cats for the stronger eye | ◀ ▲ ▼ ▶ move |
 
 The home menu groups the tiles in three rows: Read and set up · Games with bars · Two-eye games (no bars).
 
@@ -53,7 +53,7 @@ js/menu-art.js   menu tile icons
 js/story-art.js  story drawings
 js/library.js    story list
 js/calibrate.js  colour test and picker
-js/games/        engine.js + blaster, racer, runner, snake, maze, blocks (+ split stack), paddle, fruit, slide
+js/games/        engine.js + blaster, racer, runner, snake, maze (+ cheese chase), blocks (split stack), paddle, fruit, slide
 assets/          icon.png (80x80), largeIcon.png (130x130), splash.png (1920x1080)
 docs/            store submission notes
 ```

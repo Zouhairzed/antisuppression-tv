@@ -54,12 +54,6 @@ var Sound = (function () {
       patterns: [[0, -1, 2, -1, 3, -1, 2, -1], [0, -1, 3, -1, 4, -1, 2, -1]],
       arp: [12, 'sine', 0.075, 3], bass: ['half', 'sine', 0.10], pad: 0.04, echo: 0.28, filter: 1800
     },
-    // Block Drop: smooth and steady, gentle syncopation (Bb major)
-    blocks: {
-      bpm: 100, chords: [[58, 62, 65], [55, 58, 62], [51, 55, 58], [53, 57, 60]],
-      patterns: [[0, 2, -1, 3, 2, -1, 1, 2], [0, 3, -1, 4, 3, -1, 2, 1]],
-      arp: [12, 'sine', 0.08, 1.6], bass: ['half', 'triangle', 0.11], pad: 0.03, echo: 0.2, filter: 2400
-    },
     // Split Stack: steady, thoughtful (C major, low and warm)
     split: {
       bpm: 96, chords: [[48, 52, 55], [45, 48, 52], [41, 45, 48], [43, 47, 50]],
@@ -83,6 +77,12 @@ var Sound = (function () {
       bpm: 84, chords: [[50, 54, 57], [55, 59, 62], [47, 50, 54], [52, 55, 59]],
       patterns: [[0, -1, 2, 3, -1, 2, 1, -1], [0, -1, 3, 4, -1, 3, 2, -1]],
       arp: [12, 'sine', 0.08, 2.0], bass: ['half', 'sine', 0.10], pad: 0.035, echo: 0.28, filter: 2000
+    },
+    // Cheese Chase: playful, sneaky pizzicato over a walking bass (E minor)
+    chase: {
+      bpm: 104, chords: [[52, 55, 59], [48, 52, 55], [45, 48, 52], [47, 51, 54]],
+      patterns: [[0, -1, 2, 1, -1, 3, 2, -1], [0, 2, -1, 3, 4, -1, 2, 1]],
+      arp: [12, 'triangle', 0.075, 0.6], bass: ['walk', 'triangle', 0.11], pad: 0.015, echo: 0.16, filter: 2300
     },
     // Maze Mouse: light "tiptoe" feel, staccato notes over a walking bass (G minor)
     maze: {

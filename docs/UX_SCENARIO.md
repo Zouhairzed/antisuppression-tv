@@ -18,8 +18,8 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 1. Launch the app from the Home launcher. The splash screen appears, then the **"Before you start"** notice.
 2. Press **OK**. The notice closes and the **home menu** appears: twelve tiles with an icon and a short description, in three labelled rows:
    - **Read and set up**: Reading, Settings
-   - **Games with bars**: Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse, Block Drop
-   - **Two-eye games · no bars**: Split Stack, Ball & Paddle, Fruit Catcher, Picture Slide
+   - **Games with bars**: Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse
+   - **Two-eye games · no bars**: Split Stack, Ball & Paddle, Fruit Catcher, Picture Slide, Cheese Chase
 3. The home menu is shown without bars so it is easy to read. Vertical red and green bars cover the screen in Reading and in every game; this is the core function of the app.
 4. Relaunch the app: the notice is not shown again.
 
@@ -98,20 +98,15 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 4. Touching a scared cat adds 50 points and sends it home. Touching a normal cat costs one life.
 5. Eating every crumb adds 100 points and starts the next level with faster cats; "Level N" appears at the top.
 
-### 5f. Block Drop
-1. Select **Block Drop**. Blocks made of four squares fall into a well 10 squares wide. The next block is shown on the right; lines cleared and the level on the left.
-2. Press **◀ / ▶** to move the block (hold to keep moving), **▲** or **OK** to rotate it, and hold **▼** to drop it faster.
-3. An outline shows where the block will land.
-4. Completing a full row clears it: 1, 2, 3 or 4 rows give 10, 30, 50 or 80 points times the level. Every 10 rows the level goes up and blocks fall faster.
-5. If the stack reaches the top, one life is lost and the well is emptied (the score is kept).
-
-## 5x. Two-eye games (Split Stack, Ball & Paddle, Fruit Catcher, Picture Slide)
-- In these four games the red/green bars are not shown. Instead, parts of the game are drawn only in the weaker eye's colour and other parts only in the stronger eye's colour (dimmed by **Strong-eye contrast**), so each eye sees different pieces. The two colours are the **Red colour** and **Green colour** (or **Blue colour**) from Settings; **Weaker eye** decides which one the weaker eye gets. Frames, text and score are white (both eyes).
+## 5x. Two-eye games (Split Stack, Ball & Paddle, Fruit Catcher, Picture Slide, Cheese Chase)
+- In these five games the red/green bars are not shown. Instead, parts of the game are drawn only in the weaker eye's colour and other parts only in the stronger eye's colour (dimmed by **Strong-eye contrast**), so each eye sees different pieces. The two colours are the **Red colour** and **Green colour** (or **Blue colour**) from Settings; **Weaker eye** decides which one the weaker eye gets. Frames, text and score are white (both eyes).
 - Lives, pause, Settings, music and Game over work as in the other games.
 
 ### 5g. Split Stack
-1. Same controls and rules as Block Drop (5f).
-2. The falling block, its landing outline and the next block are drawn for the weaker eye; the stack is drawn for the stronger eye.
+1. Blocks made of four squares fall into a well 10 squares wide. The next block is shown on the right; lines cleared and the level on the left.
+2. Press **◀ / ▶** to move the block (hold to keep moving), **▲** or **OK** to rotate it, and hold **▼** to drop it faster.
+3. Completing a full row clears it: 1, 2, 3 or 4 rows give 10, 30, 50 or 80 points times the level. Every 10 rows the level goes up and blocks fall faster. If the stack reaches the top, one life is lost and the well is emptied (the score is kept).
+4. The falling block, its landing outline and the next block are drawn for the weaker eye; the stack is drawn for the stronger eye.
 
 ### 5h. Ball & Paddle
 1. Bricks fill the top of a walled court. The ball serves by itself after a moment (or press **OK** / **▲**).
@@ -129,6 +124,10 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 2. Press **◀ ▲ ▼ ▶** to slide the tile next to the gap in that direction (for example, ◀ moves the tile to the right of the gap into it).
 3. When every tile is in place, the whole picture is shown with "Solved in N moves!", points are added (fewer moves, more points) and the next puzzle starts. Puzzles 1–3 are 3 × 3, then 4 × 4.
 4. Each dinosaur is drawn in two colours: some parts (body, ground) for the weaker eye and other parts (legs, spikes, sun, cloud) for the stronger eye, so each eye sees only part of it. Tile edges and small helper numbers are grey (both eyes). No lives can be lost in this game.
+
+### 5k. Cheese Chase
+1. Same controls and rules as Maze Mouse (5e), in a different maze.
+2. The mouse, crumbs and cheese wedges are drawn for the weaker eye; the maze walls and the cats for the stronger eye. You need both eyes to steer through the maze and see the cats coming.
 
 ## Expected key behaviour summary
 | Key | Menu | Reading | Games | Settings |

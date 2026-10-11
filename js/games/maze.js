@@ -1,13 +1,16 @@
 /*
- * Maze Mouse — guide the mouse through the maze eating crumbs while cats chase it.
- * Big cheese makes the cats scared for a few seconds so the mouse can chase them back.
+ * Maze Mouse and Cheese Chase — guide the mouse through the maze eating crumbs while cats
+ * chase it. Big cheese makes the cats scared for a few seconds so the mouse can chase them back.
+ *
+ * Cheese Chase is the two-eye version (no bars), with its own maze: the mouse, crumbs and cheese
+ * are drawn in the weaker eye's colour, the walls and cats in the stronger eye's colour.
  */
-var Maze = (function () {
+function makeMaze(opts) {
   var K = { LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40 };
   var W = Engine.W, FG = Engine.FG, BG = Engine.BG;
   var WALL = '#9a9a9a';
 
-  var MAP = [
+  var MAP = opts.map || [
     '#########################',
     '#o..........#..........o#',
     '#.###.#####.#.#####.###.#',
@@ -34,6 +37,7 @@ var Maze = (function () {
   var ALL = [DIRS[K.LEFT], DIRS[K.RIGHT], DIRS[K.UP], DIRS[K.DOWN]];
 
   var grid, crumbsLeft, mouse, cats, scared, freeze, level, startP, startC;
+  var C_WALL = WALL, C_FOOD = FG, C_MOUSE = FG, C_CAT = FG;   // set per frame in draw()
 
   function open(x, y) { return y >= 0 && y < ROWS && x >= 0 && x < COLS && grid[y][x] !== '#'; }
 
@@ -166,11 +170,11 @@ var Maze = (function () {
     ctx.save();
     ctx.translate(p.x, p.y);
     ctx.rotate(ang);
-    ctx.fillStyle = FG;
+    ctx.fillStyle = C_MOUSE;
     ctx.beginPath(); ctx.ellipse(-2, 0, 20, 14, 0, 0, Math.PI * 2); ctx.fill();   // body
     ctx.beginPath(); ctx.moveTo(14, -9); ctx.lineTo(27, 0); ctx.lineTo(14, 9); ctx.fill(); // snout
     ctx.beginPath(); ctx.arc(6, -14, 8, 0, Math.PI * 2); ctx.arc(6, 14, 8, 0, Math.PI * 2); ctx.fill(); // ears
-    ctx.strokeStyle = FG; ctx.lineWidth = 3;
+    ctx.strokeStyle = C_MOUSE; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.moveTo(-20, 0); ctx.quadraticCurveTo(-30, 10, -27, 18); ctx.stroke(); // tail
     ctx.fillStyle = BG;
     ctx.beginPath(); ctx.arc(14, -5, 3, 0, Math.PI * 2); ctx.arc(14, 5, 3, 0, Math.PI * 2); ctx.fill(); // eyes
@@ -183,7 +187,7 @@ var Maze = (function () {
     var hollow = (scared > 0 && !c.eaten) && !flash;
     ctx.save();
     ctx.translate(p.x, p.y);
-    ctx.fillStyle = FG; ctx.strokeStyle = FG; ctx.lineWidth = 4;
+    ctx.fillStyle = C_CAT; ctx.strokeStyle = C_CAT; ctx.lineWidth = 4;
     if (c.eaten) { // only eyes travel home
       ctx.beginPath(); ctx.arc(-8, -2, 6, 0, Math.PI * 2); ctx.arc(8, -2, 6, 0, Math.PI * 2); ctx.fill();
       ctx.restore(); return;
@@ -204,19 +208,22 @@ var Maze = (function () {
   }
 
   function draw(ctx, st) {
+    var eyes = opts.dichoptic ? Engine.colors() : null;
+    C_WALL = eyes ? eyes.strong : WALL; C_CAT = eyes ? eyes.strong : FG;
+    C_FOOD = eyes ? eyes.weak : FG; C_MOUSE = eyes ? eyes.weak : FG;
     for (var y = 0; y < ROWS; y++) {
       for (var x = 0; x < COLS; x++) {
         var ch = grid[y][x], px = OX + x * T, py = OY + y * T;
         if (ch === '#') {
-          ctx.fillStyle = WALL;
+          ctx.fillStyle = C_WALL;
           ctx.fillRect(px + 4, py + 4, T - 8, T - 8);
           if (open(x + 1, y) === false && x + 1 < COLS) ctx.fillRect(px + T - 4, py + 4, 8, T - 8);
           if (open(x, y + 1) === false && y + 1 < ROWS) ctx.fillRect(px + 4, py + T - 4, T - 8, 8);
         } else if (ch === '.') {
-          ctx.fillStyle = FG;
+          ctx.fillStyle = C_FOOD;
           ctx.fillRect(px + T / 2 - 5, py + T / 2 - 5, 10, 10);
         } else if (ch === 'o') { // cheese wedge
-          ctx.fillStyle = FG;
+          ctx.fillStyle = C_FOOD;
           ctx.beginPath();
           ctx.moveTo(px + 10, py + T - 14); ctx.lineTo(px + T - 10, py + T - 14); ctx.lineTo(px + T - 10, py + 14);
           ctx.closePath(); ctx.fill();
@@ -231,7 +238,28 @@ var Maze = (function () {
     }
   }
 
-  return { id: 'maze', title: 'Maze Mouse', hint: '◀ ▲ ▼ ▶ move  ·  big cheese scares the cats',
+  return { id: opts.id, title: opts.title, dichoptic: !!opts.dichoptic,
+    hint: '◀ ▲ ▼ ▶ move  ·  big cheese scares the cats',
     init: init, update: update, draw: draw, keydown: keydown,
     _map: MAP };
-})();
+}
+
+var Maze = makeMaze({ id: 'maze', title: 'Maze Mouse' });
+
+var CheeseChase = makeMaze({ id: 'chase', title: 'Cheese Chase', dichoptic: true, map: [
+  '#########################',
+  '#o.........#.#.........o#',
+  '#.##.####..#.#..####.##.#',
+  '#.#......#.....#......#.#',
+  '#.#.####.#.###.#.####.#.#',
+  '#...#..........C....#...#',
+  '###.#.###.##.##.###.#.###',
+  '#.......#...P...#.......#',
+  '###.#.###.##.##.###.#.###',
+  '#...#....C..........#...#',
+  '#.#.####.#.###.#.####.#.#',
+  '#.#......#.....#......#.#',
+  '#.##.####..#.#..####.##.#',
+  '#o.........#.#.........o#',
+  '#########################'
+] });

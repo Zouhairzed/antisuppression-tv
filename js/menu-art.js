@@ -43,14 +43,6 @@ var MENU_ART = (function () {
         '<circle cx="15" cy="48" r="4" fill="currentColor" stroke="none"/>',
         'fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"')
     },
-    blocks: {
-      tag: 'fill the lines',
-      icon: svg('<rect x="13" y="5" width="12" height="12" rx="2"/><rect x="26" y="5" width="12" height="12" rx="2"/>' +
-        '<rect x="39" y="5" width="12" height="12" rx="2"/><rect x="26" y="18" width="12" height="12" rx="2"/>' +
-        '<rect x="6" y="46" width="12" height="12" rx="2"/><rect x="19" y="46" width="12" height="12" rx="2"/>' +
-        '<rect x="45" y="46" width="12" height="12" rx="2"/><rect x="6" y="33" width="12" height="12" rx="2"/>' +
-        '<rect x="45" y="33" width="12" height="12" rx="2"/><rect x="32" y="46" width="12" height="12" rx="2"/>')
-    },
     split: {
       tag: 'blocks for both eyes',
       icon: svg('<g fill="none" stroke="currentColor" stroke-width="3"><rect x="14" y="5" width="11" height="11" rx="2"/>' +
@@ -72,6 +64,12 @@ var MENU_ART = (function () {
       icon: svg('<circle cx="26" cy="18" r="9"/><circle cx="36" cy="18" r="9"/><rect x="30" y="2" width="3" height="8"/>' +
         '<path d="M6 36h52l-7 22H13z"/><path d="M4 33h56v5H4z"/>' +
         '<path d="M20 41v13M28 41v13M36 41v13M44 41v13" stroke="#111" stroke-width="3"/>')
+    },
+    chase: {
+      tag: 'a maze for both eyes',
+      icon: svg('<g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">' +
+        '<path d="M8 8h48v48H8zM8 22h18M40 8v16M24 22v20M24 42h18"/></g>' +
+        '<path d="M44 40l10 4-10 4z"/><circle cx="16" cy="48" r="5"/>')
     },
     slide: {
       tag: 'build the dinosaur',
