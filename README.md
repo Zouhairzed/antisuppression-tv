@@ -41,7 +41,7 @@ docs/            store submission notes
 ```
 
 ## Remote controls
-| Key | Menu | Reading (6 stories) | Settings panel |
+| Key | Menu | Reading (11 stories: 8 English, 3 Arabic) | Settings panel |
 |---|---|---|---|
 | ▲ ▼ | move | scroll text | move selection |
 | ◀ ▶ | — | previous / next story | change value |

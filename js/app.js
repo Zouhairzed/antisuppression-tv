@@ -43,10 +43,14 @@
   function renderText() {
     textEl.style.fontSize = s.fontSize + 'px';
     var st = STORIES[storyIdx];
+    var ar = st.lang === 'ar';
+    textEl.setAttribute('dir', ar ? 'rtl' : 'ltr');
+    textEl.setAttribute('lang', st.lang || 'en');
     textEl.innerHTML =
       '<h2 class="story-title">' + st.title + '</h2>' +
       st.paragraphs.map(function (p) { return '<p>' + p + '</p>'; }).join('') +
-      '<p class="story-end">◀ ▶ story ' + (storyIdx + 1) + ' of ' + STORIES.length + '</p>';
+      '<p class="story-end" dir="ltr">◀ ▶ story ' + (storyIdx + 1) + ' of ' + STORIES.length +
+      (ar ? '  ·  العربية' : '') + '</p>';
   }
 
   function changeStory(dir) {

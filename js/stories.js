@@ -63,5 +63,60 @@ var STORIES = [
       'Minutes passed. The children leaned closer. The silver line grew longer and longer, until Comet touched the chalk mark at the finish. Everyone cheered so loudly that a pigeon flew off the school roof.',
       '"How did you know?" her friends asked. Nora shrugged. "I didn\'t," she said. "But Comet never stopped looking where she was going."'
     ]
+  },
+  {
+    title: 'The Clockmaker\'s Apprentice',
+    paragraphs: [
+      'At the end of a crooked street stood a tiny shop full of clocks. There were tall clocks and round clocks, clocks shaped like owls and clocks shaped like houses, and every one of them ticked in its own small voice.',
+      'The clockmaker was an old man named Mr. Haddad, and his apprentice was a boy named Karim, who wanted to fix everything quickly. When a clock stopped, Karim would shake it, tap it and wind it as fast as he could. Most of the time it stayed silent.',
+      'One morning a woman brought in a beautiful blue clock that had belonged to her mother. "It has not ticked for ten years," she said. Karim reached for his tools, but Mr. Haddad put a gentle hand on his arm. "First," he said, "we listen."',
+      'They opened the clock and looked inside for a long time. Mr. Haddad pointed at the tiny wheels, one by one. "This one turns that one. That one turns this one. If one tooth is bent, the whole clock waits." Karim looked closer and found it: a single bent tooth, smaller than a grain of rice.',
+      'He straightened it with the finest pliers in the shop. When he closed the case, the blue clock gave one soft tick, then another, then another. The woman smiled with tears in her eyes. That night Karim wrote a note and pinned it above his workbench: Look first. Fix second.'
+    ]
+  },
+  {
+    title: 'The Garden on the Roof',
+    paragraphs: [
+      'Lina lived on the fifth floor of a tall apartment building in the middle of a busy city. From her window she could see roads, cars, cranes and grey walls, but not a single tree.',
+      'One spring she found a packet of seeds in a kitchen drawer: tomatoes, mint and sunflowers. "Where would we even plant them?" asked her father. Lina pointed up. "On the roof," she said.',
+      'The roof was flat and empty, with a few puddles and a lot of wind. Lina and her father carried up old buckets, wooden boxes and bags of soil. The neighbours watched from their windows and shook their heads.',
+      'Every evening Lina climbed the stairs with a watering can. The mint came first, small and bright. Then the tomato plants curled their way up thin sticks. Last of all, the sunflowers grew taller than Lina herself and turned their faces toward the evening sun.',
+      'One by one, the neighbours came up to look. Mrs. Rania brought a pot of basil. Mr. Omar brought a lemon tree in a barrel. The children brought chairs. By the end of summer, the grey roof had become the greenest place in the building, and everyone said it had all started with one small packet of seeds.'
+    ]
+  },
+
+  /* ---------- Arabic stories (shown right-to-left) ---------- */
+  {
+    title: 'الجمل الصبور',
+    lang: 'ar',
+    paragraphs: [
+      'في قافلة طويلة تعبر الصحراء، كان هناك جمل كبير اسمه صبور. لم يكن أسرع الجمال ولا أقواها، لكنه كان يمشي دائماً بخطوات ثابتة، لا يتعب ولا يتوقف.',
+      'كانت الجمال الصغيرة تضحك منه وتقول: لماذا تمشي ببطء هكذا؟ نحن نسبق الريح! ثم تركض أمامه حتى تختفي خلف الكثبان الذهبية.',
+      'وفي ظهيرة حارة، هبّت عاصفة رملية قوية. امتلأت السماء بالغبار، واختفى الطريق، ولم يعد أحد يرى شيئاً. توقفت الجمال الصغيرة خائفة، لا تعرف إلى أين تذهب.',
+      'أما صبور فقد رفع رأسه يشمّ الهواء، ثم واصل المشي بخطواته الهادئة نفسها. كان يعرف رائحة الماء، ويتذكر شكل كل كثيب مرّ به من قبل.',
+      'تبعته القافلة كلها خطوة بخطوة، حتى ظهرت أمامهم أشجار النخيل وواحة زرقاء صافية. شربت الجمال الصغيرة حتى ارتوت، ثم قالت بصوت خافت: شكراً يا صبور. فأجاب مبتسماً: الطريق الطويل لا يحتاج إلى سرعة، بل إلى صبر.'
+    ]
+  },
+  {
+    title: 'شجرة الزيتون',
+    lang: 'ar',
+    paragraphs: [
+      'في قرية صغيرة بين الجبال، كانت لجدّ أمين شجرة زيتون عجوز، جذعها ملتوٍ مثل حبل قديم، وأغصانها فضية تلمع تحت الشمس.',
+      'سأل أمين جدّه يوماً: كم عمر هذه الشجرة يا جدّي؟ ضحك الجدّ وقال: زرعها جدّ جدّي، ولم يأكل من زيتونها أبداً. لقد زرعها من أجلي ومن أجلك.',
+      'تعجّب أمين وقال: ولماذا يزرع شجرة لن يأكل منها؟ فأخذ الجدّ بيده، وأعطاه غصناً صغيراً، وحفر له حفرة في الأرض، وقال: ازرع هذا، وستفهم يوماً ما.',
+      'سقى أمين الغصن الصغير كل صباح، وحماه من الريح بحجارة صغيرة، ورآه ينمو ببطء شديد، ورقة بعد ورقة، وسنة بعد سنة.',
+      'وبعد سنوات طويلة، جلس أمين، وقد صار رجلاً، تحت شجرة خضراء كبيرة، والأطفال من حوله يقطفون حبات الزيتون الصغيرة. عندها فهم ما قاله جدّه: أجمل ما نزرعه هو ما يقطفه غيرنا.'
+    ]
+  },
+  {
+    title: 'خريطة الألوان',
+    lang: 'ar',
+    paragraphs: [
+      'كانت سلمى تزور مدينة فاس القديمة لأول مرة مع عمّتها. الأزقة ضيقة ومتعرّجة، والأبواب الخشبية متشابهة، والناس يمرّون مسرعين يحملون السلال والأقمشة.',
+      'توقفت سلمى لتنظر إلى دكان يبيع الفوانيس النحاسية، وحين التفتت لم تجد عمّتها. كانت الأزقة كلها تبدو متشابهة، وشعرت بقلبها يدقّ بسرعة.',
+      'تذكّرت ما قالته عمّتها في الصباح: إذا ضعتِ، فاتبعي الألوان. نظرت سلمى حولها بهدوء، فرأت زقاق الصبّاغين حيث تتدلّى الأقمشة الحمراء والخضراء، وتذكّرت أنهما مرّتا به قبل قليل.',
+      'مشت سلمى من الأحمر إلى الأخضر، ثم إلى الباب الأزرق ذي المسامير النحاسية، ثم إلى نافورة الزليج الملوّن التي شربتا منها الماء.',
+      'وهناك، بجانب النافورة، كانت عمّتها تنتظرها مبتسمة. ضمّتها وقالت: أرأيتِ؟ المدينة ليست متاهة لمن يعرف كيف ينظر. ومنذ ذلك اليوم، صارت سلمى ترى في كل لون علامة تدلّها على الطريق.'
+    ]
   }
 ];

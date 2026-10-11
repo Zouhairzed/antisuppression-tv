@@ -28,7 +28,8 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 ## 3. Reading
 1. Select **Reading**. A story is shown under the bars.
 2. Press **▼ / ▲** to scroll the story.
-3. Press **◀ / ▶** to switch between 6 stories. The footer shows "story N of 6".
+3. Press **◀ / ▶** to switch between 11 stories: 8 in English, then 3 in Arabic. The footer shows "story N of 11".
+   Arabic stories are displayed right-to-left, and their footer adds "العربية".
 4. Press **RED** to switch bars between horizontal and vertical.
 5. Press **GREEN** to change the bar width.
 6. Press **OK** to open Settings; press **OK** or **BACK** to close it.

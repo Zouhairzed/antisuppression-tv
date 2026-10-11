@@ -24,6 +24,11 @@ html, body {
 }
 #text p { margin-bottom: 1em; }
 #text .story-title { font-size: 1.5em; margin-bottom: 0.8em; }
+/* Arabic stories: right-to-left, with an Arabic-friendly font stack */
+#text[dir="rtl"] {
+  font-family: "Noto Naskh Arabic", "Noto Sans Arabic", "Geeza Pro", "Tahoma", "Arial", sans-serif;
+  line-height: 1.9;
+}
 #text .story-end { color: #aaa; font-size: 0.7em; text-align: center; margin-top: 1.5em; }
 
 /* Bars overlay */

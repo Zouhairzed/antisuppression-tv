@@ -11,7 +11,7 @@
 | In-app ads | No |
 | In-app purchases | No |
 | Age rating | General audiences (all ages) |
-| Service language / display language | English |
+| Service language / display language | English (the reader also includes 3 stories in Arabic) |
 | Privacy policy URL | https://zouhairzed.github.io/AntisuppressionBars/privacy (live once GitHub Pages is enabled) |
 
 ## Short description
@@ -23,7 +23,7 @@ Antisuppression Bars brings red-green reading bars to your LG TV for at-home vis
 Put on red-green (bichrome) glasses and the bars cover the screen. Each eye sees only part of the picture through its filter, so you need both eyes working together to read the text and follow the action.
 
 What's inside:
-• Reading: 6 original short stories under the bars, with adjustable text size
+• Reading: 11 original short stories under the bars (8 in English, 3 in Arabic), with adjustable text size
 • Shape Blaster: move the cannon and shoot falling shapes before they land
 • Lane Racer: switch lanes to dodge traffic on an endless road
 • Hop & Duck: help a running cat jump over blocks, duck under birds and collect stars
