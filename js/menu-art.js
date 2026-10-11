@@ -80,11 +80,12 @@ var MENU_ART = (function () {
         '<path d="M8 8h48v48H8zM8 22h18M40 8v16M24 22v20M24 42h18"/></g>' +
         '<path d="M44 40l10 4-10 4z"/><circle cx="16" cy="48" r="5"/>')
     },
-    slide: {
-      tag: 'build the dinosaur',
-      icon: svg('<path d="M4 44Q18 40 25 33Q30 27 37 25L43 16Q46 10 53 11L59 13Q62 15 61 19L58 22L51 22L49 26Q46 30 43 31Q42 38 37 42Q31 47 24 47Q14 47 4 44Z"/>' +
-        '<path d="M27 43L26 57L32 57L33 44ZM36 40L37 57L43 57L40 38Z"/><path d="M2 58h60v3H2z"/>' +
-        '<circle cx="55" cy="16" r="1.8" fill="#111"/>')
+    garden: {
+      tag: 'drag the pieces',
+      icon: svg('<path d="M31 34h3v24h-3z"/><path d="M32 50q-12-1-14-12q11 1 14 9zM33 46q11-1 13-11q-10 2-13 8z"/>' +
+        '<path d="M22 12l5 6l5-9l5 9l5-6q2 18-10 19q-12-1-10-19z"/>' +
+        '<rect x="6" y="56" width="52" height="4" rx="2"/>' +
+        '<path d="M46 14h12v12H46z" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="4 3"/>')
     },
     settings: {
       tag: 'glasses, eyes, sound',

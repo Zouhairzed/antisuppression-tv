@@ -18,7 +18,7 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 1. Launch the app from the Home launcher. The splash screen appears, then the **"Before you start"** notice.
 2. Press **OK**. The notice closes and the **home menu** appears: the centered title **Fusion Lab**, a **⋮** (settings) button at the top right, and twelve tiles with an icon and a short description, in a 3 × 4 grid (3 across, 4 down) made of two labelled groups of six:
    - **Reading and games with bars**: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse
-   - **Two-eye reading and games · no bars**: Two-eye Reading, Split Stack, Ball & Paddle, Fruit Catcher, Picture Slide, Cheese Chase
+   - **Two-eye reading and games · no bars**: Two-eye Reading, Split Stack, Ball & Paddle, Fruit Catcher, Garden Puzzle, Cheese Chase
 3. The home menu is shown without bars so it is easy to read. Vertical red and green bars cover the screen in Reading and in the games of the first row; this is the core function of the app.
 4. Relaunch the app: the notice is not shown again.
 
@@ -104,7 +104,7 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 4. Touching a scared cat adds 50 points and sends it home. Touching a normal cat costs one life.
 5. Eating every crumb adds 100 points and starts the next level with faster cats; "Level N" appears at the top.
 
-## 5x. Two-eye games (Split Stack, Ball & Paddle, Fruit Catcher, Picture Slide, Cheese Chase)
+## 5x. Two-eye games (Split Stack, Ball & Paddle, Fruit Catcher, Garden Puzzle, Cheese Chase)
 - In these five games the red/green bars are not shown. Instead, parts of the game are drawn only in the weaker eye's colour and other parts only in the stronger eye's colour (dimmed by **Strong-eye contrast**), so each eye sees different pieces. The two colours are the **Red colour** and **Green colour** (or **Blue colour**) from Settings; **Weaker eye** decides which one the weaker eye gets. Frames, text and score are white (both eyes).
 - Lives, pause, Settings, music and Game over work as in the other games.
 
@@ -125,11 +125,12 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 2. Catching fruit adds points, with a growing combo bonus. Dropping fruit only resets the combo. Catching a bug costs one life.
 3. Fruit and bugs are drawn for the weaker eye, the basket for the stronger eye. Fruit falls faster and bugs become more frequent over time.
 
-### 5j. Picture Slide
-1. A dinosaur picture (T. rex, stegosaurus, long-neck or triceratops) is cut into tiles with one empty space, and shuffled. The goal picture is shown on the right; "Puzzle N" and "Moves N" on the left.
-2. Press **◀ ▲ ▼ ▶** to slide the tile next to the gap in that direction (for example, ◀ moves the tile to the right of the gap into it).
-3. When every tile is in place, the whole picture is shown with "Solved in N moves!", points are added (fewer moves, more points) and the next puzzle starts. Puzzles 1–3 are 3 × 3, then 4 × 4.
-4. Each dinosaur is drawn in two colours: some parts (body, ground) for the weaker eye and other parts (legs, spikes, sun, cloud) for the stronger eye, so each eye sees only part of it. Tile edges and small helper numbers are grey (both eyes). No lives can be lost in this game.
+### 5j. Garden Puzzle
+1. A garden picture (tulips, an apple tree, strawberries or a ladybug) is cut into pieces, which wait shuffled in the **Pieces** tray on the right. A faint copy of the picture on the board shows where each piece goes. The top line shows "Puzzle N", the garden's name and how many pieces are placed.
+2. **Pointer (Magic Remote, mouse or touch):** drag a piece from the tray onto the board. Dropped in its own place, it snaps in (+10 points); anywhere else it returns to the tray.
+3. **Remote keys:** **◀ ▲ ▼ ▶** choose a piece in the tray (white frame), **OK** picks it up; **◀ ▲ ▼ ▶** move it over the board, **OK** drops it. In a wrong place the message "Not here, try another place" appears and the piece stays in hand.
+4. When every piece is placed, the whole garden is shown with "Well done!", bonus points are added and the next garden starts. Puzzle 1 has 6 pieces, puzzle 2 has 9, then 12.
+5. Flowers, fruit and the sun are drawn for the weaker eye; leaves, stems, trees and grass for the stronger eye. Piece edges are grey (both eyes). No lives can be lost in this game.
 
 ### 5k. Cheese Chase
 1. Same controls and rules as Maze Mouse (5e), in a different maze.

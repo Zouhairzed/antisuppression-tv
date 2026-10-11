@@ -19,7 +19,7 @@
   // Home menu in two rows: reading and games with bars; two-eye reading and games (no bars).
   // Settings opens from the ⋮ button at the top right (menuFocus = SETTINGS_FOCUS).
   var BAR_GAMES = [Blaster, Racer, Runner, Snake, Maze];
-  var EYE_GAMES = [SplitStack, Paddle, Fruit, Slide, CheeseChase];
+  var EYE_GAMES = [SplitStack, Paddle, Fruit, Garden, CheeseChase];
   function gameItem(g) {
     return { label: g.title, icon: MENU_ART[g.id].icon, sub: MENU_ART[g.id].tag, action: function () { startGame(g); } };
   }

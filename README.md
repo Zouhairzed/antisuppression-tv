@@ -24,7 +24,7 @@ each eye sees only part of each object, encouraging both eyes to work together.
 | **Split Stack** *(two-eye)* — falling block for the weaker eye, stack for the stronger eye | ◀ ▶ move, ▲/OK rotate, hold ▼ drop |
 | **Ball & Paddle** *(two-eye)* — ball and bricks for the weaker eye, paddle for the stronger eye | ◀ ▶ move, OK serve |
 | **Fruit Catcher** *(two-eye)* — fruit and bugs for the weaker eye, basket for the stronger eye | ◀ ▶ move |
-| **Picture Slide** *(two-eye)* — sliding dinosaur puzzle: some parts of each dinosaur for the weaker eye, the rest for the stronger eye | ◀ ▲ ▼ ▶ slide |
+| **Garden Puzzle** *(two-eye)* — drag-and-drop garden puzzle: flowers and fruit for the weaker eye, leaves and grass for the stronger eye | drag with the pointer, or ◀ ▲ ▼ ▶ + OK pick up / drop |
 | **Cheese Chase** *(two-eye)* — maze chase: mouse and crumbs for the weaker eye, walls and cats for the stronger eye | ◀ ▲ ▼ ▶ move |
 
 The home menu is a 3 × 4 grid under a centered title, in two groups of six: **Reading and games with bars** (Reading + five games) and **Two-eye reading and games · no bars** (Two-eye Reading + five games). Settings opens from the **⋮** button at the top right (▲ from the top row, or BLUE).
@@ -57,7 +57,7 @@ js/menu-art.js   menu tile icons
 js/story-art.js  story drawings
 js/library.js    story list
 js/calibrate.js  colour test and picker
-js/games/        engine.js + blaster, racer, runner, snake, maze (+ cheese chase), blocks (split stack), paddle, fruit, slide
+js/games/        engine.js + blaster, racer, runner, snake, maze (+ cheese chase), blocks (split stack), paddle, fruit, garden
 assets/          icon.png (80x80), largeIcon.png (130x130), splash.png (1920x1080)
 docs/            store submission notes
 ```

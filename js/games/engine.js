@@ -28,8 +28,35 @@ var Engine = (function () {
     Sound.music(true, game.id);   // each game has its own theme
   }
 
+  /* Mouse, touch and Magic Remote pointer, for games that have a pointer(type, x, y, state)
+     handler. Positions are converted to the 1920 × 1080 game space (the web version scales it). */
+  var bound = null;
+  function bindPointer(canvas) {
+    if (bound === canvas) return;
+    bound = canvas;
+    function send(type, cx, cy) {
+      if (!game || !game.pointer || state.over || state.paused) return false;
+      var r = canvas.getBoundingClientRect();
+      game.pointer(type, (cx - r.left) * W / r.width, (cy - r.top) * H / r.height, state);
+      return true;
+    }
+    canvas.addEventListener('mousedown', function (e) { send('down', e.clientX, e.clientY); });
+    window.addEventListener('mousemove', function (e) { send('move', e.clientX, e.clientY); });
+    window.addEventListener('mouseup', function (e) { send('up', e.clientX, e.clientY); });
+    canvas.addEventListener('touchstart', function (e) {
+      if (send('down', e.touches[0].clientX, e.touches[0].clientY)) e.preventDefault();
+    });
+    canvas.addEventListener('touchmove', function (e) {
+      if (send('move', e.touches[0].clientX, e.touches[0].clientY)) e.preventDefault();
+    });
+    canvas.addEventListener('touchend', function (e) {
+      if (send('up', e.changedTouches[0].clientX, e.changedTouches[0].clientY)) e.preventDefault();
+    });
+  }
+
   function start(canvas, g) {
     stop();
+    bindPointer(canvas);
     ctx = canvas.getContext('2d');
     game = g;
     held = {};

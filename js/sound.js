@@ -72,8 +72,8 @@ var Sound = (function () {
       patterns: [[0, -1, 2, 1, 3, -1, 2, 1], [0, 2, -1, 4, 3, -1, 1, 2]],
       arp: [12, 'sine', 0.085, 0.9], bass: ['bounce', 'triangle', 0.10], pad: 0.02, echo: 0.15, filter: 2800
     },
-    // Picture Slide: calm and thoughtful, for taking your time (D major)
-    slide: {
+    // Garden Puzzle: calm and thoughtful, for taking your time (D major)
+    garden: {
       bpm: 84, chords: [[50, 54, 57], [55, 59, 62], [47, 50, 54], [52, 55, 59]],
       patterns: [[0, -1, 2, 3, -1, 2, 1, -1], [0, -1, 3, 4, -1, 3, 2, -1]],
       arp: [12, 'sine', 0.08, 2.0], bass: ['half', 'sine', 0.10], pad: 0.035, echo: 0.28, filter: 2000
