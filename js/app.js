@@ -22,12 +22,12 @@
   ].concat(GAMES.map(function (g) {
     return { label: g.title, sub: 'game', action: function () { startGame(g); } };
   })).concat([
-    { label: 'Settings', sub: 'bars & text', action: function () { openPanel(); } }
+    { label: 'Settings', sub: 'glasses & bars', action: function () { openPanel(); } }
   ]);
 
   var screen = 'menu';
   var menuFocus = 0, setFocus = 0, scrollY = 0;
-  var setKeys = Object.keys(Settings.LABELS);
+  var setKeys = Settings.keys(s);
 
   var storyIdx = 0;
 
@@ -57,10 +57,14 @@
   }
 
   function renderPanel() {
+    setKeys = Settings.keys(s);
+    if (setFocus >= setKeys.length) setFocus = setKeys.length - 1;
     list.innerHTML = setKeys.map(function (k, i) {
       var v = s[k];
       if (k === 'opacity') v = Math.round(v * 100) + '%';
       if (k === 'barSize' || k === 'fontSize') v = v + ' px';
+      if (k === 'glasses') v = v === 'red-blue' ? 'red / blue' : 'red / green';
+      if (/Color$/.test(k)) v = '<i class="swatch" style="background:' + v + '"></i>' + v;
       return '<li class="' + (i === setFocus ? 'focused' : '') + '"><span>' +
         Settings.LABELS[k] + '</span><span class="value">' + v + '</span></li>';
     }).join('');
@@ -76,6 +80,7 @@
 
   function show(name) {
     screen = name;
+    updateBars();
     menuEl.classList.toggle('hidden', name !== 'menu');
     reader.classList.toggle('hidden', name !== 'reader');
     canvas.classList.toggle('hidden', name !== 'game');
@@ -91,8 +96,11 @@
   }
 
   function panelOpen() { return !panel.classList.contains('hidden'); }
-  function openPanel() { Engine.pause(true); panel.classList.remove('hidden'); renderPanel(); }
-  function closePanel() { panel.classList.add('hidden'); }
+  function openPanel() { Engine.pause(true); panel.classList.remove('hidden'); renderPanel(); updateBars(); }
+  function closePanel() { panel.classList.add('hidden'); updateBars(); }
+
+  // Bars stay off the home menu, but show while Settings is open so changes can be previewed
+  function updateBars() { barsEl.classList.toggle('hidden', screen === 'menu' && !panelOpen()); }
 
   function scroll(dy) {
     var max = Math.max(0, textEl.scrollHeight - 972);

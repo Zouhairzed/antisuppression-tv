@@ -1,7 +1,7 @@
 # Antisuppression Bars — LG webOS TV app
 
 Red/green reading bars for at-home antisuppression vision therapy (amblyopia / lazy eye),
-used with bichrome (red-green) glasses. Inspired by the
+used with bichrome (red-green) or red-blue glasses. Inspired by the
 [Antisuppression Reading Bars](https://chromewebstore.google.com/detail/antisuppression-reading-b/kebomdjipbhpnlhamgnckhlobfgnabhk) Chrome extension.
 
 > ⚠️ Supplement only — use under the guidance of an optometrist or ophthalmologist.
@@ -23,6 +23,9 @@ each eye sees only part of each object, encouraging both eyes to work together.
 | **Maze Mouse** — eat every crumb while cats chase you; big cheese scares them | ◀ ▲ ▼ ▶ move |
 
 In every game: YELLOW pause · BLUE settings · BACK menu. Best scores are saved per game.
+
+The home menu is drawn without bars. **Settings → Glasses** switches between red/green and
+red/blue; each colour has its own shade list because screens show colour differently.
 
 ## Project layout
 ```

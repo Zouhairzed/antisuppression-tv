@@ -31,9 +31,10 @@ What's inside:
 • Maze Mouse: eat every crumb in the maze while cats chase you; big cheese turns the tables
 
 Adjust everything to match your glasses:
+• Red-green or red-blue glasses
 • Horizontal or vertical bars
 • Bar width and strength
-• Red and green shades
+• Red, green and blue shades, to suit how your screen shows colour
 
 The app works offline, has no ads, and collects no personal data. Settings and best scores are saved on your TV.
 

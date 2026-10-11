@@ -58,6 +58,15 @@ h1 { font-size: 48px; margin-bottom: 32px; }
   border-radius: 10px;
 }
 #settings li.focused { background: #2b5cff; }
+#settings .swatch {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  vertical-align: middle;
+  margin-right: 12px;
+}
 #settings .value::before { content: "◀  "; opacity: 0.6; }
 #settings .value::after  { content: "  ▶"; opacity: 0.6; }
 

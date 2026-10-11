@@ -17,7 +17,7 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 ## 1. First launch
 1. Launch the app from the Home launcher. The splash screen appears, then the **"Before you start"** notice.
 2. Press **OK**. The notice closes and the **home menu** appears with seven items: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse, Settings.
-3. Red and green horizontal bars cover the whole screen. This is the core function of the app.
+3. The home menu is shown without bars so it is easy to read. Red and green bars cover the screen in Reading and in every game; this is the core function of the app.
 4. Relaunch the app: the notice is not shown again.
 
 ## 2. Home menu
@@ -35,8 +35,10 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 7. Press **BACK** to return to the home menu.
 
 ## 4. Settings panel (available from anywhere with BLUE, or from the menu)
-1. Press **▲ / ▼** to choose a setting: Orientation, Bar width, Bar strength, Red shade, Green shade, Text size.
-2. Press **◀ / ▶** to change the value. The bars update immediately behind the panel.
+1. Press **▲ / ▼** to choose a setting: Glasses, Orientation, Bar width, Bar strength, Red shade, Green shade (or Blue shade), Text size.
+   - **Glasses** switches between red / green and red / blue. With red / blue, the bars become red and blue and the Green shade row is replaced by Blue shade.
+   - Each shade row shows a colour swatch and its value; several shades are offered because screens display colour differently.
+2. Press **◀ / ▶** to change the value. The bars update immediately behind the panel (bars are shown while Settings is open, even over the home menu).
 3. Press **OK**, **BACK** or **BLUE** to close.
 4. Exit and relaunch the app: the chosen settings are kept.
 
