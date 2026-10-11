@@ -1,4 +1,4 @@
-# Antisuppression Bars — LG webOS TV app
+# Fusion Lab — LG webOS TV app
 
 Red/green reading bars for at-home antisuppression vision therapy (amblyopia / lazy eye),
 used with bichrome (red-green) or red-blue glasses. Inspired by the
@@ -27,7 +27,9 @@ each eye sees only part of each object, encouraging both eyes to work together.
 | **Picture Slide** *(two-eye)* — sliding dinosaur puzzle: some parts of each dinosaur for the weaker eye, the rest for the stronger eye | ◀ ▲ ▼ ▶ slide |
 | **Cheese Chase** *(two-eye)* — maze chase: mouse and crumbs for the weaker eye, walls and cats for the stronger eye | ◀ ▲ ▼ ▶ move |
 
-The home menu groups the tiles in three rows: Read and set up · Games with bars · Two-eye games (no bars).
+The home menu has two rows: **Reading and games with bars** (Reading + five games) and **Two-eye reading and games · no bars** (Two-eye Reading + five games). Settings opens from the **⋮** button at the top right (▲ from the first row, or BLUE).
+
+**Two-eye Reading** shows the same stories without bars; the words take turns between the weaker eye's colour and the stronger eye's colour, so each eye sees every other word.
 
 Two-eye games switch the bars off and draw each part in one eye's colour instead, using the
 Red / Green (or Blue) colours from Settings, **Settings → Weaker eye** and **Settings → Strong-eye contrast**.
@@ -67,6 +69,7 @@ docs/            store submission notes
 | BACK | exit app | back to story list | close settings |
 | RED | — | toggle horizontal/vertical | — |
 | GREEN | — | next bar width | — |
+| ▲ (first row) | ⋮ settings button | — | — |
 | BLUE | settings | settings | close settings |
 
 Game controls are listed above. The full tester walkthrough is in

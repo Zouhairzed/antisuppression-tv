@@ -3,7 +3,7 @@
 ## Basic info
 | Field | Value |
 |---|---|
-| App title | Antisuppression Bars |
+| App title | Fusion Lab |
 | App ID | com.zouhair.antisuppressionbars |
 | Version | 0.1.0 |
 | Category | Education (alternative: Health & Fitness / Lifestyle) |
@@ -15,15 +15,15 @@
 | Privacy policy URL | https://visiorich.odidz.com/privacy |
 
 ## Short description
-Red-green reading bars, 19 stories and 10 games for at-home binocular vision exercises with bichrome glasses.
+Red-green reading bars, 19 stories, two-eye reading and 10 games for at-home binocular vision exercises with bichrome glasses.
 
 ## Full description
-Antisuppression Bars brings red-green reading bars to your LG TV for at-home vision exercises recommended by eye-care professionals.
+Fusion Lab brings red-green reading bars to your LG TV for at-home vision exercises recommended by eye-care professionals.
 
 Put on red-green (bichrome) glasses and the bars cover the screen. Each eye sees only part of the picture through its filter, so you need both eyes working together to read the text and follow the action.
 
 What's inside:
-• Reading: 19 original short stories, many of them funny stories for kids, each with its own picture: 12 in English, 4 in French and 3 in Arabic, with adjustable text size
+• Reading: 19 original short stories, many of them funny stories for kids, each with its own picture: 12 in English, 4 in French and 3 in Arabic, with adjustable text size. Read them under the bars, or in Two-eye Reading, where the words take turns between the two lens colours
 • Shape Blaster: move the cannon and shoot falling shapes before they land
 • Lane Racer: switch lanes to dodge traffic on an endless road
 • Hop & Duck: help a running cat jump over blocks, duck under birds and collect stars
@@ -50,7 +50,7 @@ The app works offline, has no ads, and collects no personal data. Settings and b
 Important: this app is a supplement to vision therapy prescribed by an optometrist or ophthalmologist. It is not a medical device and does not diagnose or treat any condition. Turn off any TV picture modes that change colours (such as eye-comfort or blue-light filters) before use.
 
 ## Keywords
-vision, eye exercise, binocular, bichrome, red green glasses, red blue glasses, reading bars, vision therapy, eye games, kids stories, histoires pour enfants
+fusion lab, vision, eye exercise, binocular, bichrome, red green glasses, red blue glasses, reading bars, vision therapy, eye games, kids stories, histoires pour enfants
 
 ## Images
 | Asset | File |

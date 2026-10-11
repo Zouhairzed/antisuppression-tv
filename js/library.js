@@ -6,10 +6,10 @@ var Library = (function () {
   var KEY = { LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40, ENTER: 13, BACK: 461 };
   var COLS = 5;
   var LANG = { en: 'English', fr: 'Français', ar: 'العربية' };
-  var root, focus = 0, onPick, onBack, bound = false;
+  var root, focus = 0, onPick, onBack, bound = false, heading = 'Choose a story';
 
   function render() {
-    var html = '<h1>Choose a story</h1><ul class="lib-grid">';
+    var html = '<h1>' + heading + '</h1><ul class="lib-grid">';
     STORIES.forEach(function (st, i) {
       var lang = st.lang || 'en';
       html += '<li data-i="' + i + '" class="' + (i === focus ? 'focused' : '') + '">' +
@@ -32,7 +32,8 @@ var Library = (function () {
     if (k === KEY.BACK) onBack();
   }
 
-  function open(container, startIdx, pick, back) {
+  function open(container, startIdx, title, pick, back) {
+    heading = title || 'Choose a story';
     root = container; focus = startIdx || 0; onPick = pick; onBack = back;
     if (!bound) {                       // mouse, touch and Magic Remote pointer
       bound = true;

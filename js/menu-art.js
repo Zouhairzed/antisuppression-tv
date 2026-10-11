@@ -13,6 +13,15 @@ var MENU_ART = (function () {
         '<path d="M32 15v37M15 22h10M15 30h10M39 22h10M39 30h10"/>',
         'fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"')
     },
+    reading2: {
+      tag: 'words for each eye',
+      icon: svg('<g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">' +
+        '<path d="M32 15c-6-4-14-5-23-4v37c9-1 17 0 23 4 6-4 14-5 23-4V11c-9-1-17 0-23 4zM32 15v37"/></g>' +
+        '<rect x="13" y="19" width="13" height="5" rx="2"/><rect x="38" y="19" width="13" height="5" rx="2"/>' +
+        '<g fill="none" stroke="currentColor" stroke-width="2.5"><rect x="13.5" y="28.5" width="12" height="4" rx="2"/>' +
+        '<rect x="38.5" y="28.5" width="12" height="4" rx="2"/></g>' +
+        '<rect x="13" y="37" width="13" height="5" rx="2"/><rect x="38" y="37" width="13" height="5" rx="2"/>')
+    },
     blaster: {
       tag: 'shoot falling shapes',
       icon: svg('<rect x="14" y="46" width="36" height="12" rx="2"/><path d="M20 46a12 12 0 0 1 24 0z"/>' +

@@ -1,10 +1,10 @@
-# UX Scenario — Antisuppression Bars
+# UX Scenario — Fusion Lab
 
 Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 
 | Item | Value |
 |---|---|
-| App name | Antisuppression Bars |
+| App name | Fusion Lab |
 | App ID | com.zouhair.antisuppressionbars |
 | Version | 0.1.0 |
 | Resolution | 1920 × 1080 |
@@ -16,17 +16,17 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 
 ## 1. First launch
 1. Launch the app from the Home launcher. The splash screen appears, then the **"Before you start"** notice.
-2. Press **OK**. The notice closes and the **home menu** appears: twelve tiles with an icon and a short description, in three labelled rows:
-   - **Read and set up**: Reading, Settings
-   - **Games with bars**: Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse
-   - **Two-eye games · no bars**: Split Stack, Ball & Paddle, Fruit Catcher, Picture Slide, Cheese Chase
-3. The home menu is shown without bars so it is easy to read. Vertical red and green bars cover the screen in Reading and in every game; this is the core function of the app.
+2. Press **OK**. The notice closes and the **home menu** appears: the title **Fusion Lab**, a **⋮** (settings) button at the top right, and twelve tiles with an icon and a short description, in two labelled rows:
+   - **Reading and games with bars**: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse
+   - **Two-eye reading and games · no bars**: Two-eye Reading, Split Stack, Ball & Paddle, Fruit Catcher, Picture Slide, Cheese Chase
+3. The home menu is shown without bars so it is easy to read. Vertical red and green bars cover the screen in Reading and in the games of the first row; this is the core function of the app.
 4. Relaunch the app: the notice is not shown again.
 
 ## 2. Home menu
-1. Press **◀ / ▶** to move the highlight within a row, and **▲ / ▼** to move between the three rows.
-2. Press **OK** to open the highlighted item.
-3. Press **BACK** on the home menu to exit the app.
+1. Press **◀ / ▶** to move the highlight within a row, and **▲ / ▼** to move between the two rows.
+2. Press **▲** on the first row to highlight the **⋮** button at the top right; **OK** opens Settings, **▼** returns to the tiles. (**BLUE** also opens Settings from anywhere; with the Magic Remote pointer, click ⋮.)
+3. Press **OK** to open the highlighted item.
+4. Press **BACK** on the home menu to exit the app.
 
 ## 3. Reading
 1. Select **Reading**. The **story list** appears (without bars): 19 tiles, each with a drawing of the story's subject, its title and its language — 12 in English, 4 in French, 3 in Arabic.
@@ -39,7 +39,12 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 6. Press **OK** to open Settings; press **OK** or **BACK** to close it.
 7. Press **BACK** to return to the story list.
 
-## 4. Settings panel (available from anywhere with BLUE, or from the menu)
+## 3a. Two-eye Reading (no bars)
+1. Select **Two-eye Reading**. The same story list appears, titled "Two-eye reading · choose a story".
+2. The story opens **without bars**. Its words take turns between the weaker eye's colour and the stronger eye's colour (the **Red colour** and **Green colour** or **Blue colour** from Settings, chosen by **Weaker eye**; the stronger eye's words are dimmed by **Strong-eye contrast**), so each eye sees only every other word.
+3. Scrolling, changing story, Settings and BACK work as in Reading. RED and GREEN do nothing here (there are no bars).
+
+## 4. Settings panel (the ⋮ button on the home menu, or BLUE from anywhere)
 1. Press **▲ / ▼** to choose a setting: Glasses, Orientation, Bar width, Bar strength, Red colour, Green colour (or Blue colour), Colour test, Weaker eye, Strong-eye contrast, Text size, Music, Sound effects.
    - **Glasses** switches between red / green and red / blue. With red / blue, the bars become red and blue and the Green shade row is replaced by Blue shade.
    - Each colour row shows a swatch and its value; **◀ / ▶** steps through preset colours. The defaults are red #9B1819 and green #1A9B1C at 100% bar strength.

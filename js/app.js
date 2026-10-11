@@ -16,21 +16,26 @@
   var disclaimer = $('disclaimer'), menuEl = $('menu'), menuList = $('menu-list');
   var reader = $('reader'), canvas = $('game'), gameHint = $('game-hint'), calibEl = $('calib'), libraryEl = $('library');
 
-  // Home menu in three groups: reading & settings, games with bars, two-eye games (no bars)
+  // Home menu in two rows: reading and games with bars; two-eye reading and games (no bars).
+  // Settings opens from the ⋮ button at the top right (menuFocus = SETTINGS_FOCUS).
   var BAR_GAMES = [Blaster, Racer, Runner, Snake, Maze];
   var EYE_GAMES = [SplitStack, Paddle, Fruit, Slide, CheeseChase];
   function gameItem(g) {
     return { label: g.title, icon: MENU_ART[g.id].icon, sub: MENU_ART[g.id].tag, action: function () { startGame(g); } };
   }
   var MENU = [
-    { label: 'Reading', icon: MENU_ART.reading.icon, sub: STORIES.length + ' stories', action: function () { openLibrary(); } },
-    { label: 'Settings', icon: MENU_ART.settings.icon, sub: MENU_ART.settings.tag, action: function () { openPanel(); } }
-  ].concat(BAR_GAMES.map(gameItem), EYE_GAMES.map(gameItem));
+    { label: 'Reading', icon: MENU_ART.reading.icon, sub: STORIES.length + ' stories', action: function () { openLibrary('bars'); } }
+  ].concat(BAR_GAMES.map(gameItem), [
+    { label: 'Two-eye Reading', icon: MENU_ART.reading2.icon, sub: MENU_ART.reading2.tag, action: function () { openLibrary('eyes'); } }
+  ], EYE_GAMES.map(gameItem));
   var MENU_ROWS = [
-    { title: 'Read and set up', items: [0, 1] },
-    { title: 'Games with bars', items: [2, 3, 4, 5, 6] },
-    { title: 'Two-eye games · no bars', items: [7, 8, 9, 10, 11] }
+    { title: 'Reading and games with bars', items: [0, 1, 2, 3, 4, 5] },
+    { title: 'Two-eye reading and games · no bars', items: [6, 7, 8, 9, 10, 11] }
   ];
+  var SETTINGS_FOCUS = -1, lastCol = 0;
+  var moreBtn = $('menu-more');
+  // Reading mode: 'bars' (white text under the bars) or 'eyes' (no bars; each word in one eye's colour)
+  var readingMode = 'bars';
   function menuRowOf(i) {
     for (var r = 0; r < MENU_ROWS.length; r++) {
       var c = MENU_ROWS[r].items.indexOf(i);
@@ -49,6 +54,7 @@
   /* ---------- rendering ---------- */
 
   function renderMenu() {
+    moreBtn.classList.toggle('focused', menuFocus === SETTINGS_FOCUS);
     menuList.innerHTML = MENU_ROWS.map(function (row) {
       return '<li class="menu-head">' + row.title + '</li>' + row.items.map(function (i) {
         var m = MENU[i];
@@ -58,15 +64,28 @@
     }).join('');
   }
 
+  /* Two-eye reading: words take turns between the weaker eye's colour and the stronger eye's
+     colour (the Red and Green / Blue colours from Settings), so both eyes are needed to read a line. */
+  var wordN = 0;
+  function eyeWords(text) {
+    if (readingMode !== 'eyes') return text;
+    var eyes = Settings.eyeColors(s);
+    return text.split(' ').map(function (w) {
+      return '<span style="color:' + (wordN++ % 2 ? eyes.strong : eyes.weak) + '">' + w + '</span>';
+    }).join(' ');
+  }
+
   function renderText() {
     textEl.style.fontSize = s.fontSize + 'px';
     var st = STORIES[storyIdx];
     var ar = st.lang === 'ar';
+    wordN = 0;
     textEl.setAttribute('dir', ar ? 'rtl' : 'ltr');
     textEl.setAttribute('lang', st.lang || 'en');
+    textEl.className = readingMode === 'eyes' ? 'two-eye' : '';
     textEl.innerHTML =
-      '<h2 class="story-title"><span class="story-icon">' + (STORY_ART[st.icon] || '') + '</span>' + st.title + '</h2>' +
-      st.paragraphs.map(function (p) { return '<p>' + p + '</p>'; }).join('') +
+      '<h2 class="story-title"><span class="story-icon">' + (STORY_ART[st.icon] || '') + '</span>' + eyeWords(st.title) + '</h2>' +
+      st.paragraphs.map(function (p) { return '<p>' + eyeWords(p) + '</p>'; }).join('') +
       '<p class="story-end" dir="ltr">◀ ▶ story ' + (storyIdx + 1) + ' of ' + STORIES.length +
       '  ·  ' + LANG_NAMES[st.lang || 'en'] + '</p>';
   }
@@ -135,14 +154,15 @@
   function updateBars() {
     var plain = screen === 'menu' || screen === 'library';
     // Two-eye games draw their own colours for each eye, so the bars are not used there
-    var twoEye = screen === 'game' && currentGame && currentGame.dichoptic;
+    var twoEye = (screen === 'game' && currentGame && currentGame.dichoptic) || (screen === 'reader' && readingMode === 'eyes');
     barsEl.classList.toggle('hidden', (plain && !panelOpen()) || screen === 'calib' || twoEye);
   }
 
   // Story list (no bars); picking a story opens it in the reader
-  function openLibrary() {
+  function openLibrary(mode) {
+    if (mode) readingMode = mode;
     show('library');
-    Library.open(libraryEl, storyIdx, function (i) {
+    Library.open(libraryEl, storyIdx, readingMode === 'eyes' ? 'Two-eye reading · choose a story' : 'Choose a story', function (i) {
       storyIdx = i;
       renderText();
       scrollY = 0;
@@ -205,16 +225,26 @@
     if (screen === 'library') { Library.key(k); return; }
 
     if (screen === 'menu') {
-      // Three rows of tiles: LEFT/RIGHT move within a row, UP/DOWN move between rows
-      var pos = menuRowOf(menuFocus), row = MENU_ROWS[pos.r].items;
-      if (k === KEY.LEFT) menuFocus = row[(pos.c - 1 + row.length) % row.length];
-      if (k === KEY.RIGHT) menuFocus = row[(pos.c + 1) % row.length];
-      if (k === KEY.UP || k === KEY.DOWN) {
-        var next = MENU_ROWS[(pos.r + (k === KEY.DOWN ? 1 : -1) + MENU_ROWS.length) % MENU_ROWS.length].items;
-        menuFocus = next[Math.min(pos.c, next.length - 1)];
+      // Rows of tiles: LEFT/RIGHT move within a row, UP/DOWN move between rows;
+      // UP from the first row reaches the ⋮ settings button at the top right
+      if (menuFocus === SETTINGS_FOCUS) {
+        if (k === KEY.DOWN) menuFocus = MENU_ROWS[0].items[Math.min(lastCol, MENU_ROWS[0].items.length - 1)];
+      } else {
+        var pos = menuRowOf(menuFocus), row = MENU_ROWS[pos.r].items;
+        if (k === KEY.LEFT) menuFocus = row[(pos.c - 1 + row.length) % row.length];
+        if (k === KEY.RIGHT) menuFocus = row[(pos.c + 1) % row.length];
+        if (k === KEY.UP && pos.r === 0) { lastCol = pos.c; menuFocus = SETTINGS_FOCUS; }
+        else if (k === KEY.UP || k === KEY.DOWN) {
+          var next = MENU_ROWS[Math.min(MENU_ROWS.length - 1, Math.max(0, pos.r + (k === KEY.DOWN ? 1 : -1)))].items;
+          menuFocus = next[Math.min(pos.c, next.length - 1)];
+        }
       }
       if (k >= KEY.LEFT && k <= KEY.DOWN) Sound.play('nav');
-      if (k === KEY.ENTER) { Sound.play('select'); MENU[menuFocus].action(); return; }
+      if (k === KEY.ENTER) {
+        Sound.play('select');
+        if (menuFocus === SETTINGS_FOCUS) openPanel(); else MENU[menuFocus].action();
+        return;
+      }
       if (k === KEY.BACK && window.webOS && webOS.platformBack) webOS.platformBack();
       renderMenu();
       return;
@@ -227,8 +257,8 @@
       if (k === KEY.UP) scroll(-120);
       if (k === KEY.LEFT) changeStory(-1);
       if (k === KEY.RIGHT) changeStory(1);
-      if (k === KEY.RED) { Settings.cycle(s, 'orientation', 1); apply(); }
-      if (k === KEY.GREEN) { Settings.cycle(s, 'barSize', 1); apply(); }
+      if (k === KEY.RED && readingMode === 'bars') { Settings.cycle(s, 'orientation', 1); apply(); }
+      if (k === KEY.GREEN && readingMode === 'bars') { Settings.cycle(s, 'barSize', 1); apply(); }
       return;
     }
 
@@ -242,6 +272,10 @@
 
   // Pause games when the app goes to the background
   document.addEventListener('visibilitychange', function () { if (document.hidden) Engine.pause(true); });
+
+  // The ⋮ button never keeps keyboard focus, so OK / Enter is always handled by the key handler
+  moreBtn.addEventListener('mousedown', function (e) { e.preventDefault(); });
+  moreBtn.addEventListener('click', function () { moreBtn.blur(); Sound.play('select'); openPanel(); });
 
   apply();
   show('menu');

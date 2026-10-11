@@ -113,6 +113,17 @@ h1 { font-size: 48px; margin-bottom: 32px; }
 #menu-list li.focused { border-color: #fff; background: #333; }
 #menu .hint { font-size: 28px; margin-top: 24px; width: 1752px; text-align: left; }
 
+/* Settings: only a ⋮ button at the top right of the home menu */
+#menu-more {
+  position: absolute; top: 48px; right: 84px; width: 88px; height: 88px;
+  border: 4px solid transparent; border-radius: 50%; background: none; color: #ddd;
+  display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer;
+}
+#menu-more svg { width: 56px; height: 56px; display: block; }
+#menu-more.focused { border-color: #fff; background: #333; color: #fff; }
+/* Two-eye reading: no bars; words are coloured per eye in app.js */
+#text.two-eye .story-end { color: #888; }
+
 /* Game canvas */
 #game { position: absolute; inset: 0; }
 #game-hint {
