@@ -16,12 +16,15 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 
 ## 1. First launch
 1. Launch the app from the Home launcher. The splash screen appears, then the **"Before you start"** notice.
-2. Press **OK**. The notice closes and the **home menu** appears: twelve tiles in a 4 × 3 grid, each with an icon and a short description: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse, Block Drop, Split Stack, Ball & Paddle, Fruit Catcher, Picture Slide, Settings.
+2. Press **OK**. The notice closes and the **home menu** appears: twelve tiles with an icon and a short description, in three labelled rows:
+   - **Read and set up**: Reading, Settings
+   - **Games with bars**: Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse, Block Drop
+   - **Two-eye games · no bars**: Split Stack, Ball & Paddle, Fruit Catcher, Picture Slide
 3. The home menu is shown without bars so it is easy to read. Vertical red and green bars cover the screen in Reading and in every game; this is the core function of the app.
 4. Relaunch the app: the notice is not shown again.
 
 ## 2. Home menu
-1. Press **◀ / ▶** to move the highlight between tiles, and **▲ / ▼** to move between rows.
+1. Press **◀ / ▶** to move the highlight within a row, and **▲ / ▼** to move between the three rows.
 2. Press **OK** to open the highlighted item.
 3. Press **BACK** on the home menu to exit the app.
 
@@ -122,10 +125,10 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 3. Fruit and bugs are drawn for the weaker eye, the basket for the stronger eye. Fruit falls faster and bugs become more frequent over time.
 
 ### 5j. Picture Slide
-1. A picture (one of the story drawings) is cut into tiles with one empty space, and shuffled. The goal picture is shown on the right; "Puzzle N" and "Moves N" on the left.
+1. A dinosaur picture (T. rex, stegosaurus, long-neck or triceratops) is cut into tiles with one empty space, and shuffled. The goal picture is shown on the right; "Puzzle N" and "Moves N" on the left.
 2. Press **◀ ▲ ▼ ▶** to slide the tile next to the gap in that direction (for example, ◀ moves the tile to the right of the gap into it).
 3. When every tile is in place, the whole picture is shown with "Solved in N moves!", points are added (fewer moves, more points) and the next puzzle starts. Puzzles 1–3 are 3 × 3, then 4 × 4.
-4. The picture pieces are drawn for the weaker eye; the tile edges and small helper numbers for the stronger eye. No lives can be lost in this game.
+4. Each dinosaur is drawn in two colours: some parts (body, ground) for the weaker eye and other parts (legs, spikes, sun, cloud) for the stronger eye, so each eye sees only part of it. Tile edges and small helper numbers are grey (both eyes). No lives can be lost in this game.
 
 ## Expected key behaviour summary
 | Key | Menu | Reading | Games | Settings |

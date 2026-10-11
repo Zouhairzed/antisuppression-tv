@@ -25,7 +25,9 @@ each eye sees only part of each object, encouraging both eyes to work together.
 | **Split Stack** *(two-eye)* — falling block for the weaker eye, stack for the stronger eye | as Block Drop |
 | **Ball & Paddle** *(two-eye)* — ball and bricks for the weaker eye, paddle for the stronger eye | ◀ ▶ move, OK serve |
 | **Fruit Catcher** *(two-eye)* — fruit and bugs for the weaker eye, basket for the stronger eye | ◀ ▶ move |
-| **Picture Slide** *(two-eye)* — sliding picture puzzle: pieces for the weaker eye, tile edges and numbers for the stronger eye | ◀ ▲ ▼ ▶ slide |
+| **Picture Slide** *(two-eye)* — sliding dinosaur puzzle: some parts of each dinosaur for the weaker eye, the rest for the stronger eye | ◀ ▲ ▼ ▶ slide |
+
+The home menu groups the tiles in three rows: Read and set up · Games with bars · Two-eye games (no bars).
 
 Two-eye games switch the bars off and draw each part in one eye's colour instead, using the
 Red / Green (or Blue) colours from Settings, **Settings → Weaker eye** and **Settings → Strong-eye contrast**.

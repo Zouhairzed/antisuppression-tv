@@ -74,12 +74,10 @@ var MENU_ART = (function () {
         '<path d="M20 41v13M28 41v13M36 41v13M44 41v13" stroke="#111" stroke-width="3"/>')
     },
     slide: {
-      tag: 'slide the picture back',
-      icon: svg('<rect x="4" y="4" width="17" height="17" rx="3"/><rect x="23.5" y="4" width="17" height="17" rx="3"/>' +
-        '<rect x="43" y="4" width="17" height="17" rx="3"/><rect x="4" y="23.5" width="17" height="17" rx="3"/>' +
-        '<rect x="43" y="23.5" width="17" height="17" rx="3"/><rect x="4" y="43" width="17" height="17" rx="3"/>' +
-        '<rect x="23.5" y="43" width="17" height="17" rx="3"/><rect x="43" y="43" width="17" height="17" rx="3"/>' +
-        '<path d="M26 32h12M33 27l5 5-5 5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>')
+      tag: 'build the dinosaur',
+      icon: svg('<path d="M4 44Q18 40 25 33Q30 27 37 25L43 16Q46 10 53 11L59 13Q62 15 61 19L58 22L51 22L49 26Q46 30 43 31Q42 38 37 42Q31 47 24 47Q14 47 4 44Z"/>' +
+        '<path d="M27 43L26 57L32 57L33 44ZM36 40L37 57L43 57L40 38Z"/><path d="M2 58h60v3H2z"/>' +
+        '<circle cx="55" cy="16" r="1.8" fill="#111"/>')
     },
     settings: {
       tag: 'glasses, eyes, sound',

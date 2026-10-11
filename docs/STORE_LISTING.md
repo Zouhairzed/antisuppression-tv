@@ -36,7 +36,7 @@ Two-eye games, where each eye sees different parts of the game:
 • Split Stack: the falling block is shown to one eye, the stack to the other
 • Ball & Paddle: one eye follows the ball and bricks, the other sees the paddle
 • Fruit Catcher: one eye sees the falling fruit and bugs, the other the basket
-• Picture Slide: a sliding picture puzzle; one eye sees the picture pieces, the other the tile edges and numbers
+• Picture Slide: a sliding dinosaur puzzle; some parts of each dinosaur are shown to one eye, the rest to the other
 
 Adjust everything to match your glasses:
 • Red-green or red-blue glasses
