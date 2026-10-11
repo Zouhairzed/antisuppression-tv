@@ -27,7 +27,7 @@ each eye sees only part of each object, encouraging both eyes to work together.
 | **Picture Slide** *(two-eye)* — sliding dinosaur puzzle: some parts of each dinosaur for the weaker eye, the rest for the stronger eye | ◀ ▲ ▼ ▶ slide |
 | **Cheese Chase** *(two-eye)* — maze chase: mouse and crumbs for the weaker eye, walls and cats for the stronger eye | ◀ ▲ ▼ ▶ move |
 
-The home menu has two rows: **Reading and games with bars** (Reading + five games) and **Two-eye reading and games · no bars** (Two-eye Reading + five games). Settings opens from the **⋮** button at the top right (▲ from the first row, or BLUE).
+The home menu is a 3 × 4 grid under a centered title, in two groups of six: **Reading and games with bars** (Reading + five games) and **Two-eye reading and games · no bars** (Two-eye Reading + five games). Settings opens from the **⋮** button at the top right (▲ from the top row, or BLUE).
 
 **Two-eye Reading** shows the same stories without bars; the words take turns between the weaker eye's colour and the stronger eye's colour, so each eye sees every other word.
 

@@ -28,9 +28,12 @@
   ].concat(BAR_GAMES.map(gameItem), [
     { label: 'Two-eye Reading', icon: MENU_ART.reading2.icon, sub: MENU_ART.reading2.tag, action: function () { openLibrary('eyes'); } }
   ], EYE_GAMES.map(gameItem));
+  // A 3 × 4 grid: each group of six fills two rows of three (only a group's first row has a heading)
   var MENU_ROWS = [
-    { title: 'Reading and games with bars', items: [0, 1, 2, 3, 4, 5] },
-    { title: 'Two-eye reading and games · no bars', items: [6, 7, 8, 9, 10, 11] }
+    { title: 'Reading and games with bars', items: [0, 1, 2] },
+    { title: '', items: [3, 4, 5] },
+    { title: 'Two-eye reading and games · no bars', items: [6, 7, 8] },
+    { title: '', items: [9, 10, 11] }
   ];
   var SETTINGS_FOCUS = -1, lastCol = 0;
   var moreBtn = $('menu-more');
@@ -56,10 +59,10 @@
   function renderMenu() {
     moreBtn.classList.toggle('focused', menuFocus === SETTINGS_FOCUS);
     menuList.innerHTML = MENU_ROWS.map(function (row) {
-      return '<li class="menu-head">' + row.title + '</li>' + row.items.map(function (i) {
+      return (row.title ? '<li class="menu-head">' + row.title + '</li>' : '') + row.items.map(function (i) {
         var m = MENU[i];
         return '<li data-i="' + i + '" class="' + (i === menuFocus ? 'focused' : '') + '"><span class="icon">' + m.icon +
-          '</span><span class="label">' + m.label + '</span><span class="sub">' + m.sub + '</span></li>';
+          '</span><span class="txt"><span class="label">' + m.label + '</span><span class="sub">' + m.sub + '</span></span></li>';
       }).join('');
     }).join('');
   }

@@ -16,15 +16,15 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 
 ## 1. First launch
 1. Launch the app from the Home launcher. The splash screen appears, then the **"Before you start"** notice.
-2. Press **OK**. The notice closes and the **home menu** appears: the title **Fusion Lab**, a **⋮** (settings) button at the top right, and twelve tiles with an icon and a short description, in two labelled rows:
+2. Press **OK**. The notice closes and the **home menu** appears: the centered title **Fusion Lab**, a **⋮** (settings) button at the top right, and twelve tiles with an icon and a short description, in a 3 × 4 grid (3 across, 4 down) made of two labelled groups of six:
    - **Reading and games with bars**: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse
    - **Two-eye reading and games · no bars**: Two-eye Reading, Split Stack, Ball & Paddle, Fruit Catcher, Picture Slide, Cheese Chase
 3. The home menu is shown without bars so it is easy to read. Vertical red and green bars cover the screen in Reading and in the games of the first row; this is the core function of the app.
 4. Relaunch the app: the notice is not shown again.
 
 ## 2. Home menu
-1. Press **◀ / ▶** to move the highlight within a row, and **▲ / ▼** to move between the two rows.
-2. Press **▲** on the first row to highlight the **⋮** button at the top right; **OK** opens Settings, **▼** returns to the tiles. (**BLUE** also opens Settings from anywhere; with the Magic Remote pointer, click ⋮.)
+1. Press **◀ / ▶** to move the highlight within a row, and **▲ / ▼** to move between the four rows.
+2. Press **▲** on the top row to highlight the **⋮** button at the top right; **OK** opens Settings, **▼** returns to the tiles. (**BLUE** also opens Settings from anywhere; with the Magic Remote pointer, click ⋮.)
 3. Press **OK** to open the highlighted item.
 4. Press **BACK** on the home menu to exit the app.
 
