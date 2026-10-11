@@ -8,7 +8,7 @@ used with bichrome (red-green) or red-blue glasses. Inspired by the
 
 ## Important platform limitation
 webOS TV apps **cannot draw on top of other apps** (no system overlay like a browser extension).
-The bars are shown over content *inside this app*: the built-in reader (19 stories in English, French and Arabic) and nine games.
+The bars are shown over content *inside this app*: the built-in reader (19 stories in English, French and Arabic) and ten games.
 
 ## Games
 All games draw in white on black, so the red/green bars split every object between the eyes —
@@ -25,6 +25,7 @@ each eye sees only part of each object, encouraging both eyes to work together.
 | **Split Stack** *(two-eye)* — falling block for the weaker eye, stack for the stronger eye | as Block Drop |
 | **Ball & Paddle** *(two-eye)* — ball and bricks for the weaker eye, paddle for the stronger eye | ◀ ▶ move, OK serve |
 | **Fruit Catcher** *(two-eye)* — fruit and bugs for the weaker eye, basket for the stronger eye | ◀ ▶ move |
+| **Picture Slide** *(two-eye)* — sliding picture puzzle: pieces for the weaker eye, tile edges and numbers for the stronger eye | ◀ ▲ ▼ ▶ slide |
 
 Two-eye games switch the bars off and draw each part in one eye's colour instead, using the
 Red / Green (or Blue) colours from Settings, **Settings → Weaker eye** and **Settings → Strong-eye contrast**.
@@ -50,7 +51,7 @@ js/menu-art.js   menu tile icons
 js/story-art.js  story drawings
 js/library.js    story list
 js/calibrate.js  colour test and picker
-js/games/        engine.js + blaster, racer, runner, snake, maze, blocks (+ split stack), paddle, fruit
+js/games/        engine.js + blaster, racer, runner, snake, maze, blocks (+ split stack), paddle, fruit, slide
 assets/          icon.png (80x80), largeIcon.png (130x130), splash.png (1920x1080)
 docs/            store submission notes
 ```

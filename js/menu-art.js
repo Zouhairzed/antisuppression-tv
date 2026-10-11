@@ -73,6 +73,14 @@ var MENU_ART = (function () {
         '<path d="M6 36h52l-7 22H13z"/><path d="M4 33h56v5H4z"/>' +
         '<path d="M20 41v13M28 41v13M36 41v13M44 41v13" stroke="#111" stroke-width="3"/>')
     },
+    slide: {
+      tag: 'slide the picture back',
+      icon: svg('<rect x="4" y="4" width="17" height="17" rx="3"/><rect x="23.5" y="4" width="17" height="17" rx="3"/>' +
+        '<rect x="43" y="4" width="17" height="17" rx="3"/><rect x="4" y="23.5" width="17" height="17" rx="3"/>' +
+        '<rect x="43" y="23.5" width="17" height="17" rx="3"/><rect x="4" y="43" width="17" height="17" rx="3"/>' +
+        '<rect x="23.5" y="43" width="17" height="17" rx="3"/><rect x="43" y="43" width="17" height="17" rx="3"/>' +
+        '<path d="M26 32h12M33 27l5 5-5 5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>')
+    },
     settings: {
       tag: 'glasses, eyes, sound',
       icon: svg('<path d="M10 16h44M10 32h44M10 48h44"/>' +

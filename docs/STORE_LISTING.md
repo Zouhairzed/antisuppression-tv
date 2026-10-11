@@ -15,7 +15,7 @@
 | Privacy policy URL | https://visiorich.odidz.com/privacy |
 
 ## Short description
-Red-green reading bars, 19 stories and 9 games for at-home binocular vision exercises with bichrome glasses.
+Red-green reading bars, 19 stories and 10 games for at-home binocular vision exercises with bichrome glasses.
 
 ## Full description
 Antisuppression Bars brings red-green reading bars to your LG TV for at-home vision exercises recommended by eye-care professionals.
@@ -36,6 +36,7 @@ Two-eye games, where each eye sees different parts of the game:
 • Split Stack: the falling block is shown to one eye, the stack to the other
 • Ball & Paddle: one eye follows the ball and bricks, the other sees the paddle
 • Fruit Catcher: one eye sees the falling fruit and bugs, the other the basket
+• Picture Slide: a sliding picture puzzle; one eye sees the picture pieces, the other the tile edges and numbers
 
 Adjust everything to match your glasses:
 • Red-green or red-blue glasses
