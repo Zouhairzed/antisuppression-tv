@@ -120,10 +120,11 @@ var Maze = (function () {
 
     if (stepActor(mouse, dt, chooseMouse)) {
       var ch = grid[mouse.y][mouse.x];
-      if (ch === '.') { grid[mouse.y][mouse.x] = ' '; crumbsLeft--; st.score += 1; }
+      if (ch === '.') { grid[mouse.y][mouse.x] = ' '; crumbsLeft--; st.score += 1; Sound.play('tick'); }
       if (ch === 'o') {
         grid[mouse.y][mouse.x] = ' '; crumbsLeft--; st.score += 5;
         scared = 7;
+        Sound.play('power');
         cats.forEach(function (c) { c.dir = { x: -c.dir.x, y: -c.dir.y }; });
       }
     }
@@ -138,13 +139,14 @@ var Maze = (function () {
     for (var i = 0; i < cats.length; i++) {
       var c = cats[i];
       if (c.eaten || !meets(c)) continue;
-      if (scared > 0) { c.eaten = 1; st.score += 50; }
-      else { st.lives -= 1; resetActors(); return; }
+      if (scared > 0) { c.eaten = 1; st.score += 50; Sound.play('collect'); }
+      else { st.lives -= 1; Sound.play('hurt'); resetActors(); return; }
     }
 
     if (crumbsLeft <= 0) {
       st.score += 100;
       level++;
+      Sound.play('level');
       loadMaze();
       resetActors();
     }

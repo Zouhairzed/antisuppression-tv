@@ -13,6 +13,8 @@ var Settings = (function () {
     blueColor: '#0050ff',      // azure-leaning blue: stays blue (not violet) when blended at lower strength
     blueRev: 2,
     fontSize: 44,
+    music: 'on',
+    sfx: 'on',
     seenDisclaimer: false
   };
 
@@ -27,7 +29,9 @@ var Settings = (function () {
     greenColor: ['#00ff00', '#00f000', '#00e000', '#00d000', '#00c000', '#20ff20', '#40ff40', '#00ff60', '#00ff80'],
     // From azure to pure blue. #0000ff looks violet on many screens once blended, so it is not the default.
     blueColor: ['#0050ff', '#0060ff', '#0070ff', '#0080ff', '#0040ff', '#0030ff', '#0000ff', '#0040e0', '#0050c0'],
-    fontSize: [32, 38, 44, 52, 60, 72]
+    fontSize: [32, 38, 44, 52, 60, 72],
+    music: ['on', 'off'],
+    sfx: ['on', 'off']
   };
 
   var LABELS = {
@@ -38,13 +42,15 @@ var Settings = (function () {
     redColor: 'Red shade',
     greenColor: 'Green shade',
     blueColor: 'Blue shade',
-    fontSize: 'Text size'
+    fontSize: 'Text size',
+    music: 'Music',
+    sfx: 'Sound effects'
   };
 
   // Settings shown in the panel: only the shade that matches the chosen glasses.
   function keys(s) {
     return ['glasses', 'orientation', 'barSize', 'opacity', 'redColor',
-      s.glasses === 'red-blue' ? 'blueColor' : 'greenColor', 'fontSize'];
+      s.glasses === 'red-blue' ? 'blueColor' : 'greenColor', 'fontSize', 'music', 'sfx'];
   }
 
   // The colour paired with red for the chosen glasses

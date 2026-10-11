@@ -55,6 +55,7 @@
 
   function changeStory(dir) {
     storyIdx = (storyIdx + dir + STORIES.length) % STORIES.length;
+    Sound.play('page');
     renderText();
     scrollY = 0;
     scroll(0);
@@ -76,6 +77,7 @@
 
   function apply() {
     Bars.render(barsEl, s);
+    Sound.configure({ music: s.music === 'on', sfx: s.sfx === 'on' });
     renderText();
     if (panelOpen()) renderPanel();
   }
@@ -123,6 +125,7 @@
         disclaimer.classList.add('hidden');
         s.seenDisclaimer = true;
         Settings.save(s);
+        Sound.play('select');
       }
       return;
     }
@@ -134,6 +137,7 @@
       if (k === KEY.LEFT) Settings.cycle(s, setKeys[setFocus], -1);
       if (k === KEY.RIGHT) Settings.cycle(s, setKeys[setFocus], 1);
       apply();
+      if (k >= KEY.LEFT && k <= KEY.DOWN) Sound.play('nav');
       return;
     }
 
@@ -142,7 +146,8 @@
     if (screen === 'menu') {
       if (k === KEY.UP) menuFocus = (menuFocus - 1 + MENU.length) % MENU.length;
       if (k === KEY.DOWN) menuFocus = (menuFocus + 1) % MENU.length;
-      if (k === KEY.ENTER) { MENU[menuFocus].action(); return; }
+      if (k === KEY.UP || k === KEY.DOWN) Sound.play('nav');
+      if (k === KEY.ENTER) { Sound.play('select'); MENU[menuFocus].action(); return; }
       if (k === KEY.BACK && window.webOS && webOS.platformBack) webOS.platformBack();
       renderMenu();
       return;

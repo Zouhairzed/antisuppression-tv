@@ -12,7 +12,7 @@ var Runner = (function () {
     things = []; spawnT = 1.5; speed = 620; runT = 0;
   }
 
-  function jump() { if (onGround && !ducking) { vy = JUMP_V; onGround = false; } }
+  function jump() { if (onGround && !ducking) { vy = JUMP_V; onGround = false; Sound.play('jump'); } }
 
   function keydown(k) { if (k === K.UP || k === K.ENTER) jump(); }
 
@@ -47,7 +47,7 @@ var Runner = (function () {
       var box = { x: cat.x + 15, y: cat.y + 10, w: cat.w - 30, h: cat.h - 15 };
       if (Engine.hit(box, t)) {
         things.splice(i, 1);
-        if (t.type === 'star') st.score += 25;
+        if (t.type === 'star') { st.score += 25; Sound.play('collect'); }
         else Engine.damage(st);
       } else if (t.x + t.w < 0) things.splice(i, 1);
     }

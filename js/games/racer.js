@@ -17,8 +17,8 @@ var Racer = (function () {
   }
 
   function keydown(k) {
-    if (k === K.LEFT && lane > 0) lane--;
-    if (k === K.RIGHT && lane < LANES - 1) lane++;
+    if (k === K.LEFT && lane > 0) { lane--; Sound.play('move'); }
+    if (k === K.RIGHT && lane < LANES - 1) { lane++; Sound.play('move'); }
   }
 
   function update(dt, held, st) {

@@ -15,6 +15,7 @@ var Blaster = (function () {
     if (cool > 0) return;
     bullets.push({ x: p.x + p.w / 2 - 6, y: p.y - 40, w: 12, h: 36 });
     cool = 0.22;
+    Sound.play('shoot');
   }
 
   function update(dt, held, st) {
@@ -46,6 +47,7 @@ var Blaster = (function () {
         if (Engine.hit(s, bullets[j])) {
           shapes.splice(i, 1); bullets.splice(j, 1);
           st.score += 10;
+          Sound.play('pop');
           s = null; break;
         }
       }

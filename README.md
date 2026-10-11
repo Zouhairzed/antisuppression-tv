@@ -23,6 +23,7 @@ each eye sees only part of each object, encouraging both eyes to work together.
 | **Maze Mouse** — eat every crumb while cats chase you; big cheese scares them | ◀ ▲ ▼ ▶ move |
 
 In every game: YELLOW pause · BLUE settings · BACK menu. Best scores are saved per game.
+Games have soft background music and sound effects; each can be turned off in Settings.
 
 The home menu is drawn without bars. **Settings → Glasses** switches between red/green and
 red/blue; each colour has its own shade list because screens show colour differently.
@@ -35,6 +36,7 @@ css/app.css      1920x1080 TV layout
 js/settings.js   persisted settings + option lists
 js/bars.js       bar rendering (CSS repeating gradient)
 js/app.js        menu, screens, remote-control navigation
+js/sound.js      synthesized music and sound effects (Web Audio)
 js/games/        engine.js + blaster, racer, runner, snake, maze
 assets/          icon.png (80x80), largeIcon.png (130x130), splash.png (1920x1080)
 docs/            store submission notes

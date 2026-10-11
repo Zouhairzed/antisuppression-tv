@@ -38,12 +38,13 @@ var Snake = (function () {
     var last = queue.length ? queue[queue.length - 1] : dir;
     if (d.x === -last.x && d.y === -last.y) return; // no reversing
     if (d === last) return;
-    if (queue.length < 3) queue.push(d);
+    if (queue.length < 3) { queue.push(d); Sound.play('move'); }
   }
 
   function crash(st) {
     st.lives -= 1;
     freeze = 1.2;
+    Sound.play('hurt');
     resetSnake();
   }
 
@@ -61,7 +62,7 @@ var Snake = (function () {
       var hitSelf = bodyCheck.some(function (b) { return b.x === head.x && b.y === head.y; });
       if (hitWall || hitSelf) { crash(st); return; }
       body.unshift(head);
-      if (willGrow) { eaten++; st.score += 10; placeFood(); }
+      if (willGrow) { eaten++; st.score += 10; placeFood(); Sound.play('collect'); }
       else body.pop();
     }
   }

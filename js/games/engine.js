@@ -23,6 +23,7 @@ var Engine = (function () {
   function reset() {
     state = { score: 0, lives: 3, time: 0, over: false, paused: false, best: loadBest(game.id), invuln: 0 };
     game.init(state);
+    Sound.music(true);
   }
 
   function start(canvas, g) {
@@ -39,18 +40,22 @@ var Engine = (function () {
     if (raf) cancelAnimationFrame(raf);
     raf = null;
     game = null;
+    Sound.music(false);
   }
 
   function end() {
     state.over = true;
     var s = Math.floor(state.score);
     if (s > state.best) { state.best = s; saveBest(game.id, s); }
+    Sound.music(false);
+    Sound.play('gameover');
   }
 
   function loop(t) {
     if (!game) return;
     var dt = Math.min(0.05, (t - last) / 1000);
     last = t;
+    Sound.setPaused(state.paused);
 
     if (!state.over && !state.paused) {
       state.time += dt;
@@ -117,6 +122,7 @@ var Engine = (function () {
     if (state.invuln > 0) return false;
     state.lives -= 1;
     state.invuln = 1.5;
+    Sound.play('hurt');
     return true;
   }
   function blink(state) { return state.invuln > 0 && Math.floor(state.invuln * 10) % 2 === 0; }
