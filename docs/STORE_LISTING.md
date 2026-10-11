@@ -41,7 +41,7 @@ The app works offline, has no ads, and collects no personal data. Settings and b
 Important: this app is a supplement to vision therapy prescribed by an optometrist or ophthalmologist. It is not a medical device and does not diagnose or treat any condition. Turn off any TV picture modes that change colours (such as eye-comfort or blue-light filters) before use.
 
 ## Keywords
-vision, eye exercise, binocular, bichrome, red green glasses, reading bars, vision therapy, eye games
+vision, eye exercise, binocular, bichrome, red green glasses, red blue glasses, reading bars, vision therapy, eye games
 
 ## Images
 | Asset | File |
