@@ -8,8 +8,19 @@ used with bichrome (red-green) glasses. Inspired by the
 
 ## Important platform limitation
 webOS TV apps **cannot draw on top of other apps** (no system overlay like a browser extension).
-The bars are shown over content *inside this app* — the built-in reader, and later
-e.g. bundled stories, exercises, or games.
+The bars are shown over content *inside this app*: the built-in reader and three games.
+
+## Games
+All games draw in white on black, so the red/green bars split every object between the eyes —
+each eye sees only part of each object, encouraging both eyes to work together.
+
+| Game | Controls |
+|---|---|
+| **Shape Blaster** — shoot falling shapes before they land | ◀ ▶ move, hold OK fire |
+| **Lane Racer** — dodge traffic on a 3-lane road | ◀ ▶ change lane |
+| **Hop & Duck** — a cat runs; jump blocks, duck birds, grab stars | ▲/OK jump, hold ▼ duck |
+
+In every game: YELLOW pause · BLUE settings · BACK menu. Best scores are saved per game.
 
 ## Project layout
 ```
@@ -18,7 +29,8 @@ index.html       entry page
 css/app.css      1920x1080 TV layout
 js/settings.js   persisted settings + option lists
 js/bars.js       bar rendering (CSS repeating gradient)
-js/app.js        remote-control navigation
+js/app.js        menu, screens, remote-control navigation
+js/games/        engine.js + blaster.js, racer.js, runner.js
 assets/          icon.png (80x80), largeIcon.png (130x130), splash.png (1920x1080)
 docs/            store submission notes
 ```
@@ -35,7 +47,8 @@ docs/            store submission notes
 
 ## Develop & test
 1. Install the webOS TV CLI: `npm install -g @webos-tools/cli`
-2. Quick check in a desktop browser: open `index.html` (use arrow keys + Enter).
+2. Quick check in a desktop browser: open `index.html` — arrows + Enter, Esc = BACK,
+   R/G/Y/B = colour keys.
 3. Package: `ares-package .` → produces `com.zouhair.antisuppressionbars_0.1.0_all.ipk`
 4. On the TV: install the **Developer Mode** app, enable it, then
    `ares-setup-device` and `ares-install -d <tv> *.ipk`

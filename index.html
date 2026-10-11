@@ -6,19 +6,30 @@
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
+  <!-- Home menu -->
+  <section id="menu" class="screen">
+    <h1 class="title">Antisuppression Bars</h1>
+    <ul id="menu-list"></ul>
+    <p class="hint">▲▼ select · OK open · BLUE settings · BACK exit</p>
+  </section>
+
   <!-- Reading content shown under the bars -->
-  <main id="reader">
+  <main id="reader" class="screen hidden">
     <article id="text"></article>
   </main>
 
-  <!-- Red/green bar overlay -->
+  <!-- Games render here, under the bars -->
+  <canvas id="game" class="screen hidden" width="1920" height="1080"></canvas>
+  <p id="game-hint" class="hidden"></p>
+
+  <!-- Red/green bar overlay (always on top of content) -->
   <div id="bars" aria-hidden="true"></div>
 
-  <!-- Settings panel (toggle with OK / Enter) -->
+  <!-- Settings panel -->
   <section id="panel" class="hidden">
     <h1>Settings</h1>
     <ul id="settings"></ul>
-    <p class="hint">▲▼ select · ◀▶ change · OK close · BACK exit</p>
+    <p class="hint">▲▼ select · ◀▶ change · OK / BACK close</p>
   </section>
 
   <!-- First-run disclaimer -->
@@ -33,6 +44,10 @@
 
   <script src="js/settings.js"></script>
   <script src="js/bars.js"></script>
+  <script src="js/games/engine.js"></script>
+  <script src="js/games/blaster.js"></script>
+  <script src="js/games/racer.js"></script>
+  <script src="js/games/runner.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
