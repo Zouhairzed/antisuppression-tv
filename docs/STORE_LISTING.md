@@ -30,13 +30,13 @@ What's inside:
 • Snake: steer a growing snake to the food without hitting the walls or its tail
 • Maze Mouse: eat every crumb in the maze while cats chase you; big cheese turns the tables
 • Block Drop: rotate the falling blocks to fill and clear complete lines
+• Gentle background music with its own theme for each game, and soft sound effects, each of which can be turned off in Settings
 
 Two-eye games, where each eye sees different parts of the game:
 • Split Stack: the falling block is shown to one eye, the stack to the other
 • Ball & Paddle: one eye follows the ball and bricks, the other sees the paddle
 • Fruit Catcher: one eye sees the falling fruit and bugs, the other the basket
 • Hidden Picture: find the shape hidden in dots that are split between the two eyes
-• Gentle background music with its own theme for each game, and soft sound effects, each of which can be turned off in Settings
 
 Adjust everything to match your glasses:
 • Red-green or red-blue glasses
