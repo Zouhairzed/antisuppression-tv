@@ -24,6 +24,9 @@ html, body {
 }
 #text p { margin-bottom: 1em; }
 #text .story-title { font-size: 1.5em; margin-bottom: 0.8em; }
+#text .story-icon { display: inline-block; width: 1.5em; height: 1.5em; vertical-align: -0.35em; margin: 0 0.45em 0 0; }
+#text[dir="rtl"] .story-icon { margin: 0 0 0 0.45em; }
+#text .story-icon svg { width: 100%; height: 100%; display: block; }
 /* Arabic stories: right-to-left, with an Arabic-friendly font stack */
 #text[dir="rtl"] {
   font-family: "Noto Naskh Arabic", "Noto Sans Arabic", "Geeza Pro", "Tahoma", "Arial", sans-serif;
@@ -84,13 +87,13 @@ h1 { font-size: 48px; margin-bottom: 32px; }
   align-items: center;
   justify-content: center;
 }
-#menu .title { font-size: 72px; margin-bottom: 36px; }
-/* 4 x 2 grid of tiles (flex-wrap rather than CSS grid, for older webOS browsers) */
-#menu-list { list-style: none; width: 1658px; display: flex; flex-wrap: wrap; }
+#menu .title { font-size: 68px; margin-bottom: 30px; }
+/* 3 x 3 grid of tiles (flex-wrap rather than CSS grid, for older webOS browsers) */
+#menu-list { list-style: none; width: 1260px; display: flex; flex-wrap: wrap; }
 #menu-list li {
-  width: 392px;
-  height: 290px;
-  margin: 0 30px 30px 0;
+  width: 400px;
+  height: 236px;
+  margin: 0 30px 26px 0;
   border: 4px solid #555;
   border-radius: 22px;
   display: flex;
@@ -99,11 +102,11 @@ h1 { font-size: 48px; margin-bottom: 32px; }
   justify-content: center;
   text-align: center;
 }
-#menu-list li:nth-child(4n) { margin-right: 0; }
-#menu-list li .icon { width: 116px; height: 116px; margin-bottom: 16px; }
+#menu-list li:nth-child(3n) { margin-right: 0; }
+#menu-list li .icon { width: 96px; height: 96px; margin-bottom: 10px; }
 #menu-list li .icon svg { width: 100%; height: 100%; display: block; }
-#menu-list li .label { font-size: 44px; font-weight: bold; }
-#menu-list li .sub { font-size: 28px; color: #aaa; margin-top: 6px; }
+#menu-list li .label { font-size: 42px; font-weight: bold; }
+#menu-list li .sub { font-size: 26px; color: #aaa; margin-top: 6px; }
 #menu-list li.focused { border-color: #fff; background: #333; }
 #menu .hint { font-size: 30px; margin-top: 4px; }
 
@@ -168,3 +171,22 @@ h1 { font-size: 48px; margin-bottom: 32px; }
 .calib-actions .calib-btn { margin-right: 20px; padding: 14px 30px; font-size: 32px; }
 .calib-done { background: #2b5cff; }
 #calib .hint { font-size: 26px; margin-top: 16px; }
+
+/* ---------- Story list ---------- */
+#library { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; padding: 40px 96px 0; }
+#library h1 { font-size: 56px; margin-bottom: 24px; }
+.lib-grid { list-style: none; display: flex; flex-wrap: wrap; width: 1728px; }
+.lib-grid li {
+  width: 324px; height: 196px;
+  margin: 0 27px 20px 0;
+  border: 4px solid #555; border-radius: 18px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 0 12px; cursor: pointer;
+}
+.lib-grid li:nth-child(5n) { margin-right: 0; }
+.lib-grid li.focused { border-color: #fff; background: #333; }
+.lib-icon { width: 80px; height: 80px; margin-bottom: 8px; }
+.lib-icon svg { width: 100%; height: 100%; display: block; }
+.lib-title { font-size: 25px; font-weight: bold; line-height: 1.2; max-height: 2.4em; overflow: hidden; }
+.lib-lang { font-size: 20px; color: #aaa; margin-top: 4px; }
+#library .hint { font-size: 26px; margin-top: 6px; }

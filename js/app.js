@@ -14,11 +14,11 @@
   var $ = function (id) { return document.getElementById(id); };
   var barsEl = $('bars'), textEl = $('text'), panel = $('panel'), list = $('settings');
   var disclaimer = $('disclaimer'), menuEl = $('menu'), menuList = $('menu-list');
-  var reader = $('reader'), canvas = $('game'), gameHint = $('game-hint'), calibEl = $('calib');
+  var reader = $('reader'), canvas = $('game'), gameHint = $('game-hint'), calibEl = $('calib'), libraryEl = $('library');
 
-  var GAMES = [Blaster, Racer, Runner, Snake, Maze, Blocks];
+  var GAMES = [Blaster, Racer, Runner, Snake, Maze, Blocks, Sneak];
   var MENU = [
-    { label: 'Reading', icon: MENU_ART.reading.icon, sub: STORIES.length + ' stories', action: function () { show('reader'); } }
+    { label: 'Reading', icon: MENU_ART.reading.icon, sub: STORIES.length + ' stories', action: function () { openLibrary(); } }
   ].concat(GAMES.map(function (g) {
     return { label: g.title, icon: MENU_ART[g.id].icon, sub: MENU_ART[g.id].tag, action: function () { startGame(g); } };
   })).concat([
@@ -30,6 +30,7 @@
   var setKeys = Settings.keys(s);
 
   var storyIdx = 0;
+  var LANG_NAMES = { en: 'English', fr: 'Français', ar: 'العربية' };
 
   /* ---------- rendering ---------- */
 
@@ -47,10 +48,10 @@
     textEl.setAttribute('dir', ar ? 'rtl' : 'ltr');
     textEl.setAttribute('lang', st.lang || 'en');
     textEl.innerHTML =
-      '<h2 class="story-title">' + st.title + '</h2>' +
+      '<h2 class="story-title"><span class="story-icon">' + (STORY_ART[st.icon] || '') + '</span>' + st.title + '</h2>' +
       st.paragraphs.map(function (p) { return '<p>' + p + '</p>'; }).join('') +
       '<p class="story-end" dir="ltr">◀ ▶ story ' + (storyIdx + 1) + ' of ' + STORIES.length +
-      (ar ? '  ·  العربية' : '') + '</p>';
+      '  ·  ' + LANG_NAMES[st.lang || 'en'] + '</p>';
   }
 
   function changeStory(dir) {
@@ -90,6 +91,7 @@
     updateBars();
     menuEl.classList.toggle('hidden', name !== 'menu');
     reader.classList.toggle('hidden', name !== 'reader');
+    libraryEl.classList.toggle('hidden', name !== 'library');
     canvas.classList.toggle('hidden', name !== 'game');
     calibEl.classList.toggle('hidden', name !== 'calib');
     gameHint.classList.toggle('hidden', name !== 'game');
@@ -108,7 +110,22 @@
   function closePanel() { panel.classList.add('hidden'); updateBars(); }
 
   // Bars stay off the home menu, but show while Settings is open so changes can be previewed
-  function updateBars() { barsEl.classList.toggle('hidden', (screen === 'menu' && !panelOpen()) || screen === 'calib'); }
+  function updateBars() {
+    var plain = screen === 'menu' || screen === 'library';
+    barsEl.classList.toggle('hidden', (plain && !panelOpen()) || screen === 'calib');
+  }
+
+  // Story list (no bars); picking a story opens it in the reader
+  function openLibrary() {
+    show('library');
+    Library.open(libraryEl, storyIdx, function (i) {
+      storyIdx = i;
+      renderText();
+      scrollY = 0;
+      scroll(0);
+      show('reader');
+    }, function () { show('menu'); });
+  }
 
   // Colour test & picker. Opened from Settings; returns to Settings when done.
   var beforeCalib = 'menu';
@@ -161,13 +178,15 @@
 
     if (k === KEY.BLUE) { openPanel(); return; }
 
+    if (screen === 'library') { Library.key(k); return; }
+
     if (screen === 'menu') {
-      // 4 x 2 grid of tiles: LEFT/RIGHT step through, UP/DOWN jump a row
+      // 3 x 3 grid of tiles: LEFT/RIGHT step through, UP/DOWN jump a row
       var n = MENU.length;
       if (k === KEY.LEFT) menuFocus = (menuFocus - 1 + n) % n;
       if (k === KEY.RIGHT) menuFocus = (menuFocus + 1) % n;
-      if (k === KEY.UP) menuFocus = (menuFocus - 4 + n) % n;
-      if (k === KEY.DOWN) menuFocus = (menuFocus + 4) % n;
+      if (k === KEY.UP) menuFocus = (menuFocus - 3 + n) % n;
+      if (k === KEY.DOWN) menuFocus = (menuFocus + 3) % n;
       if (k >= KEY.LEFT && k <= KEY.DOWN) Sound.play('nav');
       if (k === KEY.ENTER) { Sound.play('select'); MENU[menuFocus].action(); return; }
       if (k === KEY.BACK && window.webOS && webOS.platformBack) webOS.platformBack();
@@ -176,7 +195,7 @@
     }
 
     if (screen === 'reader') {
-      if (k === KEY.BACK) { show('menu'); return; }
+      if (k === KEY.BACK) { openLibrary(); return; }
       if (k === KEY.ENTER) { openPanel(); return; }
       if (k === KEY.DOWN) scroll(120);
       if (k === KEY.UP) scroll(-120);

@@ -1,10 +1,59 @@
 /*
  * Reading content for the reader screen.
  * All stories are original to this app (no third-party copyright).
+ * Each story has a language (lang: 'en' by default, 'fr', 'ar') and an icon from STORY_ART.
  */
 var STORIES = [
+  /* ---------- Funny stories for kids (English) ---------- */
+  {
+    title: 'The Sock Monster',
+    icon: 'sock',
+    paragraphs: [
+      'Every family has a mystery: socks go into the washing machine in pairs, but they come out alone. In the Bennett house, nobody knew why, until little Maya decided to stay up and find out.',
+      'At midnight she tiptoed to the laundry room with a torch. Behind the machine she heard a tiny crunch, crunch, munch. There, sitting on a pile of fluff, was a round purple monster no bigger than a teapot, happily chewing a striped sock.',
+      '"Excuse me," said Maya. "Those are my dad\'s favourite socks." The monster froze, with a heel sticking out of its mouth. "I only eat one of each," it said politely. "Two would be greedy."',
+      'Maya thought about this. Her dad had a whole drawer full of lonely socks that would never find their partners again. That gave her an idea.',
+      'Now, every Saturday, Maya leaves a bowl of odd socks behind the washing machine. The monster eats them with great joy, and the Bennett family has not lost a single pair since. Dad thinks it is magic. Maya just smiles and says nothing.'
+    ]
+  },
+  {
+    title: 'The Dragon Who Sneezed',
+    icon: 'cake',
+    paragraphs: [
+      'Grandpa Tom kept a small green dragon called Pickles in his garden shed. Pickles was friendly, polite and very good at fetching sticks. He had only one problem: whenever something tickled his nose, he sneezed fire.',
+      'Pepper made him sneeze. Flowers made him sneeze. Even a feather floating past could set him off. Grandpa kept a bucket of water in every room, just in case.',
+      'On Lily\'s seventh birthday, the cake arrived with seven candles, but nobody could find the matches. Everyone searched the drawers, the cupboards and even the fridge. Lily\'s lip began to wobble.',
+      'Then Grandpa had an idea. He picked a daisy from the garden and held it under Pickles\' nose. The dragon\'s eyes watered. His nostrils twitched. "Ah... ah... AAH-CHOO!" A tiny, perfect puff of flame shot across the table.',
+      'All seven candles flickered to life. Everyone cheered, Lily laughed, and Pickles looked very proud of himself, even though Grandpa was now missing half of one eyebrow.'
+    ]
+  },
+  {
+    title: 'The Robot Who Loved to Dance',
+    icon: 'robot',
+    paragraphs: [
+      'Professor Nadia built a robot to help around the house. She called him Bolt. Bolt could sweep the floor, wash the dishes and fold the laundry into perfect little squares.',
+      'One morning the professor turned on the radio while Bolt was ironing. A happy song came on, with drums and trumpets. Bolt\'s left foot began to tap. Then his right foot. Then his arms started to swing.',
+      '"Bolt, the ironing!" cried the professor. But Bolt was already spinning across the kitchen, waving a shirt above his head like a flag. He danced past the cat, who jumped onto the fridge in surprise.',
+      'The professor checked his wires, his buttons and his batteries. Everything was fine. "There is nothing wrong with you," she said at last. "You just like music."',
+      'So now the house has a new rule. In the morning, Bolt works. In the afternoon, Bolt dances. And on Sundays, the professor dances with him, while the cat watches from the top of the fridge, shaking its head.'
+    ]
+  },
+  {
+    title: 'A Bathtub for Hugo',
+    icon: 'bathtub',
+    paragraphs: [
+      'Hugo the hippo lived in a river, but one day he saw a picture of a bathtub full of bubbles, and he wanted one more than anything in the world.',
+      'He walked all the way into town and knocked on the door of the bathroom shop. "One bathtub, please," he said. "The biggest one you have." The shopkeeper looked at Hugo, then at his bathtubs, then at Hugo again.',
+      'The biggest bathtub was still very small for a hippo. Hugo climbed in anyway. First one foot, then another, then his round bottom. SPLOOSH! The water jumped out and soaked the shopkeeper from head to toe.',
+      'Hugo sat there with his knees up to his ears and a single bubble on his nose. "This is wonderful," he sighed. The shopkeeper, dripping wet, could not stop laughing.',
+      'In the end, the whole town helped Hugo carry the bathtub to the river. He fills it with bubbles every evening, and the ducks line up to take turns sliding down his back.'
+    ]
+  },
+
+  /* ---------- More stories (English) ---------- */
   {
     title: 'The Lighthouse Cat',
+    icon: 'lighthouse',
     paragraphs: [
       'On a rocky island at the edge of the sea stood a white lighthouse, and in the lighthouse lived a grey cat named Pebble. Every evening, when the keeper climbed the long spiral stairs to light the great lamp, Pebble climbed beside him, one step at a time, tail held high like a flag.',
       'At the top, the keeper polished the glass until it shone. Pebble sat by the window and watched the boats come home. The fishing boats were small and red. The ferry was long and green. Far out on the water, a sailboat leaned in the wind like a white feather.',
@@ -15,6 +64,7 @@ var STORIES = [
   },
   {
     title: 'The Tortoise Who Counted Stars',
+    icon: 'tortoise',
     paragraphs: [
       'Old Tortoise could not run, could not climb and could not fly, but every clear night he lay on his back in the meadow and counted stars.',
       '"Why do you bother?" asked Rabbit. "There are too many. You will never finish." Tortoise only smiled and said, "Seven hundred and twelve," and kept on counting.',
@@ -26,6 +76,7 @@ var STORIES = [
   },
   {
     title: 'A Kite Named Tomorrow',
+    icon: 'kite',
     paragraphs: [
       'Samir built his first kite from two sticks, a sheet of newspaper and a long tail of knotted ribbon. He painted one half red and one half green, because those were the only two paints left in the box.',
       'The first time he ran with it, the kite dragged across the ground. The second time, it rose a little, spun twice and crashed into a bush. His little sister laughed so hard she had to sit down.',
@@ -36,6 +87,7 @@ var STORIES = [
   },
   {
     title: 'The Baker\'s Secret Ingredient',
+    icon: 'bread',
     paragraphs: [
       'In a narrow street that smelled of bread, there was a bakery with a blue door. Every morning, long before sunrise, Mrs. Amina mixed flour, water, salt and yeast in a wide wooden bowl.',
       'Her bread was famous. People came from other towns to buy it. Other bakers asked for her recipe, and she always gave it to them: flour, water, salt and yeast. They went home, baked carefully, and their bread was good, but it was never quite the same.',
@@ -46,6 +98,7 @@ var STORIES = [
   },
   {
     title: 'The Two Windows',
+    icon: 'windows',
     paragraphs: [
       'In a tall house on a quiet hill, there was a room with two windows. One window looked toward the mountains. The other looked toward the sea.',
       'A boy named Leo slept in that room. In the mornings he liked the mountain window best, because the sun rose behind the peaks and painted them pink and gold. In the evenings he liked the sea window, where the light sank into the water and the boats turned on their lamps.',
@@ -56,6 +109,7 @@ var STORIES = [
   },
   {
     title: 'The Snail Race',
+    icon: 'snail',
     paragraphs: [
       'Every summer, the children of the village held a snail race on the long flat stone behind the school. Each child chose a snail, painted a small number on its shell with a dot of red or green, and set it at the starting line.',
       'Nora chose the smallest snail in the garden. Her friends laughed. "That one is too tiny," they said. "It will never win." Nora named her snail Comet anyway and painted a green number one on its shell.',
@@ -66,6 +120,7 @@ var STORIES = [
   },
   {
     title: 'The Clockmaker\'s Apprentice',
+    icon: 'clock',
     paragraphs: [
       'At the end of a crooked street stood a tiny shop full of clocks. There were tall clocks and round clocks, clocks shaped like owls and clocks shaped like houses, and every one of them ticked in its own small voice.',
       'The clockmaker was an old man named Mr. Haddad, and his apprentice was a boy named Karim, who wanted to fix everything quickly. When a clock stopped, Karim would shake it, tap it and wind it as fast as he could. Most of the time it stayed silent.',
@@ -76,6 +131,7 @@ var STORIES = [
   },
   {
     title: 'The Garden on the Roof',
+    icon: 'sunflower',
     paragraphs: [
       'Lina lived on the fifth floor of a tall apartment building in the middle of a busy city. From her window she could see roads, cars, cranes and grey walls, but not a single tree.',
       'One spring she found a packet of seeds in a kitchen drawer: tomatoes, mint and sunflowers. "Where would we even plant them?" asked her father. Lina pointed up. "On the roof," she said.',
@@ -85,9 +141,60 @@ var STORIES = [
     ]
   },
 
+  /* ---------- Histoires en français ---------- */
+  {
+    title: "Le crocodile qui avait peur de l'eau",
+    lang: 'fr',
+    icon: 'crocodile',
+    paragraphs: [
+      "Au bord d'un grand fleuve vivait un crocodile nommé Gaspard. Il avait de grandes dents, une longue queue et une peau verte toute bosselée. Il avait aussi un secret : il avait peur de l'eau.",
+      "Les autres crocodiles plongeaient, nageaient et faisaient des bulles toute la journée. Gaspard, lui, restait sur la rive avec un petit parapluie, au cas où une goutte tomberait du ciel.",
+      "« Tu es un crocodile, pas un chat ! » se moquait son cousin Léon. Gaspard rougissait, ce qui est très difficile pour un crocodile vert.",
+      "Un jour, une petite tortue tomba dans le courant et cria à l'aide. Tous les crocodiles dormaient. Gaspard ferma les yeux, serra son parapluie… et sauta dans le fleuve.",
+      "L'eau était fraîche, douce et pas méchante du tout. Gaspard ramena la tortue sur la rive en nageant comme un champion. Depuis ce jour, il nage tous les matins. Mais il garde toujours son parapluie, parce qu'il le trouve très élégant."
+    ]
+  },
+  {
+    title: "La vache qui voulait danser",
+    lang: 'fr',
+    icon: 'cow',
+    paragraphs: [
+      "Dans une ferme tranquille vivait une vache nommée Marguerite. Elle mangeait de l'herbe, donnait du bon lait et dormait au soleil. Mais en secret, elle rêvait de danser.",
+      "Un soir, la radio du fermier joua une musique joyeuse. Marguerite leva une patte, puis l'autre. Elle tourna sur elle-même et fit trembler toute l'étable. Les poules s'envolèrent, le cochon tomba dans la boue et le chien se cacha sous la paille.",
+      "« Une vache, ça ne danse pas ! » dit le vieux cheval. « Pourquoi pas ? » répondit Marguerite. Le cheval réfléchit longtemps. Il ne trouva aucune bonne raison.",
+      "Alors Marguerite prit des cours. Le canard lui apprit la valse, le mouton le rock, et le petit chat lui montra comment faire une jolie révérence.",
+      "Aujourd'hui, chaque samedi soir, il y a un grand bal à la ferme. Marguerite danse au milieu de la grange, et le fermier jure que, depuis qu'elle danse, son lait sort déjà en milk-shake."
+    ]
+  },
+  {
+    title: "Le petit nuage grognon",
+    lang: 'fr',
+    icon: 'cloud',
+    paragraphs: [
+      "Tout en haut du ciel vivait un petit nuage gris qui n'était jamais content. Quand il faisait beau, il boudait. Quand il y avait du vent, il râlait. Et quand il était fâché, il faisait pleuvoir sur la tête des gens.",
+      "Un matin, il vit une fête d'anniversaire dans un jardin. Il y avait des ballons, un gâteau et des enfants qui riaient. « Trop de bruit ! » grogna le nuage, et il se gonfla pour faire tomber une grosse averse.",
+      "Mais au lieu de se sauver, les enfants mirent leurs bottes et sautèrent dans les flaques en criant de joie. Une petite fille leva la tête et dit : « Merci, nuage ! C'est la meilleure fête du monde ! »",
+      "Le nuage ne savait pas quoi répondre. Personne ne l'avait jamais remercié. Il sentit quelque chose de tout chaud au fond de lui, et un rayon de soleil passa à travers ses gouttes.",
+      "Alors, au-dessus du jardin, apparut un magnifique arc-en-ciel. Depuis ce jour, le petit nuage grogne encore un peu, mais seulement pour rire."
+    ]
+  },
+  {
+    title: "Monsieur Pingouin a trop chaud",
+    lang: 'fr',
+    icon: 'penguin',
+    paragraphs: [
+      "Monsieur Pingouin vivait sur la banquise, où il faisait toujours très froid. Un jour, il reçut une carte postale de son ami le chameau : « Viens me voir dans le désert, il fait beau et chaud ! »",
+      "Monsieur Pingouin prépara sa valise : une écharpe, un bonnet et ses plus belles moufles. Puis il prit l'avion. Quand la porte s'ouvrit, une vague de chaleur lui sauta au visage.",
+      "« Oh là là ! » dit-il en enlevant son écharpe. Puis son bonnet. Puis ses moufles. Il marchait sur le sable brûlant en sautillant d'une patte sur l'autre, comme s'il dansait.",
+      "Le chameau éclata de rire. « Viens, j'ai une surprise pour toi. » Il l'emmena dans un petit café où l'on vendait des glaces de toutes les couleurs. Monsieur Pingouin en commanda douze.",
+      "Le soir, il écrivit une carte postale à sa famille : « Le désert est très chaud, le sable est très chaud, le soleil est très chaud. Mais les glaces sont excellentes. Je reste encore une semaine ! »"
+    ]
+  },
+
   /* ---------- Arabic stories (shown right-to-left) ---------- */
   {
     title: 'الجمل الصبور',
+    icon: 'camel',
     lang: 'ar',
     paragraphs: [
       'في قافلة طويلة تعبر الصحراء، كان هناك جمل كبير اسمه صبور. لم يكن أسرع الجمال ولا أقواها، لكنه كان يمشي دائماً بخطوات ثابتة، لا يتعب ولا يتوقف.',
@@ -99,6 +206,7 @@ var STORIES = [
   },
   {
     title: 'شجرة الزيتون',
+    icon: 'olive',
     lang: 'ar',
     paragraphs: [
       'في قرية صغيرة بين الجبال، كانت لجدّ أمين شجرة زيتون عجوز، جذعها ملتوٍ مثل حبل قديم، وأغصانها فضية تلمع تحت الشمس.',
@@ -110,6 +218,7 @@ var STORIES = [
   },
   {
     title: 'خريطة الألوان',
+    icon: 'door',
     lang: 'ar',
     paragraphs: [
       'كانت سلمى تزور مدينة فاس القديمة لأول مرة مع عمّتها. الأزقة ضيقة ومتعرّجة، والأبواب الخشبية متشابهة، والناس يمرّون مسرعين يحملون السلال والأقمشة.',

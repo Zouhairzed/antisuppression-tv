@@ -11,11 +11,11 @@
 | In-app ads | No |
 | In-app purchases | No |
 | Age rating | General audiences (all ages) |
-| Service language / display language | English (the reader also includes 3 stories in Arabic) |
+| Service language / display language | English (the reader also includes 4 stories in French and 3 in Arabic) |
 | Privacy policy URL | https://visiorich.odidz.com/privacy |
 
 ## Short description
-Red-green reading bars and 6 games for at-home binocular vision exercises with bichrome glasses.
+Red-green reading bars, 19 stories and 7 games for at-home binocular vision exercises with bichrome glasses.
 
 ## Full description
 Antisuppression Bars brings red-green reading bars to your LG TV for at-home vision exercises recommended by eye-care professionals.
@@ -23,13 +23,14 @@ Antisuppression Bars brings red-green reading bars to your LG TV for at-home vis
 Put on red-green (bichrome) glasses and the bars cover the screen. Each eye sees only part of the picture through its filter, so you need both eyes working together to read the text and follow the action.
 
 What's inside:
-• Reading: 11 original short stories under the bars (8 in English, 3 in Arabic), with adjustable text size
+• Reading: 19 original short stories, many of them funny stories for kids, each with its own picture: 12 in English, 4 in French and 3 in Arabic, with adjustable text size
 • Shape Blaster: move the cannon and shoot falling shapes before they land
 • Lane Racer: switch lanes to dodge traffic on an endless road
 • Hop & Duck: help a running cat jump over blocks, duck under birds and collect stars
 • Snake: steer a growing snake to the food without hitting the walls or its tail
 • Maze Mouse: eat every crumb in the maze while cats chase you; big cheese turns the tables
 • Block Drop: rotate the falling blocks to fill and clear complete lines
+• Find the Sneak: one owl keeps glancing sideways; spot it and catch it before time runs out
 • Gentle background music with its own theme for each game, and soft sound effects, each of which can be turned off in Settings
 
 Adjust everything to match your glasses:
@@ -43,7 +44,7 @@ The app works offline, has no ads, and collects no personal data. Settings and b
 Important: this app is a supplement to vision therapy prescribed by an optometrist or ophthalmologist. It is not a medical device and does not diagnose or treat any condition. Turn off any TV picture modes that change colours (such as eye-comfort or blue-light filters) before use.
 
 ## Keywords
-vision, eye exercise, binocular, bichrome, red green glasses, red blue glasses, reading bars, vision therapy, eye games
+vision, eye exercise, binocular, bichrome, red green glasses, red blue glasses, reading bars, vision therapy, eye games, kids stories, histoires pour enfants
 
 ## Images
 | Asset | File |

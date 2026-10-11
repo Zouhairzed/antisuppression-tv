@@ -8,9 +8,9 @@ var Settings = (function () {
     orientRev: 2,
     barSize: 60,               // px per bar
     opacity: 1.0,              // 0.2 – 1.0; full strength keeps each colour pure (no leak to the other eye)
-    redColor: '#aa1819',       // reference reading-bar red
-    greenColor: '#1aa91c',     // reference reading-bar green
-    colorRev: 3,
+    redColor: '#9b1819',       // default bar red
+    greenColor: '#1a9b1c',     // default bar green
+    colorRev: 4,
     blueColor: '#0050ff',      // azure-leaning blue: stays blue (not violet) when blended at lower strength
     blueRev: 2,
     fontSize: 44,
@@ -26,8 +26,8 @@ var Settings = (function () {
     orientation: ['vertical', 'horizontal'],
     barSize: [20, 30, 40, 50, 60, 80, 100, 140, 200],
     opacity: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-    redColor: ['#aa1819', '#ff0000', '#f00000', '#e00000', '#d00000', '#c00000', '#ff2020', '#ff4040', '#ff0040'],
-    greenColor: ['#1aa91c', '#00ff00', '#00f000', '#00e000', '#00d000', '#00c000', '#20ff20', '#40ff40', '#00ff60', '#00ff80'],
+    redColor: ['#9b1819', '#aa1819', '#ff0000', '#f00000', '#e00000', '#d00000', '#c00000', '#ff2020', '#ff4040', '#ff0040'],
+    greenColor: ['#1a9b1c', '#1aa91c', '#00ff00', '#00f000', '#00e000', '#00d000', '#00c000', '#20ff20', '#40ff40', '#00ff60', '#00ff80'],
     // From azure to pure blue. #0000ff looks violet on many screens once blended, so it is not the default.
     blueColor: ['#0050ff', '#0060ff', '#0070ff', '#0080ff', '#0040ff', '#0030ff', '#0000ff', '#0040e0', '#0050c0'],
     fontSize: [32, 38, 44, 52, 60, 72],
@@ -68,7 +68,7 @@ var Settings = (function () {
       if ((saved.blueRev || 0) < DEFAULTS.blueRev) { out.blueColor = DEFAULTS.blueColor; out.blueRev = DEFAULTS.blueRev; }
       // Earlier versions defaulted to horizontal bars; switch saved settings to the new default once
       if ((saved.orientRev || 0) < DEFAULTS.orientRev) { out.orientation = DEFAULTS.orientation; out.orientRev = DEFAULTS.orientRev; }
-      // Move earlier versions to the reference bar colours at full strength, once
+      // Move earlier versions to the default bar colours at full strength, once
       if ((saved.colorRev || 0) < DEFAULTS.colorRev) {
         out.redColor = DEFAULTS.redColor; out.greenColor = DEFAULTS.greenColor;
         out.opacity = DEFAULTS.opacity; out.colorRev = DEFAULTS.colorRev;

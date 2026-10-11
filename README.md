@@ -8,7 +8,7 @@ used with bichrome (red-green) or red-blue glasses. Inspired by the
 
 ## Important platform limitation
 webOS TV apps **cannot draw on top of other apps** (no system overlay like a browser extension).
-The bars are shown over content *inside this app*: the built-in reader and six games.
+The bars are shown over content *inside this app*: the built-in reader (19 stories in English, French and Arabic) and seven games.
 
 ## Games
 All games draw in white on black, so the red/green bars split every object between the eyes —
@@ -22,14 +22,15 @@ each eye sees only part of each object, encouraging both eyes to work together.
 | **Snake** — eat food, grow longer, avoid walls and your own tail | ◀ ▲ ▼ ▶ steer |
 | **Maze Mouse** — eat every crumb while cats chase you; big cheese scares them | ◀ ▲ ▼ ▶ move |
 | **Block Drop** — rotate falling blocks to fill and clear complete lines | ◀ ▶ move, ▲/OK rotate, hold ▼ drop |
+| **Find the Sneak** — one owl keeps glancing sideways; catch it before time runs out | ◀ ▲ ▼ ▶ spotlight, OK catch |
 
 In every game: YELLOW pause · BLUE settings · BACK menu. Best scores are saved per game.
 Games have soft background music and sound effects; each can be turned off in Settings.
 
 The home menu is drawn without bars. **Settings → Glasses** switches between red/green and
 red/blue. **Settings → Colour test** shows a cat through each bar colour with R / G / B pickers,
-to tune the colours to your glasses and screen. Defaults are the reference reading-bar colours
-(red #AA1819, green #1AA91C) at 100% strength.
+to tune the colours to your glasses and screen. Defaults are red #9B1819 and green #1A9B1C
+at 100% strength.
 
 ## Project layout
 ```
@@ -41,19 +42,21 @@ js/bars.js       bar rendering (CSS repeating gradient)
 js/app.js        menu, screens, remote-control navigation
 js/sound.js      synthesized music and sound effects (Web Audio)
 js/menu-art.js   menu tile icons
+js/story-art.js  story drawings
+js/library.js    story list
 js/calibrate.js  colour test and picker
-js/games/        engine.js + blaster, racer, runner, snake, maze, blocks
+js/games/        engine.js + blaster, racer, runner, snake, maze, blocks, sneak
 assets/          icon.png (80x80), largeIcon.png (130x130), splash.png (1920x1080)
 docs/            store submission notes
 ```
 
 ## Remote controls
-| Key | Menu | Reading (11 stories: 8 English, 3 Arabic) | Settings panel |
+| Key | Menu | Reading (19 stories: English, French, Arabic) | Settings panel |
 |---|---|---|---|
 | ▲ ▼ | move | scroll text | move selection |
 | ◀ ▶ | move | previous / next story | change value |
 | OK | open item | open settings | close settings |
-| BACK | exit app | back to menu | close settings |
+| BACK | exit app | back to story list | close settings |
 | RED | — | toggle horizontal/vertical | — |
 | GREEN | — | next bar width | — |
 | BLUE | settings | settings | close settings |

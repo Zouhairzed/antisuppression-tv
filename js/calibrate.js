@@ -66,7 +66,7 @@ var Calibrate = (function () {
     });
     html += '</div><div class="calib-actions">';
     items.push({ type: 'button', act: 'reference' });
-    html += '<div class="calib-row calib-btn" data-i="' + (items.length - 1) + '">Use reference colours</div>';
+    html += '<div class="calib-row calib-btn" data-i="' + (items.length - 1) + '">Use default colours</div>';
     items.push({ type: 'button', act: 'done' });
     html += '<div class="calib-row calib-btn calib-done" data-i="' + (items.length - 1) + '">Done</div></div>' +
       '<p class="hint">▲▼ choose · ◀▶ adjust · OK select · BACK done</p>';

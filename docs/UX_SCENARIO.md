@@ -16,29 +16,30 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 
 ## 1. First launch
 1. Launch the app from the Home launcher. The splash screen appears, then the **"Before you start"** notice.
-2. Press **OK**. The notice closes and the **home menu** appears: eight tiles in a 4 × 2 grid, each with an icon and a short description: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse, Block Drop, Settings.
+2. Press **OK**. The notice closes and the **home menu** appears: nine tiles in a 3 × 3 grid, each with an icon and a short description: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse, Block Drop, Find the Sneak, Settings.
 3. The home menu is shown without bars so it is easy to read. Vertical red and green bars cover the screen in Reading and in every game; this is the core function of the app.
 4. Relaunch the app: the notice is not shown again.
 
 ## 2. Home menu
-1. Press **◀ / ▶** to move the highlight between tiles, and **▲ / ▼** to move between the two rows.
+1. Press **◀ / ▶** to move the highlight between tiles, and **▲ / ▼** to move between rows.
 2. Press **OK** to open the highlighted item.
 3. Press **BACK** on the home menu to exit the app.
 
 ## 3. Reading
-1. Select **Reading**. A story is shown under the bars.
-2. Press **▼ / ▲** to scroll the story.
-3. Press **◀ / ▶** to switch between 11 stories: 8 in English, then 3 in Arabic. The footer shows "story N of 11".
-   Arabic stories are displayed right-to-left, and their footer adds "العربية".
+1. Select **Reading**. The **story list** appears (without bars): 19 tiles, each with a drawing of the story's subject, its title and its language — 12 in English, 4 in French, 3 in Arabic.
+   Press **◀ ▲ ▼ ▶** to choose and **OK** to open; **BACK** returns to the home menu.
+2. The story opens under the bars, with its drawing next to the title. Press **▼ / ▲** to scroll.
+3. Press **◀ / ▶** to go to the previous / next story. The footer shows "story N of 19" and the language.
+   Arabic stories are displayed right-to-left.
 4. Press **RED** to switch bars between vertical (default) and horizontal.
 5. Press **GREEN** to change the bar width.
 6. Press **OK** to open Settings; press **OK** or **BACK** to close it.
-7. Press **BACK** to return to the home menu.
+7. Press **BACK** to return to the story list.
 
 ## 4. Settings panel (available from anywhere with BLUE, or from the menu)
 1. Press **▲ / ▼** to choose a setting: Glasses, Orientation, Bar width, Bar strength, Red colour, Green colour (or Blue colour), Colour test, Text size, Music, Sound effects.
    - **Glasses** switches between red / green and red / blue. With red / blue, the bars become red and blue and the Green shade row is replaced by Blue shade.
-   - Each colour row shows a swatch and its value; **◀ / ▶** steps through preset colours. The defaults are the reference reading-bar colours (red #AA1819, green #1AA91C) at 100% bar strength.
+   - Each colour row shows a swatch and its value; **◀ / ▶** steps through preset colours. The defaults are red #9B1819 and green #1A9B1C at 100% bar strength.
    - **Colour test** (press **OK**) opens the colour test and picker described in section 4a.
    - **Music** (on / off) controls the soft background music in games. **Sound effects** (on / off) controls the short sounds for menus, moves, shots, jumps, pickups and losing a life.
 2. Press **◀ / ▶** to change the value. The bars update immediately behind the panel (bars are shown while Settings is open, even over the home menu).
@@ -50,7 +51,7 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 2. Next to each test: a colour swatch with its value, and **R**, **G**, **B** sliders (0–255).
 3. Press **▲ / ▼** to move between the sliders and buttons, and **◀ / ▶** to change the highlighted slider in steps of 5 (hold to keep changing). The test square and swatch update immediately.
 4. User instruction on screen: close the eye behind the green lens and, looking through the red lens only, adjust the green colour until the cat disappears; then the same for red with the green lens.
-5. **Reset to default** restores that colour; **Use reference colours** restores both; **Done** or **BACK** saves and returns to Settings.
+5. **Reset to default** restores that colour; **Use default colours** restores both; **Done** or **BACK** saves and returns to Settings.
 6. With the Magic Remote pointer, sliders can also be dragged and buttons clicked.
 
 ## 5. Games (common behaviour)
@@ -99,13 +100,20 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 4. Completing a full row clears it: 1, 2, 3 or 4 rows give 10, 30, 50 or 80 points times the level. Every 10 rows the level goes up and blocks fall faster.
 5. If the stack reaches the top, one life is lost and the well is emptied (the score is kept).
 
+### 5g. Find the Sneak
+1. Select **Find the Sneak**. Owls wander around the screen; one of them is the sneak. "Round N" and a timer bar are shown at the top.
+2. Every few seconds the sneak glances sideways while the other owls look straight ahead.
+3. Press and hold **◀ ▲ ▼ ▶** to move the dotted spotlight; the owl it would pick gets a ring. Press **OK** to catch it.
+4. Catching the sneak adds 50 points plus a time bonus and starts the next round with more owls (6, 8, 10 … up to 14) and a shorter glance. From round 3 all owls also blink now and then, as a distraction.
+5. Picking the wrong owl crosses it out and costs one life. If the timer runs out, one life is lost and the sneak is shown.
+
 ## Expected key behaviour summary
 | Key | Menu | Reading | Games | Settings |
 |---|---|---|---|---|
-| ▲ ▼ | move between rows | scroll | jump / duck, steer, rotate / drop faster (Block Drop) | choose |
+| ▲ ▼ | move between rows | scroll | jump / duck, steer, rotate / drop faster, move spotlight | choose |
 | ◀ ▶ | move between tiles | change story | move / change lane / steer | change value |
-| OK | open item | open Settings | fire / jump / rotate / restart | close |
-| BACK | exit app | menu | menu | close |
+| OK | open item | open Settings | fire / jump / rotate / catch / restart | close |
+| BACK | exit app | story list | menu | close |
 | RED | — | bar orientation | — | — |
 | GREEN | — | bar width | — | — |
 | YELLOW | — | — | pause | — |
