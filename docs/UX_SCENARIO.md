@@ -17,7 +17,7 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 ## 1. First launch
 1. Launch the app from the Home launcher. The splash screen appears, then the **"Before you start"** notice.
 2. Press **OK**. The notice closes and the **home menu** appears with seven items: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse, Settings.
-3. The home menu is shown without bars so it is easy to read. Red and green bars cover the screen in Reading and in every game; this is the core function of the app.
+3. The home menu is shown without bars so it is easy to read. Vertical red and green bars cover the screen in Reading and in every game; this is the core function of the app.
 4. Relaunch the app: the notice is not shown again.
 
 ## 2. Home menu
@@ -30,7 +30,7 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 2. Press **▼ / ▲** to scroll the story.
 3. Press **◀ / ▶** to switch between 11 stories: 8 in English, then 3 in Arabic. The footer shows "story N of 11".
    Arabic stories are displayed right-to-left, and their footer adds "العربية".
-4. Press **RED** to switch bars between horizontal and vertical.
+4. Press **RED** to switch bars between vertical (default) and horizontal.
 5. Press **GREEN** to change the bar width.
 6. Press **OK** to open Settings; press **OK** or **BACK** to close it.
 7. Press **BACK** to return to the home menu.

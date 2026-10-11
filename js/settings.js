@@ -4,7 +4,8 @@ var Settings = (function () {
 
   var DEFAULTS = {
     glasses: 'red-green',      // 'red-green' | 'red-blue'
-    orientation: 'horizontal', // 'horizontal' | 'vertical'
+    orientation: 'vertical',   // 'vertical' | 'horizontal'
+    orientRev: 2,
     barSize: 60,               // px per bar
     opacity: 0.6,              // 0.1 – 1.0
     redColor: '#ff0000',
@@ -19,7 +20,7 @@ var Settings = (function () {
   // differently: pick the shade where each eye sees only its own bars through the glasses.
   var OPTIONS = {
     glasses: ['red-green', 'red-blue'],
-    orientation: ['horizontal', 'vertical'],
+    orientation: ['vertical', 'horizontal'],
     barSize: [20, 30, 40, 50, 60, 80, 100, 140, 200],
     opacity: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
     redColor: ['#ff0000', '#f00000', '#e00000', '#d00000', '#c00000', '#ff2020', '#ff4040', '#ff0040'],
@@ -57,6 +58,8 @@ var Settings = (function () {
       for (var k in DEFAULTS) out[k] = (k in saved) ? saved[k] : DEFAULTS[k];
       // Older versions saved #0000ff as the blue default; move those to the new default once
       if ((saved.blueRev || 0) < DEFAULTS.blueRev) { out.blueColor = DEFAULTS.blueColor; out.blueRev = DEFAULTS.blueRev; }
+      // Earlier versions defaulted to horizontal bars; switch saved settings to the new default once
+      if ((saved.orientRev || 0) < DEFAULTS.orientRev) { out.orientation = DEFAULTS.orientation; out.orientRev = DEFAULTS.orientRev; }
       return out;
     } catch (e) {
       return JSON.parse(JSON.stringify(DEFAULTS));
