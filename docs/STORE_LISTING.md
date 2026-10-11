@@ -12,7 +12,7 @@
 | In-app purchases | No |
 | Age rating | General audiences (all ages) |
 | Service language / display language | English |
-| Privacy policy URL | *(public link to docs/privacy-policy.html — see note below)* |
+| Privacy policy URL | https://zouhairzed.github.io/AntisuppressionBars/privacy (live once GitHub Pages is enabled) |
 
 ## Short description
 Red-green reading bars and 5 games for at-home binocular vision exercises with bichrome glasses.
