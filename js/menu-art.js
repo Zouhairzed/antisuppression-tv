@@ -3,21 +3,6 @@
  * Icons are simple line/solid drawings in the current text colour.
  */
 var MENU_ART = (function () {
-  // Hidden Picture icon: a star made of dots
-  function dotStar() {
-    var pts = [], out = '';
-    for (var i = 0; i < 10; i++) { var a = -Math.PI / 2 + i * Math.PI / 5, r = i % 2 ? 12 : 29; pts.push([32 + Math.cos(a) * r, 34 + Math.sin(a) * r]); }
-    function inside(x, y) {
-      var c = false;
-      for (var i = 0, j = pts.length - 1; i < pts.length; j = i++) {
-        if ((pts[i][1] > y) !== (pts[j][1] > y) && x < (pts[j][0] - pts[i][0]) * (y - pts[i][1]) / (pts[j][1] - pts[i][1]) + pts[i][0]) c = !c;
-      }
-      return c;
-    }
-    for (var y = 4; y < 64; y += 6) for (var x = 4; x < 64; x += 6) if (inside(x, y)) out += '<circle cx="' + x + '" cy="' + y + '" r="2.2"/>';
-    return out;
-  }
-
   function svg(body, extra) {
     return '<svg viewBox="0 0 64 64" aria-hidden="true" ' + (extra || 'fill="currentColor"') + '>' + body + '</svg>';
   }
@@ -87,10 +72,6 @@ var MENU_ART = (function () {
       icon: svg('<circle cx="26" cy="18" r="9"/><circle cx="36" cy="18" r="9"/><rect x="30" y="2" width="3" height="8"/>' +
         '<path d="M6 36h52l-7 22H13z"/><path d="M4 33h56v5H4z"/>' +
         '<path d="M20 41v13M28 41v13M36 41v13M44 41v13" stroke="#111" stroke-width="3"/>')
-    },
-    picture: {
-      tag: 'find the shape in the dots',
-      icon: svg(dotStar())
     },
     settings: {
       tag: 'glasses, eyes, sound',

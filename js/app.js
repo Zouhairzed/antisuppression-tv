@@ -16,7 +16,7 @@
   var disclaimer = $('disclaimer'), menuEl = $('menu'), menuList = $('menu-list');
   var reader = $('reader'), canvas = $('game'), gameHint = $('game-hint'), calibEl = $('calib'), libraryEl = $('library');
 
-  var GAMES = [Blaster, Racer, Runner, Snake, Maze, Blocks, SplitStack, Paddle, Fruit, Picture];
+  var GAMES = [Blaster, Racer, Runner, Snake, Maze, Blocks, SplitStack, Paddle, Fruit];
   var MENU = [
     { label: 'Reading', icon: MENU_ART.reading.icon, sub: STORIES.length + ' stories', action: function () { openLibrary(); } }
   ].concat(GAMES.map(function (g) {

@@ -16,7 +16,7 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 
 ## 1. First launch
 1. Launch the app from the Home launcher. The splash screen appears, then the **"Before you start"** notice.
-2. Press **OK**. The notice closes and the **home menu** appears: twelve tiles in a 4 × 3 grid, each with an icon and a short description: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse, Block Drop, Split Stack, Ball & Paddle, Fruit Catcher, Hidden Picture, Settings.
+2. Press **OK**. The notice closes and the **home menu** appears: twelve tiles in a 4 × 3 grid, each with an icon and a short description: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse, Block Drop, Split Stack, Ball & Paddle, Fruit Catcher, Settings.
 3. The home menu is shown without bars so it is easy to read. Vertical red and green bars cover the screen in Reading and in every game; this is the core function of the app.
 4. Relaunch the app: the notice is not shown again.
 
@@ -102,8 +102,8 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 4. Completing a full row clears it: 1, 2, 3 or 4 rows give 10, 30, 50 or 80 points times the level. Every 10 rows the level goes up and blocks fall faster.
 5. If the stack reaches the top, one life is lost and the well is emptied (the score is kept).
 
-## 5x. Two-eye games (Split Stack, Ball & Paddle, Fruit Catcher, Hidden Picture)
-- In these four games the red/green bars are not shown. Instead, parts of the game are drawn only in the weaker eye's colour and other parts only in the stronger eye's colour (dimmed by **Strong-eye contrast**), so each eye sees different pieces. Frames, text and score are white (both eyes).
+## 5x. Two-eye games (Split Stack, Ball & Paddle, Fruit Catcher)
+- In these three games the red/green bars are not shown. Instead, parts of the game are drawn only in the weaker eye's colour and other parts only in the stronger eye's colour (dimmed by **Strong-eye contrast**), so each eye sees different pieces. The two colours are the **Red colour** and **Green colour** (or **Blue colour**) from Settings; **Weaker eye** decides which one the weaker eye gets. Frames, text and score are white (both eyes).
 - Lives, pause, Settings, music and Game over work as in the other games.
 
 ### 5g. Split Stack
@@ -121,17 +121,12 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 2. Catching fruit adds points, with a growing combo bonus. Dropping fruit only resets the combo. Catching a bug costs one life.
 3. Fruit and bugs are drawn for the weaker eye, the basket for the stronger eye. Fruit falls faster and bugs become more frequent over time.
 
-### 5j. Hidden Picture
-1. A shape (circle, square, triangle, star, heart, moon, house, fish, arrow or cross) is hidden in a field of dots. Patches of dots are drawn for the weaker eye and the other patches for the stronger eye.
-2. Three answers are shown below with a small picture and name. Press **◀ / ▶** to choose and **OK** to answer.
-3. A right answer adds points and shows the shape; a wrong answer costs one life and shows the right shape. Each new picture adds more background dots.
-
 ## Expected key behaviour summary
 | Key | Menu | Reading | Games | Settings |
 |---|---|---|---|---|
 | ▲ ▼ | move between rows | scroll | jump / duck, steer, rotate / drop faster, serve | choose |
-| ◀ ▶ | move between tiles | change story | move / change lane / steer / choose answer | change value |
-| OK | open item | open Settings | fire / jump / rotate / serve / answer / restart | close |
+| ◀ ▶ | move between tiles | change story | move / change lane / steer | change value |
+| OK | open item | open Settings | fire / jump / rotate / serve / restart | close |
 | BACK | exit app | story list | menu | close |
 | RED | — | bar orientation | — | — |
 | GREEN | — | bar width | — | — |

@@ -78,12 +78,6 @@ var Sound = (function () {
       patterns: [[0, -1, 2, 1, 3, -1, 2, 1], [0, 2, -1, 4, 3, -1, 1, 2]],
       arp: [12, 'sine', 0.085, 0.9], bass: ['bounce', 'triangle', 0.10], pad: 0.02, echo: 0.15, filter: 2800
     },
-    // Hidden Picture: calm and slow, for looking carefully (F major)
-    picture: {
-      bpm: 76, chords: [[53, 57, 60], [50, 53, 57], [55, 58, 62], [48, 52, 55]],
-      patterns: [[0, -1, 2, -1, 3, -1, 4, -1], [0, -1, 3, -1, 2, -1, 1, -1]],
-      arp: [12, 'sine', 0.075, 2.6], bass: ['half', 'sine', 0.10], pad: 0.04, echo: 0.3, filter: 1900
-    },
     // Maze Mouse: light "tiptoe" feel, staccato notes over a walking bass (G minor)
     maze: {
       bpm: 96, chords: [[55, 58, 62], [51, 55, 58], [48, 51, 55], [50, 54, 57]],
