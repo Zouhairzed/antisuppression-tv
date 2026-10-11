@@ -16,12 +16,12 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 
 ## 1. First launch
 1. Launch the app from the Home launcher. The splash screen appears, then the **"Before you start"** notice.
-2. Press **OK**. The notice closes and the **home menu** appears with seven items: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse, Settings.
+2. Press **OK**. The notice closes and the **home menu** appears: eight tiles in a 4 × 2 grid, each with an icon and a short description: Reading, Shape Blaster, Lane Racer, Hop & Duck, Snake, Maze Mouse, Block Drop, Settings.
 3. The home menu is shown without bars so it is easy to read. Vertical red and green bars cover the screen in Reading and in every game; this is the core function of the app.
 4. Relaunch the app: the notice is not shown again.
 
 ## 2. Home menu
-1. Press **▲ / ▼** to move the highlight between items.
+1. Press **◀ / ▶** to move the highlight between tiles, and **▲ / ▼** to move between the two rows.
 2. Press **OK** to open the highlighted item.
 3. Press **BACK** on the home menu to exit the app.
 
@@ -83,12 +83,19 @@ Copy these steps into the UX scenario template downloaded from LG Seller Lounge.
 4. Touching a scared cat adds 50 points and sends it home. Touching a normal cat costs one life.
 5. Eating every crumb adds 100 points and starts the next level with faster cats; "Level N" appears at the top.
 
+### 5f. Block Drop
+1. Select **Block Drop**. Blocks made of four squares fall into a well 10 squares wide. The next block is shown on the right; lines cleared and the level on the left.
+2. Press **◀ / ▶** to move the block (hold to keep moving), **▲** or **OK** to rotate it, and hold **▼** to drop it faster.
+3. An outline shows where the block will land.
+4. Completing a full row clears it: 1, 2, 3 or 4 rows give 10, 30, 50 or 80 points times the level. Every 10 rows the level goes up and blocks fall faster.
+5. If the stack reaches the top, one life is lost and the well is emptied (the score is kept).
+
 ## Expected key behaviour summary
 | Key | Menu | Reading | Games | Settings |
 |---|---|---|---|---|
-| ▲ ▼ | move | scroll | jump / duck, steer (Snake, Maze Mouse) | choose |
-| ◀ ▶ | — | change story | move / change lane / steer | change value |
-| OK | open item | open Settings | fire / jump / restart | close |
+| ▲ ▼ | move between rows | scroll | jump / duck, steer, rotate / drop faster (Block Drop) | choose |
+| ◀ ▶ | move between tiles | change story | move / change lane / steer | change value |
+| OK | open item | open Settings | fire / jump / rotate / restart | close |
 | BACK | exit app | menu | menu | close |
 | RED | — | bar orientation | — | — |
 | GREEN | — | bar width | — | — |

@@ -15,7 +15,7 @@
 | Privacy policy URL | https://zouhairzed.github.io/AntisuppressionBars/privacy (live once GitHub Pages is enabled) |
 
 ## Short description
-Red-green reading bars and 5 games for at-home binocular vision exercises with bichrome glasses.
+Red-green reading bars and 6 games for at-home binocular vision exercises with bichrome glasses.
 
 ## Full description
 Antisuppression Bars brings red-green reading bars to your LG TV for at-home vision exercises recommended by eye-care professionals.
@@ -29,6 +29,7 @@ What's inside:
 • Hop & Duck: help a running cat jump over blocks, duck under birds and collect stars
 • Snake: steer a growing snake to the food without hitting the walls or its tail
 • Maze Mouse: eat every crumb in the maze while cats chase you; big cheese turns the tables
+• Block Drop: rotate the falling blocks to fill and clear complete lines
 • Gentle background music with its own theme for each game, and soft sound effects, each of which can be turned off in Settings
 
 Adjust everything to match your glasses:

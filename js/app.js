@@ -16,13 +16,13 @@
   var disclaimer = $('disclaimer'), menuEl = $('menu'), menuList = $('menu-list');
   var reader = $('reader'), canvas = $('game'), gameHint = $('game-hint');
 
-  var GAMES = [Blaster, Racer, Runner, Snake, Maze];
+  var GAMES = [Blaster, Racer, Runner, Snake, Maze, Blocks];
   var MENU = [
-    { label: 'Reading', sub: STORIES.length + ' stories', action: function () { show('reader'); } }
+    { label: 'Reading', icon: MENU_ART.reading.icon, sub: STORIES.length + ' stories', action: function () { show('reader'); } }
   ].concat(GAMES.map(function (g) {
-    return { label: g.title, sub: 'game', action: function () { startGame(g); } };
+    return { label: g.title, icon: MENU_ART[g.id].icon, sub: MENU_ART[g.id].tag, action: function () { startGame(g); } };
   })).concat([
-    { label: 'Settings', sub: 'glasses & bars', action: function () { openPanel(); } }
+    { label: 'Settings', icon: MENU_ART.settings.icon, sub: MENU_ART.settings.tag, action: function () { openPanel(); } }
   ]);
 
   var screen = 'menu';
@@ -35,7 +35,7 @@
 
   function renderMenu() {
     menuList.innerHTML = MENU.map(function (m, i) {
-      return '<li class="' + (i === menuFocus ? 'focused' : '') + '"><span>' + m.label +
+      return '<li class="' + (i === menuFocus ? 'focused' : '') + '"><span class="icon">' + m.icon + '</span><span class="label">' + m.label +
         '</span><span class="sub">' + m.sub + '</span></li>';
     }).join('');
   }
@@ -144,9 +144,13 @@
     if (k === KEY.BLUE) { openPanel(); return; }
 
     if (screen === 'menu') {
-      if (k === KEY.UP) menuFocus = (menuFocus - 1 + MENU.length) % MENU.length;
-      if (k === KEY.DOWN) menuFocus = (menuFocus + 1) % MENU.length;
-      if (k === KEY.UP || k === KEY.DOWN) Sound.play('nav');
+      // 4 x 2 grid of tiles: LEFT/RIGHT step through, UP/DOWN jump a row
+      var n = MENU.length;
+      if (k === KEY.LEFT) menuFocus = (menuFocus - 1 + n) % n;
+      if (k === KEY.RIGHT) menuFocus = (menuFocus + 1) % n;
+      if (k === KEY.UP) menuFocus = (menuFocus - 4 + n) % n;
+      if (k === KEY.DOWN) menuFocus = (menuFocus + 4) % n;
+      if (k >= KEY.LEFT && k <= KEY.DOWN) Sound.play('nav');
       if (k === KEY.ENTER) { Sound.play('select'); MENU[menuFocus].action(); return; }
       if (k === KEY.BACK && window.webOS && webOS.platformBack) webOS.platformBack();
       renderMenu();

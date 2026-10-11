@@ -108,8 +108,9 @@ var Engine = (function () {
     if (state.over) { if (k === KEY.ENTER) reset(); return; }
     if (k === KEY.YELLOW || k === KEY.PAUSE || k === KEY.PLAY) { state.paused = !state.paused; return; }
     if (state.paused) { if (k === KEY.ENTER) state.paused = false; return; }
+    var repeat = !!held[k];
     held[k] = true;
-    if (game.keydown) game.keydown(k, state);
+    if (game.keydown) game.keydown(k, state, repeat);
   }
 
   function keyup(k) { held[k] = false; }

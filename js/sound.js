@@ -54,6 +54,12 @@ var Sound = (function () {
       patterns: [[0, -1, 2, -1, 3, -1, 2, -1], [0, -1, 3, -1, 4, -1, 2, -1]],
       arp: [12, 'sine', 0.075, 3], bass: ['half', 'sine', 0.10], pad: 0.04, echo: 0.28, filter: 1800
     },
+    // Block Drop: smooth and steady, gentle syncopation (Bb major)
+    blocks: {
+      bpm: 100, chords: [[58, 62, 65], [55, 58, 62], [51, 55, 58], [53, 57, 60]],
+      patterns: [[0, 2, -1, 3, 2, -1, 1, 2], [0, 3, -1, 4, 3, -1, 2, 1]],
+      arp: [12, 'sine', 0.08, 1.6], bass: ['half', 'triangle', 0.11], pad: 0.03, echo: 0.2, filter: 2400
+    },
     // Maze Mouse: light "tiptoe" feel, staccato notes over a walking bass (G minor)
     maze: {
       bpm: 96, chords: [[55, 58, 62], [51, 55, 58], [48, 51, 55], [50, 54, 57]],
